@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 
+import requests
 import anyio
 from dotenv import load_dotenv
 from mcp.server.stdio import stdio_server
@@ -27,7 +28,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
-
+session = None
 
 def parse_args():
     """Parse command-line arguments."""
@@ -246,7 +247,12 @@ def main():
     """Main entry point for the CLI."""
     # Load environment variables from .env file
     load_dotenv()
-
+    global session
+    if session is None:
+            session = requests.Session()
+            
+    logger.info("Done initializing session")
+    
     try:
         # Parse command-line arguments
         args = parse_args()

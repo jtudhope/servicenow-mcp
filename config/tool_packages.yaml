@@ -107,6 +107,20 @@ platform_developer:
   - commit_changeset
   - publish_changeset
   - add_file_to_changeset
+  # UI Actions
+  - create_ui_action
+  - update_ui_action
+  - list_ui_actions
+  - get_ui_action
+  - delete_ui_action
+  # ACL Management
+  - create_acl
+  - update_acl
+  - list_acls
+  - get_acl
+  - delete_acl
+  # Security Elevation
+  - security_elevation
 
 agile_management:
   # Story Management
@@ -256,3 +270,40 @@ full:
   - create_project
   - update_project
   - list_projects
+  # UI Actions
+  - create_ui_action
+  - update_ui_action
+  - list_ui_actions
+  - get_ui_action
+  - delete_ui_action
+  # ACL Management
+  - create_acl
+  - update_acl
+  - list_acls
+  - get_acl
+  - delete_acl
+  # Security Elevation
+  - security_elevation
+  # Inbound Email Action Management
+  - create_inbound_email_action
+  - update_inbound_email_action
+  - list_inbound_email_actions
+  - get_inbound_email_action
+  - delete_inbound_email_action
+  # Table Management
+  - create_table
+  - create_table_column
+  - update_table
+  - update_table_column
+  - list_tables
+  - list_table_columns
+  - get_table
+  - get_table_column
+  # Choice Management
+  - create_choice
+  - update_choice
+  - list_choices
+  - get_choice
+  - delete_choice
+  - bulk_create_choices
+  - reorder_choices

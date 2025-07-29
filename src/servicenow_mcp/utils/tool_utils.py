@@ -334,6 +334,101 @@ from servicenow_mcp.tools.project_tools import (
     list_projects as list_projects_tool,
 )
 
+from servicenow_mcp.tools.developer_ui_action import (
+    CreateUIActionParams,
+    UpdateUIActionParams,
+    ListUIActionsParams,
+    GetUIActionParams,
+    DeleteUIActionParams,
+)
+
+from servicenow_mcp.tools.developer_ui_action import (
+    create_ui_action as create_ui_action_tool,
+    update_ui_action as update_ui_action_tool,
+    list_ui_actions as list_ui_actions_tool,
+    get_ui_action as get_ui_action_tool,
+    delete_ui_action as delete_ui_action_tool,
+)
+
+from servicenow_mcp.tools.developer_acl import (
+    CreateACLParams,
+    UpdateACLParams,
+    ListACLsParams,
+    GetACLParams,
+    DeleteACLParams,
+)
+from servicenow_mcp.tools.developer_acl import (
+    create_acl as create_acl_tool,
+    update_acl as update_acl_tool,
+    list_acls as list_acls_tool,
+    get_acl as get_acl_tool,
+    delete_acl as delete_acl_tool,
+)
+
+from servicenow_mcp.tools.developer_elevate_permissions import (
+    SecurityElevationParams,
+)
+from servicenow_mcp.tools.developer_elevate_permissions import (
+    security_elevation as security_elevation_tool,
+)
+
+# Add imports for the inbound email action tool parameters and functions
+from servicenow_mcp.tools.developer_inbound_email_actions import (
+    CreateInboundEmailActionParams,
+    UpdateInboundEmailActionParams,
+    ListInboundEmailActionsParams,
+    GetInboundEmailActionParams,
+    DeleteInboundEmailActionParams,
+)
+from servicenow_mcp.tools.developer_inbound_email_actions import (
+    create_inbound_email_action as create_inbound_email_action_tool,
+    update_inbound_email_action as update_inbound_email_action_tool,
+    list_inbound_email_actions as list_inbound_email_actions_tool,
+    get_inbound_email_action as get_inbound_email_action_tool,
+    delete_inbound_email_action as delete_inbound_email_action_tool,
+)
+
+from servicenow_mcp.tools.developer_table import (
+    CreateTableParams,
+    CreateTableColumnParams,
+    UpdateTableParams,
+    UpdateTableColumnParams,
+    ListTablesParams,
+    ListTableColumnsParams,
+    GetTableParams,
+    GetTableColumnParams,
+)
+from servicenow_mcp.tools.developer_table import (
+    create_table as create_table_tool,
+    create_table_column as create_table_column_tool,
+    update_table as update_table_tool,
+    update_table_column as update_table_column_tool,
+    list_tables as list_tables_tool,
+    list_table_columns as list_table_columns_tool,
+    get_table as get_table_tool,
+    get_table_column as get_table_column_tool,
+)
+
+
+from servicenow_mcp.tools.developer_table_choice import (
+    CreateChoiceParams,
+    UpdateChoiceParams,
+    ListChoicesParams,
+    GetChoiceParams,
+    DeleteChoiceParams,
+    BulkCreateChoicesParams,
+    ReorderChoicesParams,
+)
+from servicenow_mcp.tools.developer_table_choice import (
+    create_choice as create_choice_tool,
+    update_choice as update_choice_tool,
+    list_choices as list_choices_tool,
+    get_choice as get_choice_tool,
+    delete_choice as delete_choice_tool,
+    bulk_create_choices as bulk_create_choices_tool,
+    reorder_choices as reorder_choices_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -942,5 +1037,226 @@ def get_tool_definitions(
             "List projects from ServiceNow",
             "json",  # Tool returns list/dict
         ),
+        "create_ui_action": (
+            create_ui_action_tool,
+            CreateUIActionParams,
+            str,  # Expects JSON string
+            "Create a new UI action in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_ui_action": (
+            update_ui_action_tool,
+            UpdateUIActionParams,
+            str,  # Expects JSON string
+            "Update an existing UI action in ServiceNow",
+            "json",  # Tool returns list/dict
+        ),
+        "list_ui_actions": (
+            list_ui_actions_tool,
+            ListUIActionsParams,
+            str,  # Expects JSON string
+            "List UI actions from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_ui_action": (
+            get_ui_action_tool,
+            GetUIActionParams,
+            str,  # Expects JSON string
+            "Get a specific UI action from ServiceNow",
+            "json",  # Tool returns list/dict
+        ),
+        "delete_ui_action": (
+            delete_ui_action_tool,
+            DeleteUIActionParams,
+            str,  # Expects JSON string
+            "Delete a UI action from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "create_acl": (
+            create_acl_tool,
+            CreateACLParams,
+            str,  # Expects JSON string
+            "Create a new ACL in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_acl": (
+            update_acl_tool,
+            UpdateACLParams,
+            str,  # Expects JSON string
+            "Update an existing ACL in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "list_acls": (
+            list_acls_tool,
+            ListACLsParams,
+            str,  # Expects JSON string
+            "List ACLs from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_acl": (
+            get_acl_tool,
+            GetACLParams,
+            str,  # Expects JSON string
+            "Get a specific ACL from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "delete_acl": (
+            delete_acl_tool,
+            DeleteACLParams,
+            str,  # Expects JSON string
+            "Delete an ACL from ServiceNow",
+            "json",  # Tool returns list/dict
+        ),
+        "security_elevation": (
+            security_elevation_tool,
+            SecurityElevationParams,
+            str,  # Expects JSON string
+            "Elevate login session with specified roles",
+            "json",  # Tool returns list/dict
+        ),
+        "create_inbound_email_action": (
+            create_inbound_email_action_tool,
+            CreateInboundEmailActionParams,
+            str,  # Expects JSON string
+            "Create a new inbound email action in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_inbound_email_action": (
+            update_inbound_email_action_tool,
+            UpdateInboundEmailActionParams,
+            str,  # Expects JSON string
+            "Update an existing inbound email action in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "list_inbound_email_actions": (
+            list_inbound_email_actions_tool,
+            ListInboundEmailActionsParams,
+            str,  # Expects JSON string
+            "List inbound email actions from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_inbound_email_action": (
+            get_inbound_email_action_tool,
+            GetInboundEmailActionParams,
+            str,  # Expects JSON string
+            "Get a specific inbound email action from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "delete_inbound_email_action": (
+            delete_inbound_email_action_tool,
+            DeleteInboundEmailActionParams,
+            str,  # Expects JSON string
+            "Delete an inbound email action from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "create_table": (
+            create_table_tool,
+            CreateTableParams,
+            str,  # Expects JSON string
+            "Create a new custom table in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "create_table_column": (
+            create_table_column_tool,
+            CreateTableColumnParams,
+            str,  # Expects JSON string
+            "Create a new column in a table.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_table": (
+            update_table_tool,
+            UpdateTableParams,
+            str,  # Expects JSON string
+            "Update an existing table in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_table_column": (
+            update_table_column_tool,
+            UpdateTableColumnParams,
+            str,  # Expects JSON string
+            "Update an existing table column in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "list_tables": (
+            list_tables_tool,
+            ListTablesParams,
+            str,  # Expects JSON string
+            "List tables from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "list_table_columns": (
+            list_table_columns_tool,
+            ListTableColumnsParams,
+            str,  # Expects JSON string
+            "List columns from a specific table in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_table": (
+            get_table_tool,
+            GetTableParams,
+            str,  # Expects JSON string
+            "Get details of a specific table from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_table_column": (
+            get_table_column_tool,
+            GetTableColumnParams,
+            str,  # Expects JSON string
+            "Get details of a specific table column from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+
+
+
+        "create_choice": (
+            create_choice_tool,
+            CreateChoiceParams,
+            str,  # Expects JSON string
+            "Create a new choice for a choice field in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "update_choice": (
+            update_choice_tool,
+            UpdateChoiceParams,
+            str,  # Expects JSON string
+            "Update an existing choice in ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "list_choices": (
+            list_choices_tool,
+            ListChoicesParams,
+            str,  # Expects JSON string
+            "List choices for a specific field from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "get_choice": (
+            get_choice_tool,
+            GetChoiceParams,
+            str,  # Expects JSON string
+            "Get a specific choice from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "delete_choice": (
+            delete_choice_tool,
+            DeleteChoiceParams,
+            str,  # Expects JSON string
+            "Delete a choice from ServiceNow.",
+            "json",  # Tool returns list/dict
+        ),
+        "bulk_create_choices": (
+            bulk_create_choices_tool,
+            BulkCreateChoicesParams,
+            str,  # Expects JSON string
+            "Create multiple choices at once for a choice field.",
+            "json",  # Tool returns list/dict
+        ),
+        "reorder_choices": (
+            reorder_choices_tool,
+            ReorderChoicesParams,
+            str,  # Expects JSON string
+            "Reorder choices by updating their sequence values.",
+            "json",  # Tool returns list/dict
+        ),
+
     }
     return tool_definitions

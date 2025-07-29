@@ -117,6 +117,21 @@ def {tool_name}(
         )
 ```
 
+### 2. Update config/tool_packages.yaml
+
+```python
+# Add configuration for new tool to appropriate category
+platform_developer:
+  # Script Includes
+  - list_script_includes
+  - get_script_include
+  - create_script_include
+  - update_script_include
+  - delete_script_include
+  - execute_script_include
+```
+
+
 ### 2. Update tools/__init__.py
 
 ```python

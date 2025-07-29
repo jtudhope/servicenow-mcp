@@ -25,8 +25,15 @@ from servicenow_mcp.utils.config import ServerConfig
 from servicenow_mcp.utils.tool_utils import get_tool_definitions
 
 # Set up logging
-logging.basicConfig(level=logging.INFO)
+#logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+session = None
+logging.basicConfig(
+    filename="C:/Development/servicenow-mcp/servicenow-mcp/app1.log",
+    level=logging.DEBUG
+)
+logger.debug("Starting Log")
+
 
 # Define path for the configuration file
 TOOL_PACKAGE_CONFIG_PATH = os.getenv("TOOL_PACKAGE_CONFIG_PATH", "config/tool_packages.yaml")

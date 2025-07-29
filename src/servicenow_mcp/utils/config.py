@@ -61,3 +61,4 @@ class ServerConfig(BaseModel):
     def api_url(self) -> str:
         """Get the API URL for the ServiceNow instance."""
         return f"{self.instance_url}/api/now"
+

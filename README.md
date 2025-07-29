@@ -283,6 +283,38 @@ The default `config/tool_packages.yaml` includes the following role-based packag
 1. **create_ui_policy** - Creates a ServiceNow UI Policy, typically for a Catalog Item.
 2. **create_ui_policy_action** - Creates an action associated with a UI Policy to control variable states (visibility, mandatory, etc.).
 
+
+#### Developer Toolbox Tools
+
+1. **create_ui_action** - Create a new UI action in ServiceNow with specified configuration
+2. **update_ui_action** - Update an existing UI action's properties and behavior
+3. **list_ui_actions** - List UI actions with filtering by table, active status, and search queries
+4. **get_ui_action** - Retrieve detailed information about a specific UI action
+5. **delete_ui_action** - Remove a UI action from ServiceNow
+
+6. **create_inbound_email_action** - Create a new inbound email action
+7. **update_inbound_email_action** - Update an existing inbound email action
+8. **list_inbound_email_actions** - List and search inbound email actions
+9. **get_inbound_email_action** - Get details of a specific inbound email action
+10. **delete_inbound_email_action** - Delete an inbound email action
+
+11. **create_table** - Create a new custom table
+12. **create_table_column** - Create a new column in a table
+13. **update_table** - Update an existing table
+14. **update_table_column** - Update an existing table column
+14. **list_tables** - List and search custom tables
+16. **list_table_columns** - List columns in a specific table
+17. **get_table** - Get details of a specific table
+18. **get_table_column** - Get details of a specific table column
+
+19. **create_choice** - Create a new choice for a choice field
+20. **update_choice** - Update an existing choice option
+21. **list_choices** - List all choices for a specific field
+22. **get_choice** - Get details of a specific choice
+23. **delete_choice** - Delete a choice option
+24. **bulk_create_choices** - Create multiple choices at once
+25. **reorder_choices** - Reorder choices by sequence
+
 ### Using the MCP CLI
 
 The ServiceNow MCP server can be installed with the MCP CLI, which provides a convenient way to register the server with Claude.
@@ -444,6 +476,35 @@ Below are some example natural language queries you can use with Claude to inter
 - "Create a UI policy for the 'Software Request' item (sys_id: abc...) named 'Show Justification' that applies when 'software_cost' is greater than 100."
 - "For the UI policy 'Show Justification' (sys_id: def...), add an action to make the 'business_justification' variable visible and mandatory."
 - "Create another action for policy 'Show Justification' to hide the 'alternative_software' variable."
+
+#### Developer Toolbox Examples
+- "Create a UI action on the incident table that sets the state to resolved"
+- "Show me all UI actions for the change_request table"
+- "Update the 'Quick Approve' UI action to include a confirmation dialog"
+- "Create a list banner button that allows bulk assignment of incidents"
+- "Find all inactive UI actions across all tables"
+- "Delete the UI action with sys_id abc123def456"
+- "Create a form button that only appears for users with the admin role"
+- "List all UI actions that contain 'approval' in their name or action text"
+
+
+#### Inbound Email Action Management Examples
+- "Create an email action that creates incidents from support emails"
+- "Update the email processing script for the incident creation action"
+- "Show me all active inbound email actions"
+- "Find email actions that process emails for the incident table"
+- "Delete the old email routing action"
+- "Get the details of the support email processing action"
+
+#### Table Management Examples
+- "Create a custom table for tracking company assets"
+- "Add a new column to the asset tracking table for serial numbers"
+- "Show me all custom tables in the system"
+- "List all columns in the incident table"
+- "Update the asset table to make the asset type field mandatory"
+- "Get the details of the custom project tracking table"
+- "Create a reference field that links to the user table"
+- "Add a choice field with predefined options for priority levels"
 
 ### Example Scripts
 

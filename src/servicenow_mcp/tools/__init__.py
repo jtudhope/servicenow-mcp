@@ -112,7 +112,57 @@ from servicenow_mcp.tools.project_tools import (
     update_project,
     list_projects,
 )
-# from servicenow_mcp.tools.problem_tools import create_problem, update_problem
+
+from servicenow_mcp.tools.developer_ui_action import (
+    create_ui_action,
+    update_ui_action,
+    list_ui_actions,
+    get_ui_action,
+    delete_ui_action,
+)
+
+from servicenow_mcp.tools.developer_acl import (
+    create_acl,
+    update_acl,
+    list_acls,
+    get_acl,
+    delete_acl,
+)
+
+
+
+# Add import for new inbound email action tools
+from servicenow_mcp.tools.developer_inbound_email_actions import (
+    create_inbound_email_action,
+    update_inbound_email_action,
+    list_inbound_email_actions,
+    get_inbound_email_action,
+    delete_inbound_email_action,
+)
+
+
+# Add import for new table tools
+from servicenow_mcp.tools.developer_table import (
+    create_table,
+    create_table_column,
+    update_table,
+    update_table_column,
+    list_tables,
+    list_table_columns,
+    get_table,
+    get_table_column,
+)
+
+from servicenow_mcp.tools.developer_table_choice import (
+    create_choice,
+    update_choice,
+    list_choices,
+    get_choice,
+    delete_choice,
+    bulk_create_choices,
+    reorder_choices,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -221,6 +271,48 @@ __all__ = [
     "update_project",
     "list_projects",
 
+    # Developer Toolbox - UI Actions
+    "create_ui_action",
+    "update_ui_action", 
+    "list_ui_actions",
+    "get_ui_action",
+    "delete_ui_action",
+
+    # ACL Management tools
+    "create_acl",
+    "update_acl", 
+    "list_acls",
+    "get_acl",
+    "delete_acl",
+
+    # Security Elevation tools
+    "security_elevation",
+    
+    # Inbound Email Action tools
+    "create_inbound_email_action",
+    "update_inbound_email_action", 
+    "list_inbound_email_actions",
+    "get_inbound_email_action",
+    "delete_inbound_email_action",
+
+    # Table Management tools
+    "create_table",
+    "create_table_column",
+    "update_table",
+    "update_table_column",
+    "list_tables",
+    "list_table_columns",
+    "get_table",
+    "get_table_column",
+
+    # Choice Management tools
+    "create_choice",
+    "update_choice",
+    "list_choices",
+    "get_choice",
+    "delete_choice",
+    "bulk_create_choices",
+    "reorder_choices",
     
     # Future tools
     # "create_problem",
