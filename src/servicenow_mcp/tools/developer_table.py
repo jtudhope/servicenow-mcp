@@ -186,7 +186,8 @@ def create_table(
 
     # Make request
     try:
-        response = requests.post(
+        session = get_session() 
+        response = session.post(
             api_url,
             json=data,
             headers=auth_manager.get_headers(),

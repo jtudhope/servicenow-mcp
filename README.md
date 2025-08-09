@@ -315,6 +315,77 @@ The default `config/tool_packages.yaml` includes the following role-based packag
 24. **bulk_create_choices** - Create multiple choices at once
 25. **reorder_choices** - Reorder choices by sequence
 
+### Application Menu Items
+
+1. **create_application_menu** - Create custom menu items that appear in the All menu and navigation areas
+2. **update_application_menu** - Modify existing menu item properties including title, roles, order, and visibility
+3. **list_application_menus** - List and filter menu items by category, device type, or active status
+4. **get_application_menu** - Retrieve detailed information about a specific menu item
+5. **delete_application_menu** - Remove menu items from the navigation interface
+
+### Employee Center Quicklinks
+
+1. **create_quick_link** - Create employee center quick links for Service Portal navigation
+2. **update_quick_link** - Update existing employee center quick links
+3. **list_quick_links** - List and filter employee center quick links  
+4. **get_quick_link** - Get detailed information about specific quick links
+5. **delete_quick_link** - Remove employee center quick links
+
+
+#### Employee Center Widget Instance Management Tools
+
+1. **create_widget_instance** - Create a new widget instance with specified configuration, styling, and placement parameters
+2. **update_widget_instance** - Update an existing widget instance including configuration, styling, and placement properties  
+3. **list_widget_instances** - List widget instances with optional filtering by widget, column, or active status
+4. **get_widget_instance** - Get detailed information about a specific widget instance
+5. **delete_widget_instance** - Delete a widget instance from portal pages
+6. **clone_widget_instance** - Clone an existing widget instance with optional modifications to configuration and placement
+7. **bulk_update_widget_instances** - Bulk update multiple widget instances simultaneously for efficient portal management
+
+
+#### Portal UI Page Configuration Management Tools
+
+1. **create_portal_page** - Create new portal pages in the sp_page table with configurable properties including title, CSS, roles, and visibility settings
+2. **update_portal_page** - Update existing portal pages by ID or sys_id, modifying properties like title, CSS, roles, and other configuration options
+3. **list_portal_pages** - List portal pages with optional filtering by category, public status, draft status, and other criteria
+4. **get_portal_page** - Get detailed information about a specific portal page by ID or sys_id
+5. **clone_portal_page** - Clone existing portal pages to create duplicates with optional modifications to title, description, CSS, and roles
+6. **delete_portal_page** - Delete portal pages from the sp_page table by ID or sys_id
+
+
+#### Portal UI Row Management Tools
+
+1. **create_portal_row** - Create new portal rows in the sp_row table with configurable container, column, CSS class, order, and semantic tag properties
+2. **update_portal_row** - Update existing portal rows by sys_id, modifying properties like container, column, CSS class, order, and semantic tag
+3. **list_portal_rows** - List portal rows with optional filtering by container, column, semantic tag, and other criteria
+4. **get_portal_row** - Get detailed information about a specific portal row by sys_id
+5. **clone_portal_row** - Clone existing portal rows to create duplicates with optional modifications to container, column, CSS class, and semantic tag
+6. **delete_portal_row** - Delete portal rows from the sp_row table by sys_id
+7. **reorder_portal_rows** - Reorder portal rows within a container or column by updating their order values according to a specified sequence
+
+#### Portal UI Column Management Tools
+
+1. **create_portal_column** - Create new portal columns in the sp_column table with configurable row, CSS class, responsive Bootstrap sizes, order, and semantic tag properties
+2. **update_portal_column** - Update existing portal columns by sys_id, modifying properties like row, CSS class, responsive sizes, order, and semantic tag
+3. **list_portal_columns** - List portal columns with optional filtering by row, semantic tag, size ranges, and other criteria
+4. **get_portal_column** - Get detailed information about a specific portal column by sys_id including responsive size configurations
+5. **clone_portal_column** - Clone existing portal columns to create duplicates with optional modifications to row, CSS class, responsive sizes, and semantic tag
+6. **delete_portal_column** - Delete portal columns from the sp_column table by sys_id
+7. **reorder_portal_columns** - Reorder portal columns within a row by updating their order values according to a specified sequence
+8. **create_responsive_grid** - Create responsive grid layouts by generating multiple columns with specified Bootstrap responsive configurations in a single operation
+
+#### Portal Container Management Tools
+
+1. **create_portal_container** - Create a new portal container with configurable page, styling, background, and layout properties
+2. **update_portal_container** - Update an existing portal container's properties including styling, background, and layout settings
+3. **list_portal_containers** - List portal containers with optional filtering by page, semantic tag, width, and other criteria
+4. **get_portal_container** - Get detailed information about a specific portal container by sys_id or name
+5. **clone_portal_container** - Clone an existing portal container with optional modifications to styling, background, and target page
+6. **delete_portal_container** - Delete a portal container from the system
+7. **reorder_portal_containers** - Reorder portal containers within a page by updating their sequence
+
+
+
 ### Using the MCP CLI
 
 The ServiceNow MCP server can be installed with the MCP CLI, which provides a convenient way to register the server with Claude.
@@ -506,6 +577,89 @@ Below are some example natural language queries you can use with Claude to inter
 - "Create a reference field that links to the user table"
 - "Add a choice field with predefined options for priority levels"
 
+#### Application Menu Examples
+- "Create a menu item for custom reports that only admins and report viewers can access"
+- "Add a new menu entry for field service tools optimized for mobile devices"
+- "List all active menu items in the reporting category"
+- "Update the asset management menu to appear first in the navigation"
+- "Show me the configuration for the executive dashboard menu item"
+- "Delete the old system tools menu that's no longer needed"
+- "Create a menu for help desk that appears in the service management category"
+- "Add a menu item for data analytics that requires analyst role"
+- "Find all menu items that are available on mobile devices"
+- "Set up a menu entry for the new project tracking application"
+
+#### Employee Center Quick Link Management Examples
+- "Create a quick link to the employee handbook knowledge article"
+- "List all active quick links in the employee center"
+- "Update the IT support quick link to point to a new catalog item"
+- "Delete the outdated training portal quick link"
+- "Show me details for the benefits enrollment quick link"
+
+
+#### Employee Center Widget Instance Management Examples
+- "Create a new widget instance for the employee dashboard using the 'Quick Actions' widget"
+- "Update all widget instances in the main column to use the primary color scheme"
+- "List all widget instances that are currently inactive on the Employee Center"
+- "Clone the 'Popular Knowledge Articles' widget instance to the sidebar column"
+- "Show me the configuration details for widget instance XYZ123"
+- "Delete the outdated 'Legacy Tools' widget instance from the portal"
+- "Bulk update all announcement widgets to use the warning color and large size"
+- "Find all widget instances that reference the 'Incident Reporter' widget"
+- "Create a widget instance with custom parameters for showing only high-priority tickets"
+- "Update the widget instance order to move 'Quick Links' to the top of the column"
+
+
+#### Portal UI Page Configuration Management Examples
+
+- "Create a new portal page called 'employee_dashboard' with admin role access"
+- "Clone the homepage and create a development version"
+- "List all public portal pages that are not in draft mode"
+- "Update the CSS styling for the customer portal page"
+- "Show me all portal pages in the 'custom' category"
+- "Delete the old_landing_page portal page"
+- "Create a public landing page with custom CSS and no role restrictions"
+- "Find the portal page with ID 'service_catalog' and show its configuration"
+- "Make the employee_portal page internal and add the 'employee' role"
+- "Clone the customer_support page but don't copy the CSS styling"
+
+
+#### Portal UI Row Management Examples
+
+- "Create a new portal row in container ABC123 with CSS class 'hero-section'"
+- "Clone the header row and move it to a different container"
+- "List all rows in the homepage container ordered by their sequence"
+- "Update the CSS class of row XYZ789 to 'updated-layout'"
+- "Show me all portal rows that use the 'section' semantic tag"
+- "Delete the old footer row that's no longer needed"
+- "Reorder the rows in container ABC123 to put the navigation row first"
+- "Create a new row with semantic tag 'main' and order it after the header"
+- "Find the portal row with sys_id DEF456 and show its configuration"
+- "Move row GHI789 from one container to another container"
+
+#### Portal UI Column Management Examples
+
+- "Create a new portal column in row ABC123 with Bootstrap size 6 for medium devices and size 12 for mobile"
+- "Clone the sidebar column and move it to a different row with updated responsive sizes"
+- "List all columns in the homepage row that are wider than 6 grid units"
+- "Update the column XYZ789 to use semantic tag 'aside' and CSS class 'sidebar-widget'"
+- "Show me all portal columns that use responsive breakpoints"
+- "Delete the unused column that's no longer needed"
+- "Reorder the columns in row ABC123 to put the main content column first"
+- "Create a responsive grid with three equal columns that stack on mobile devices"
+- "Find the portal column with sys_id DEF456 and show its Bootstrap size configuration"
+- "Create a two-column layout with 8/4 split for desktop and stacked for mobile"
+
+#### Portal Container Management Examples
+- "Create a new main content container for the homepage with container-fluid width"
+- "List all containers on the employee portal homepage"
+- "Clone the header container from the main page to the help page"
+- "Update the background color of the hero section container to blue"
+- "Reorder the containers on the landing page so the testimonials come before the features"
+- "Show me the configuration details for the footer container"
+- "Delete the unused promotional banner container"
+- "Create a new section container with semantic tag 'aside' for the sidebar content"
+
 ### Example Scripts
 
 The repository includes example scripts that demonstrate how to use the tools:
@@ -585,3 +739,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+

@@ -16,9 +16,11 @@ from servicenow_mcp.tools.catalog_tools import (
     update_catalog_category,
 )
 from servicenow_mcp.tools.catalog_variables import (
-    create_catalog_item_variable,
-    list_catalog_item_variables,
-    update_catalog_item_variable,
+    create_catalog_variable,
+    list_catalog_variables,
+    update_catalog_variable,
+    delete_catalog_variable,
+    get_catalog_variable,
 )
 from servicenow_mcp.tools.change_tools import (
     add_change_task,
@@ -163,6 +165,108 @@ from servicenow_mcp.tools.developer_table_choice import (
     reorder_choices,
 )
 
+from servicenow_mcp.tools.developer_notification import (
+    create_email_notification,
+    update_email_notification,
+    list_email_notifications,
+    get_email_notification,
+    delete_email_notification,
+)
+
+# Application Menu Items
+from servicenow_mcp.tools.menu.developer_menu_application import (
+    create_application_menu,
+    update_application_menu,
+    list_application_menus,
+    get_application_menu,
+    delete_application_menu,
+)
+
+# Import for new application module tools
+from servicenow_mcp.tools.menu.developer_menu_module import (
+    create_app_module,
+    update_app_module,
+    list_app_modules,
+    get_app_module,
+    delete_app_module,
+)
+
+
+from servicenow_mcp.tools.developer_user_role import (
+    assign_user_role,
+    remove_user_role,
+    list_user_roles,
+    bulk_assign_user_roles,
+    bulk_remove_user_roles,
+)
+
+from servicenow_mcp.tools.developer_esc_quicklinks import (
+    create_quick_link,
+    update_quick_link,
+    list_quick_links,
+    get_quick_link,
+    delete_quick_link,
+)
+
+# Portal Configuration Management
+from servicenow_mcp.tools.portal.developer_portal import (
+    create_portal,
+    update_portal,
+    list_portals,
+    get_portal,
+    delete_portal,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_instance import (
+    create_widget_instance,
+    update_widget_instance,
+    list_widget_instances,
+    get_widget_instance,
+    delete_widget_instance,
+    clone_widget_instance,
+    bulk_update_widget_instances,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_page import (
+    create_portal_page,
+    update_portal_page,
+    list_portal_pages,
+    get_portal_page,
+    clone_portal_page,
+    delete_portal_page,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_row import (
+    create_portal_row,
+    update_portal_row,
+    list_portal_rows,
+    get_portal_row,
+    clone_portal_row,
+    delete_portal_row,
+    reorder_portal_rows,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_column import (
+    create_portal_column,
+    update_portal_column,
+    list_portal_columns,
+    get_portal_column,
+    clone_portal_column,
+    delete_portal_column,
+    reorder_portal_columns,
+    create_responsive_grid,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_container import (
+    create_portal_container,
+    update_portal_container,
+    list_portal_containers,
+    get_portal_container,
+    clone_portal_container,
+    delete_portal_container,
+    reorder_portal_containers,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -182,9 +286,7 @@ __all__ = [
     "move_catalog_items",
     "get_optimization_recommendations",
     "update_catalog_item",
-    "create_catalog_item_variable",
-    "list_catalog_item_variables",
-    "update_catalog_item_variable",
+
     
     # Change management tools
     "create_change_request",
@@ -314,9 +416,98 @@ __all__ = [
     "bulk_create_choices",
     "reorder_choices",
     
-    # Future tools
-    # "create_problem",
-    # "update_problem",
-    # "create_request",
-    # "update_request",
+    # Email Notification Actions
+    "create_email_notification",
+    "update_email_notification",
+    "list_email_notifications",
+    "get_email_notification",
+    "delete_email_notification",
+
+
+    # Application Menu Items
+    "create_application_menu",
+    "update_application_menu",
+    "list_application_menus",
+    "get_application_menu",
+    "delete_application_menu",
+
+    # Application Module Menu Tools
+    "create_app_module",
+    "update_app_module", 
+    "list_app_modules",
+    "get_app_module",
+    "delete_app_module",
+
+    # User Role Management tools
+    "assign_user_role",
+    "remove_user_role", 
+    "list_user_roles",
+    "bulk_assign_user_roles",
+    "bulk_remove_user_roles",
+
+    # Employee Center Quick Link Management
+    "create_quick_link",
+    "update_quick_link", 
+    "list_quick_links",
+    "get_quick_link",
+    "delete_quick_link",
+
+    # Portal Configuration Management
+    "create_portal",
+    "update_portal", 
+    "list_portals",
+    "get_portal",
+    "delete_portal",
+
+    # Employee Center Widget Instance Management
+    "create_widget_instance",
+    "update_widget_instance", 
+    "list_widget_instances",
+    "get_widget_instance",
+    "delete_widget_instance",
+    "clone_widget_instance",
+    "bulk_update_widget_instances",
+
+    # Portal Page tools
+    "create_portal_page",
+    "update_portal_page", 
+    "list_portal_pages",
+    "get_portal_page",
+    "clone_portal_page",
+    "delete_portal_page",
+
+    # Portal Row tools
+    "create_portal_row",
+    "update_portal_row", 
+    "list_portal_rows",
+    "get_portal_row",
+    "clone_portal_row",
+    "delete_portal_row",
+    "reorder_portal_rows",
+
+    # Portal Column tools
+    "create_portal_column",
+    "update_portal_column", 
+    "list_portal_columns",
+    "get_portal_column",
+    "clone_portal_column",
+    "delete_portal_column",
+    "reorder_portal_columns",
+    "create_responsive_grid",
+
+        # Portal Container tools
+    "create_portal_container",
+    "update_portal_container", 
+    "list_portal_containers",
+    "get_portal_container",
+    "clone_portal_container",
+    "delete_portal_container",
+    "reorder_portal_containers",
+
+    "create_catalog_variable",
+    "list_catalog_variables", 
+    "update_catalog_variable",
+    "delete_catalog_variable",
+    "get_catalog_variable",
+    
 ] 

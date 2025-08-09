@@ -35,11 +35,12 @@ catalog_builder:
   - update_catalog_category
   - move_catalog_items
   # Variables
-  - create_catalog_item_variable
-  - list_catalog_item_variables
-  - update_catalog_item_variable
-  - delete_catalog_item_variable
-  - create_catalog_variable_choice
+  - create_catalog_variable,
+  - list_catalog_variables,
+  - update_catalog_variable,
+  - delete_catalog_variable,
+  - get_catalog_variable,
+
   # Basic Scripting (UI Policy & User Criteria)
   - create_ui_policy
   - create_ui_policy_action
@@ -179,12 +180,7 @@ full:
   - move_catalog_items
   # Catalog (Optimization)
   - get_optimization_recommendations
-  # Catalog (Variables)
-  - create_catalog_item_variable
-  - list_catalog_item_variables
-  - update_catalog_item_variable
-  - delete_catalog_item_variable
-  - create_catalog_variable_choice
+
   # Change Management
   - create_change_request
   - update_change_request
@@ -284,7 +280,7 @@ full:
   - delete_acl
   # Security Elevation
   - security_elevation
-  # Inbound Email Action Management
+  # Inbound Email Actions
   - create_inbound_email_action
   - update_inbound_email_action
   - list_inbound_email_actions
@@ -307,3 +303,91 @@ full:
   - delete_choice
   - bulk_create_choices
   - reorder_choices
+  # Email Notification Actions
+  - create_email_notification
+  - update_email_notification
+  - list_email_notifications
+  - get_email_notification
+  - delete_email_notification
+  # Application Menu Items
+  - create_application_menu
+  - update_application_menu
+  - list_application_menus
+  - get_application_menu
+  - delete_application_menu
+  # Application Module Menu Tools
+  - create_app_module
+  - update_app_module
+  - list_app_modules
+  - get_app_module
+  - delete_app_module
+  # User Role Management
+  - assign_user_role
+  - remove_user_role
+  - list_user_roles
+  - bulk_assign_user_roles
+  - bulk_remove_user_roles
+  # Employee Center Quick Links
+  - create_quick_link
+  - update_quick_link
+  - list_quick_links
+  - get_quick_link
+  - delete_quick_link
+
+  # Portal Configuration Management
+  - create_portal
+  - update_portal
+  - list_portals
+  - get_portal
+  - delete_portal
+  
+  # Employee Center Widget Instance Management
+  - create_widget_instance
+  - update_widget_instance
+  - list_widget_instances
+  - get_widget_instance
+  - delete_widget_instance
+  - clone_widget_instance
+  - bulk_update_widget_instances
+
+  # Portal Pages
+  - create_portal_page
+  - update_portal_page
+  - list_portal_pages
+  - get_portal_page
+  - clone_portal_page
+  - delete_portal_page
+
+  # Portal Rows
+  - create_portal_row
+  - update_portal_row
+  - list_portal_rows
+  - get_portal_row
+  - clone_portal_row
+  - delete_portal_row
+  - reorder_portal_rows
+
+  # Portal Columns
+  - create_portal_column
+  - update_portal_column
+  - list_portal_columns
+  - get_portal_column
+  - clone_portal_column
+  - delete_portal_column
+  - reorder_portal_columns
+  - create_responsive_grid
+
+  # Portal Container Management
+  - create_portal_container
+  - update_portal_container
+  - list_portal_containers
+  - get_portal_container
+  - clone_portal_container
+  - delete_portal_container
+  - reorder_portal_containers
+  # Catalog (Variables)
+  - create_catalog_variable
+  - list_catalog_variables
+  - update_catalog_variable
+  - delete_catalog_variable
+  - get_catalog_variable

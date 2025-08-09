@@ -38,20 +38,22 @@ from servicenow_mcp.tools.catalog_tools import (
 from servicenow_mcp.tools.catalog_tools import (
     update_catalog_category as update_catalog_category_tool,
 )
+
 from servicenow_mcp.tools.catalog_variables import (
-    CreateCatalogItemVariableParams,
-    ListCatalogItemVariablesParams,
-    UpdateCatalogItemVariableParams,
+    CreateCatalogVariableParams,
+    ListCatalogVariablesParams,
+    UpdateCatalogVariableParams,
+    DeleteCatalogVariableParams,
+    GetCatalogVariableParams,
 )
 from servicenow_mcp.tools.catalog_variables import (
-    create_catalog_item_variable as create_catalog_item_variable_tool,
+    create_catalog_variable as create_catalog_variable_tool,
+    list_catalog_variables as list_catalog_variables_tool,
+    update_catalog_variable as update_catalog_variable_tool,
+    delete_catalog_variable as delete_catalog_variable_tool,
+    get_catalog_variable as get_catalog_variable_tool,
 )
-from servicenow_mcp.tools.catalog_variables import (
-    list_catalog_item_variables as list_catalog_item_variables_tool,
-)
-from servicenow_mcp.tools.catalog_variables import (
-    update_catalog_item_variable as update_catalog_item_variable_tool,
-)
+
 from servicenow_mcp.tools.change_tools import (
     AddChangeTaskParams,
     ApproveChangeParams,
@@ -429,6 +431,195 @@ from servicenow_mcp.tools.developer_table_choice import (
     reorder_choices as reorder_choices_tool,
 )
 
+# Email Notification Actions
+from servicenow_mcp.tools.developer_notification import (
+    CreateEmailNotificationParams,
+    UpdateEmailNotificationParams,
+    ListEmailNotificationsParams,
+    GetEmailNotificationParams,
+    DeleteEmailNotificationParams,
+)
+
+from servicenow_mcp.tools.developer_notification import (
+    create_email_notification as create_email_notification_tool,
+    update_email_notification as update_email_notification_tool,
+    list_email_notifications as list_email_notifications_tool,
+    get_email_notification as get_email_notification_tool,
+    delete_email_notification as delete_email_notification_tool,
+)
+
+# Application Menu Items
+from servicenow_mcp.tools.menu.developer_menu_application import (
+    CreateApplicationMenuParams,
+    UpdateApplicationMenuParams,
+    ListApplicationMenusParams,
+    GetApplicationMenuParams,
+    DeleteApplicationMenuParams,
+)
+
+from servicenow_mcp.tools.menu.developer_menu_application import (
+    create_application_menu as create_application_menu_tool,
+    update_application_menu as update_application_menu_tool,
+    list_application_menus as list_application_menus_tool,
+    get_application_menu as get_application_menu_tool,
+    delete_application_menu as delete_application_menu_tool,
+)
+
+from servicenow_mcp.tools.menu.developer_menu_module import (
+    CreateAppModuleParams,
+    UpdateAppModuleParams,
+    ListAppModulesParams,
+)
+from servicenow_mcp.tools.menu.developer_menu_module import (
+    create_app_module as create_app_module_tool,
+    update_app_module as update_app_module_tool,
+    list_app_modules as list_app_modules_tool,
+    get_app_module as get_app_module_tool,
+    delete_app_module as delete_app_module_tool,
+)
+
+from servicenow_mcp.tools.developer_user_role import (
+    AssignUserRoleParams,
+    RemoveUserRoleParams,
+    ListUserRolesParams,
+    BulkAssignRolesParams,
+    BulkRemoveRolesParams,
+)
+from servicenow_mcp.tools.developer_user_role import (
+    assign_user_role as assign_user_role_tool,
+    remove_user_role as remove_user_role_tool,
+    list_user_roles as list_user_roles_tool,
+    bulk_assign_user_roles as bulk_assign_user_roles_tool,
+    bulk_remove_user_roles as bulk_remove_user_roles_tool,
+)
+
+from servicenow_mcp.tools.developer_esc_quicklinks import (
+    CreateQuickLinkParams,
+    UpdateQuickLinkParams,
+    ListQuickLinksParams,
+    GetQuickLinkParams,
+    DeleteQuickLinkParams,
+)
+from servicenow_mcp.tools.developer_esc_quicklinks import (
+    create_quick_link as create_quick_link_tool,
+    update_quick_link as update_quick_link_tool,
+    list_quick_links as list_quick_links_tool,
+    get_quick_link as get_quick_link_tool,
+    delete_quick_link as delete_quick_link_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal import (
+    CreatePortalParams,
+    UpdatePortalParams,
+    ListPortalsParams,
+    GetPortalParams,
+    DeletePortalParams,
+)
+from servicenow_mcp.tools.portal.developer_portal import (
+    create_portal as create_portal_tool,
+    update_portal as update_portal_tool,
+    list_portals as list_portals_tool,
+    get_portal as get_portal_tool,
+    delete_portal as delete_portal_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_instance import (
+    CreateWidgetInstanceParams,
+    UpdateWidgetInstanceParams,
+    ListWidgetInstancesParams,
+    GetWidgetInstanceParams,
+    DeleteWidgetInstanceParams,
+    CloneWidgetInstanceParams,
+    BulkUpdateWidgetInstancesParams,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_instance import (
+    create_widget_instance as create_widget_instance_tool,
+    update_widget_instance as update_widget_instance_tool,
+    list_widget_instances as list_widget_instances_tool,
+    get_widget_instance as get_widget_instance_tool,
+    delete_widget_instance as delete_widget_instance_tool,
+    clone_widget_instance as clone_widget_instance_tool,
+    bulk_update_widget_instances as bulk_update_widget_instances_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_page import (
+    CreatePortalPageParams,
+    UpdatePortalPageParams,
+    ListPortalPagesParams,
+    GetPortalPageParams,
+    ClonePortalPageParams,
+    DeletePortalPageParams,
+)
+from servicenow_mcp.tools.portal.developer_portal_page import (
+    create_portal_page as create_portal_page_tool,
+    update_portal_page as update_portal_page_tool,
+    list_portal_pages as list_portal_pages_tool,
+    get_portal_page as get_portal_page_tool,
+    clone_portal_page as clone_portal_page_tool,
+    delete_portal_page as delete_portal_page_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_row import (
+    CreatePortalRowParams,
+    UpdatePortalRowParams,
+    ListPortalRowsParams,
+    GetPortalRowParams,
+    ClonePortalRowParams,
+    DeletePortalRowParams,
+    ReorderPortalRowsParams,
+)
+from servicenow_mcp.tools.portal.developer_portal_row import (
+    create_portal_row as create_portal_row_tool,
+    update_portal_row as update_portal_row_tool,
+    list_portal_rows as list_portal_rows_tool,
+    get_portal_row as get_portal_row_tool,
+    clone_portal_row as clone_portal_row_tool,
+    delete_portal_row as delete_portal_row_tool,
+    reorder_portal_rows as reorder_portal_rows_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_column import (
+    CreatePortalColumnParams,
+    UpdatePortalColumnParams,
+    ListPortalColumnsParams,
+    GetPortalColumnParams,
+    ClonePortalColumnParams,
+    DeletePortalColumnParams,
+    ReorderPortalColumnsParams,
+    CreateResponsiveGridParams,
+)
+from servicenow_mcp.tools.portal.developer_portal_column import (
+    create_portal_column as create_portal_column_tool,
+    update_portal_column as update_portal_column_tool,
+    list_portal_columns as list_portal_columns_tool,
+    get_portal_column as get_portal_column_tool,
+    clone_portal_column as clone_portal_column_tool,
+    delete_portal_column as delete_portal_column_tool,
+    reorder_portal_columns as reorder_portal_columns_tool,
+    create_responsive_grid as create_responsive_grid_tool,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_container import (
+    CreatePortalContainerParams,
+    UpdatePortalContainerParams,
+    ListPortalContainersParams,
+    GetPortalContainerParams,
+    ClonePortalContainerParams,
+    DeletePortalContainerParams,
+    ReorderPortalContainersParams,
+)
+
+from servicenow_mcp.tools.portal.developer_portal_container import (
+    create_portal_container as create_portal_container_tool,
+    update_portal_container as update_portal_container_tool,
+    list_portal_containers as list_portal_containers_tool,
+    get_portal_container as get_portal_container_tool,
+    clone_portal_container as clone_portal_container_tool,
+    delete_portal_container as delete_portal_container_tool,
+    reorder_portal_containers as reorder_portal_containers_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -548,28 +739,7 @@ def get_tool_definitions(
             "Update a service catalog item.",
             "json",  # Tool returns Pydantic model
         ),
-        # Catalog Variables
-        "create_catalog_item_variable": (
-            create_catalog_item_variable_tool,
-            CreateCatalogItemVariableParams,
-            Dict[str, Any],  # Expects dict
-            "Create a new catalog item variable",
-            "dict",  # Tool returns Pydantic model
-        ),
-        "list_catalog_item_variables": (
-            list_catalog_item_variables_tool,
-            ListCatalogItemVariablesParams,
-            Dict[str, Any],  # Expects dict
-            "List catalog item variables",
-            "dict",  # Tool returns Pydantic model
-        ),
-        "update_catalog_item_variable": (
-            update_catalog_item_variable_tool,
-            UpdateCatalogItemVariableParams,
-            Dict[str, Any],  # Expects dict
-            "Update a catalog item variable",
-            "dict",  # Tool returns Pydantic model
-        ),
+ 
         # Change Management Tools
         "create_change_request": (
             create_change_request_tool,
@@ -1256,6 +1426,513 @@ def get_tool_definitions(
             str,  # Expects JSON string
             "Reorder choices by updating their sequence values.",
             "json",  # Tool returns list/dict
+        ),
+
+        "create_email_notification": (
+            create_email_notification_tool,
+            CreateEmailNotificationParams,
+            str,
+            "Create a new email notification action in ServiceNow. This tool allows developers to set up outbound email notifications that trigger when specified events occur on a table, enabling automated system notifications for various business processes.",
+            "json",
+        ),
+        "update_email_notification": (
+            update_email_notification_tool,
+            UpdateEmailNotificationParams,
+            str,
+            "Update an existing email notification action in ServiceNow. Modify notification settings, recipients, message content, triggers, and other configuration options for existing email notifications.",
+            "json",
+        ),
+        "list_email_notifications": (
+            list_email_notifications_tool,
+            ListEmailNotificationsParams,
+            str,
+            "List email notification actions from ServiceNow. Filter by table, event name, active status, category, or other criteria to find specific notifications.",
+            "json",
+        ),
+        "get_email_notification": (
+            get_email_notification_tool,
+            GetEmailNotificationParams,
+            str,
+            "Get detailed information about a specific email notification action from ServiceNow using its sys_id.",
+            "json",
+        ),
+        "delete_email_notification": (
+            delete_email_notification_tool,
+            DeleteEmailNotificationParams,
+            str,
+            "Delete an email notification action from ServiceNow. This permanently removes the notification configuration.",
+            "json",
+        ),
+
+        "create_application_menu": (
+            create_application_menu_tool,
+            CreateApplicationMenuParams,
+            str,
+            "Create a new application menu item in ServiceNow. This tool allows developers to add custom menu entries to the All menu and other navigation areas, providing access to tables, modules, or other functionality.",
+            "json",
+        ),
+        "update_application_menu": (
+            update_application_menu_tool,
+            UpdateApplicationMenuParams,
+            str,
+            "Update an existing application menu item in ServiceNow. Modify menu properties including title, description, roles, order, category, and other display settings.",
+            "json",
+        ),
+        "list_application_menus": (
+            list_application_menus_tool,
+            ListApplicationMenusParams,
+            str,
+            "List application menu items from ServiceNow. Filter by active status, category, device type, title, or other criteria to find specific menu items.",
+            "json",
+        ),
+        "get_application_menu": (
+            get_application_menu_tool,
+            GetApplicationMenuParams,
+            str,
+            "Get detailed information about a specific application menu item from ServiceNow using its sys_id.",
+            "json",
+        ),
+        "delete_application_menu": (
+            delete_application_menu_tool,
+            DeleteApplicationMenuParams,
+            str,
+            "Delete an application menu item from ServiceNow. This permanently removes the menu entry from the navigation interface.",
+            "json",
+        ),
+
+        "create_app_module": (
+            create_app_module_tool,
+            CreateAppModuleParams,
+            str,
+            "Create a new application module menu item. Application modules are children of application menus and appear in the All menu navigation.",
+            "json",
+        ),
+        "update_app_module": (
+            update_app_module_tool,
+            UpdateAppModuleParams,
+            str,
+            "Update an existing application module menu item. Modify properties like title, roles, filters, or display settings.",
+            "json",
+        ),
+        "list_app_modules": (
+            list_app_modules_tool,
+            ListAppModulesParams,
+            str,
+            "List application module menu items with optional filtering by application, status, table, or roles.",
+            "json",
+        ),
+        "get_app_module": (
+            get_app_module_tool,
+            str,
+            str,
+            "Get details of a specific application module menu item by its sys_id.",
+            "json",
+        ),
+        "delete_app_module": (
+            delete_app_module_tool,
+            str,
+            str,
+            "Delete an application module menu item by its sys_id.",
+            "json",
+        ),
+
+        "assign_user_role": (
+            assign_user_role_tool,
+            AssignUserRoleParams,
+            str,
+            "Assign a role to a user by creating a record in sys_user_has_role table",
+            "json",
+        ),
+        "remove_user_role": (
+            remove_user_role_tool,
+            RemoveUserRoleParams,
+            str,
+            "Remove a role from a user by deleting the record from sys_user_has_role table",
+            "json",
+        ),
+        "list_user_roles": (
+            list_user_roles_tool,
+            ListUserRolesParams,
+            str,
+            "List user role assignments from sys_user_has_role table",
+            "json",
+        ),
+        "bulk_assign_user_roles": (
+            bulk_assign_user_roles_tool,
+            BulkAssignRolesParams,
+            str,
+            "Bulk assign roles to users by creating multiple records in sys_user_has_role table",
+            "json",
+        ),
+        "bulk_remove_user_roles": (
+            bulk_remove_user_roles_tool,
+            BulkRemoveRolesParams,
+            str,
+            "Bulk remove roles from users by deleting multiple records from sys_user_has_role table",
+            "json",
+        ),
+
+        "create_quick_link": (
+            create_quick_link_tool,
+            CreateQuickLinkParams,
+            str,
+            "Create a new employee center quick link for the Service Portal with customizable content types including pages, external links, knowledge articles, and catalog items.",
+            "json",
+        ),
+        "update_quick_link": (
+            update_quick_link_tool,
+            UpdateQuickLinkParams,
+            str,
+            "Update an existing employee center quick link including its name, content type, display properties, and associated content references.",
+            "json",
+        ),
+        "list_quick_links": (
+            list_quick_links_tool,
+            ListQuickLinksParams,
+            str,
+            "List employee center quick links with optional filtering by active status, content type, and other criteria to manage portal navigation.",
+            "json",
+        ),
+        "get_quick_link": (
+            get_quick_link_tool,
+            GetQuickLinkParams,
+            str,
+            "Get detailed information about a specific employee center quick link including all configuration and content references.",
+            "json",
+        ),
+        "delete_quick_link": (
+            delete_quick_link_tool,
+            DeleteQuickLinkParams,
+            str,
+            "Delete an employee center quick link from the Service Portal navigation to remove outdated or unused links.",
+            "json",
+        ),
+
+        # Portal Configuration Management
+        "create_portal": (
+            create_portal_tool,
+            CreatePortalParams,
+            str,
+            "Create a new portal configuration in ServiceNow with customizable settings including title, URL suffix, themes, pages, and various portal features",
+            "json",
+        ),
+        "update_portal": (
+            update_portal_tool,
+            UpdatePortalParams,
+            str,
+            "Update an existing portal configuration in ServiceNow, modifying settings like title, theme, pages, and portal features",
+            "json",
+        ),
+        "list_portals": (
+            list_portals_tool,
+            ListPortalsParams,
+            str,
+            "List portal configurations from ServiceNow with optional filtering by active status, default portal, and other criteria",
+            "json",
+        ),
+        "get_portal": (
+            get_portal_tool,
+            GetPortalParams,
+            str,
+            "Get detailed information about a specific portal configuration by sys_id or URL suffix",
+            "json",
+        ),
+        "delete_portal": (
+            delete_portal_tool,
+            DeletePortalParams,
+            str,
+            "Delete a portal configuration from ServiceNow by sys_id",
+            "json",
+        ),
+
+        # Employee Center Widget Instance Management
+        "create_widget_instance": (
+            create_widget_instance_tool,
+            CreateWidgetInstanceParams,
+            str,
+            "Create a new widget instance in ServiceNow Employee Center with specified configuration, styling, and placement parameters",
+            "json",
+        ),
+        "update_widget_instance": (
+            update_widget_instance_tool,
+            UpdateWidgetInstanceParams,
+            str,
+            "Update an existing widget instance in ServiceNow Employee Center including configuration, styling, and placement properties",
+            "json",
+        ),
+        "list_widget_instances": (
+            list_widget_instances_tool,
+            ListWidgetInstancesParams,
+            str,
+            "List widget instances from ServiceNow Employee Center with optional filtering by widget, column, or active status",
+            "json",
+        ),
+        "get_widget_instance": (
+            get_widget_instance_tool,
+            GetWidgetInstanceParams,
+            str,
+            "Get detailed information about a specific widget instance from ServiceNow Employee Center",
+            "json",
+        ),
+        "delete_widget_instance": (
+            delete_widget_instance_tool,
+            DeleteWidgetInstanceParams,
+            str,
+            "Delete a widget instance from ServiceNow Employee Center to remove it from portal pages",
+            "json",
+        ),
+        "clone_widget_instance": (
+            clone_widget_instance_tool,
+            CloneWidgetInstanceParams,
+            str,
+            "Clone an existing widget instance to create a duplicate with optional modifications to configuration and placement",
+            "json",
+        ),
+        "bulk_update_widget_instances": (
+            bulk_update_widget_instances_tool,
+            BulkUpdateWidgetInstancesParams,
+            str,
+            "Bulk update multiple widget instances simultaneously with the same property changes for efficient portal management",
+            "json",
+        ),
+
+            # Portal Page tools
+        "create_portal_page": (
+            create_portal_page_tool,
+            CreatePortalPageParams,
+            str,
+            "Create a new portal page in the sp_page table with configurable properties including title, CSS, roles, and visibility settings",
+            "json",
+        ),
+        "update_portal_page": (
+            update_portal_page_tool,
+            UpdatePortalPageParams,
+            str,
+            "Update an existing portal page in the sp_page table by ID or sys_id, modifying properties like title, CSS, roles, and other configuration options",
+            "json",
+        ),
+        "list_portal_pages": (
+            list_portal_pages_tool,
+            ListPortalPagesParams,
+            str,
+            "List portal pages from the sp_page table with optional filtering by category, public status, draft status, and other criteria",
+            "json",
+        ),
+        "get_portal_page": (
+            get_portal_page_tool,
+            GetPortalPageParams,
+            str,
+            "Get detailed information about a specific portal page by ID or sys_id from the sp_page table",
+            "json",
+        ),
+        "clone_portal_page": (
+            clone_portal_page_tool,
+            ClonePortalPageParams,
+            str,
+            "Clone an existing portal page to create a duplicate with optional modifications to title, description, CSS, and roles",
+            "json",
+        ),
+        "delete_portal_page": (
+            delete_portal_page_tool,
+            DeletePortalPageParams,
+            str,
+            "Delete a portal page from the sp_page table by ID or sys_id",
+            "json",
+        ),
+
+        # Portal Row tools
+        "create_portal_row": (
+            create_portal_row_tool,
+            CreatePortalRowParams,
+            str,
+            "Create a new portal row in the sp_row table with configurable container, column, CSS class, order, and semantic tag properties",
+            "json",
+        ),
+        "update_portal_row": (
+            update_portal_row_tool,
+            UpdatePortalRowParams,
+            str,
+            "Update an existing portal row in the sp_row table by sys_id, modifying properties like container, column, CSS class, order, and semantic tag",
+            "json",
+        ),
+        "list_portal_rows": (
+            list_portal_rows_tool,
+            ListPortalRowsParams,
+            str,
+            "List portal rows from the sp_row table with optional filtering by container, column, semantic tag, and other criteria",
+            "json",
+        ),
+        "get_portal_row": (
+            get_portal_row_tool,
+            GetPortalRowParams,
+            str,
+            "Get detailed information about a specific portal row by sys_id from the sp_row table",
+            "json",
+        ),
+        "clone_portal_row": (
+            clone_portal_row_tool,
+            ClonePortalRowParams,
+            str,
+            "Clone an existing portal row to create a duplicate with optional modifications to container, column, CSS class, and semantic tag",
+            "json",
+        ),
+        "delete_portal_row": (
+            delete_portal_row_tool,
+            DeletePortalRowParams,
+            str,
+            "Delete a portal row from the sp_row table by sys_id",
+            "json",
+        ),
+        "reorder_portal_rows": (
+            reorder_portal_rows_tool,
+            ReorderPortalRowsParams,
+            str,
+            "Reorder portal rows within a container or column by updating their order values according to a specified sequence",
+            "json",
+        ),
+        # Portal Column tools
+        "create_portal_column": (
+            create_portal_column_tool,
+            CreatePortalColumnParams,
+            str,
+            "Create a new portal column in the sp_column table with configurable row, CSS class, responsive Bootstrap sizes, order, and semantic tag properties",
+            "json",
+        ),
+        "update_portal_column": (
+            update_portal_column_tool,
+            UpdatePortalColumnParams,
+            str,
+            "Update an existing portal column in the sp_column table by sys_id, modifying properties like row, CSS class, responsive sizes, order, and semantic tag",
+            "json",
+        ),
+        "list_portal_columns": (
+            list_portal_columns_tool,
+            ListPortalColumnsParams,
+            str,
+            "List portal columns from the sp_column table with optional filtering by row, semantic tag, size ranges, and other criteria",
+            "json",
+        ),
+        "get_portal_column": (
+            get_portal_column_tool,
+            GetPortalColumnParams,
+            str,
+            "Get detailed information about a specific portal column by sys_id from the sp_column table including responsive size configurations",
+            "json",
+        ),
+        "clone_portal_column": (
+            clone_portal_column_tool,
+            ClonePortalColumnParams,
+            str,
+            "Clone an existing portal column to create a duplicate with optional modifications to row, CSS class, responsive sizes, and semantic tag",
+            "json",
+        ),
+        "delete_portal_column": (
+            delete_portal_column_tool,
+            DeletePortalColumnParams,
+            str,
+            "Delete a portal column from the sp_column table by sys_id",
+            "json",
+        ),
+        "reorder_portal_columns": (
+            reorder_portal_columns_tool,
+            ReorderPortalColumnsParams,
+            str,
+            "Reorder portal columns within a row by updating their order values according to a specified sequence",
+            "json",
+        ),
+        "create_responsive_grid": (
+            create_responsive_grid_tool,
+            CreateResponsiveGridParams,
+            str,
+            "Create a responsive grid layout by generating multiple columns with specified Bootstrap responsive configurations in a single operation",
+            "json",
+        ),
+
+        "create_portal_container": (
+            create_portal_container_tool,
+            CreatePortalContainerParams,
+            str,
+            "Create a new portal container in the sp_container table with configurable page, styling, background, and layout properties",
+            "json",
+        ),
+        "update_portal_container": (
+            update_portal_container_tool,
+            UpdatePortalContainerParams,
+            str,
+            "Update an existing portal container in the sp_container table by sys_id, modifying properties like page, styling, background, and layout settings",
+            "json",
+        ),
+        "list_portal_containers": (
+            list_portal_containers_tool,
+            ListPortalContainersParams,
+            str,
+            "List portal containers from the sp_container table with optional filtering by page, semantic tag, width, and other criteria",
+            "json",
+        ),
+        "get_portal_container": (
+            get_portal_container_tool,
+            GetPortalContainerParams,
+            str,
+            "Get detailed information about a specific portal container by sys_id or name from the sp_container table",
+            "json",
+        ),
+        "clone_portal_container": (
+            clone_portal_container_tool,
+            ClonePortalContainerParams,
+            str,
+            "Clone an existing portal container to create a duplicate with optional modifications to styling, background, and target page",
+            "json",
+        ),
+        "delete_portal_container": (
+            delete_portal_container_tool,
+            DeletePortalContainerParams,
+            str,
+            "Delete a portal container from the sp_container table by sys_id",
+            "json",
+        ),
+        "reorder_portal_containers": (
+            reorder_portal_containers_tool,
+            ReorderPortalContainersParams,
+            str,
+            "Reorder portal containers within a page by updating their order values according to a specified sequence",
+            "json",
+        ),
+
+        # Catalog Variables
+        "create_catalog_variable": (
+            create_catalog_variable_tool,
+            CreateCatalogVariableParams,
+            str,
+            "Create a new catalog variable in the item_option_new table with configurable properties including type, label, mandatory status, field mappings, and choice configurations",
+            "json",
+        ),
+        "list_catalog_variables": (
+            list_catalog_variables_tool,
+            ListCatalogVariablesParams,
+            str,
+            "List catalog variables for a specific catalog item from the item_option_new table with optional detailed information and pagination",
+            "json",
+        ),
+        "update_catalog_variable": (
+            update_catalog_variable_tool,
+            UpdateCatalogVariableParams,
+            str,
+            "Update an existing catalog variable in the item_option_new table by sys_id, modifying properties like type, label, field mappings, and choice configurations",
+            "json",
+        ),
+        "delete_catalog_variable": (
+            delete_catalog_variable_tool,
+            DeleteCatalogVariableParams,
+            str,
+            "Delete a catalog variable from the item_option_new table by sys_id to remove it from the catalog item",
+            "json",
+        ),
+        "get_catalog_variable": (
+            get_catalog_variable_tool,
+            GetCatalogVariableParams,
+            str,
+            "Get detailed information about a specific catalog variable by sys_id from the item_option_new table",
+            "json",
         ),
 
     }

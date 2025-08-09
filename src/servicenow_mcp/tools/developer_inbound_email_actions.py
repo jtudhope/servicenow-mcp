@@ -1,7 +1,9 @@
 """
-Inbound Email Action tools for the ServiceNow MCP server.
+Inbound Email Actions tools for the ServiceNow MCP server.
 
-This module provides tools for creating, updating, and deleting Inbound Email Actions in ServiceNow.
+This module provides comprehensive tools for creating and managing inbound email actions in ServiceNow.
+Inbound email actions determine how ServiceNow processes incoming emails and supports ALL available
+fields in the sysevent_in_email_action table.
 """
 
 import logging
@@ -17,43 +19,76 @@ logger = logging.getLogger(__name__)
 
 
 class CreateInboundEmailActionParams(BaseModel):
-    """Parameters for creating an inbound email action."""
+    """Parameters for creating an inbound email action with ALL available fields."""
 
+    # Core required fields
     name: str = Field(..., description="Name of the inbound email action")
-    action_type: str = Field(..., description="Type of action (script, table_api, etc.)")
-    script: Optional[str] = Field(None, description="Script content for the email action")
-    table: Optional[str] = Field(None, description="Target table for table API actions")
-    active: bool = Field(True, description="Whether the email action is active")
-    order: Optional[int] = Field(None, description="Execution order of the action")
+    action: str = Field(..., description="Action type (record_action, script, table_api, etc.)")
+    
+    # Essential configuration fields
+    active: bool = Field(default=True, description="Whether the email action is active")
+    type: str = Field(default="new", description="Type of email (new, reply, forward)")
+    table: Optional[str] = Field(None, description="Target table for the action")
+    event_name: str = Field(default="email.read", description="Event name that triggers this action")
+    
+    # Processing control fields
+    stop_processing: bool = Field(default=False, description="Stop processing further actions after this one")
+    condition_script: Optional[str] = Field(None, description="Condition script to determine when action runs")
+    filter_condition: Optional[str] = Field(None, description="Filter condition for email processing")
+    
+    # Script and template fields
+    script: Optional[str] = Field(None, description="JavaScript script content for the email action")
+    template: Optional[str] = Field(None, description="Field actions template for dynamic processing")
+    
+    # Assignment and user fields
+    from_user: Optional[str] = Field(None, description="From user reference (sys_id)")
+    assignment_operator: Optional[str] = Field(None, description="Assignment operator for the action")
+    required_roles: Optional[str] = Field(None, description="Required roles to execute this action")
+    
+    # Email content fields
+    reply_email: Optional[str] = Field(None, description="Reply email HTML content only used for action types of reply_email")
+    
+    # System metadata fields (usually auto-managed but can be set)
     description: Optional[str] = Field(None, description="Description of the email action")
-    condition: Optional[str] = Field(None, description="Condition script to determine when action runs")
-    stop_processing: bool = Field(False, description="Stop processing further actions after this one")
+    order: Optional[int] = Field(None, description="Execution order of the action")
 
 
 class UpdateInboundEmailActionParams(BaseModel):
-    """Parameters for updating an inbound email action."""
+    """Parameters for updating an inbound email action with ALL available fields."""
 
     action_id: str = Field(..., description="Inbound email action ID or sys_id")
+    
+    # All updatable fields (making them optional for updates)
     name: Optional[str] = Field(None, description="Updated name of the inbound email action")
-    action_type: Optional[str] = Field(None, description="Updated type of action")
-    script: Optional[str] = Field(None, description="Updated script content")
-    table: Optional[str] = Field(None, description="Updated target table")
+    action: Optional[str] = Field(None, description="Updated action type")
     active: Optional[bool] = Field(None, description="Updated active status")
-    order: Optional[int] = Field(None, description="Updated execution order")
-    description: Optional[str] = Field(None, description="Updated description")
-    condition: Optional[str] = Field(None, description="Updated condition script")
+    type: Optional[str] = Field(None, description="Updated email type")
+    table: Optional[str] = Field(None, description="Updated target table")
+    event_name: Optional[str] = Field(None, description="Updated event name")
     stop_processing: Optional[bool] = Field(None, description="Updated stop processing flag")
+    condition_script: Optional[str] = Field(None, description="Updated condition script")
+    filter_condition: Optional[str] = Field(None, description="Updated filter condition")
+    script: Optional[str] = Field(None, description="Updated script content")
+    template: Optional[str] = Field(None, description="Updated field actions template")
+    from_user: Optional[str] = Field(None, description="Updated from user reference")
+    assignment_operator: Optional[str] = Field(None, description="Updated assignment operator")
+    required_roles: Optional[str] = Field(None, description="Updated required roles")
+    reply_email: Optional[str] = Field(None, description="Updated reply email content")
+    description: Optional[str] = Field(None, description="Updated description")
+    order: Optional[int] = Field(None, description="Updated execution order")
 
 
 class ListInboundEmailActionsParams(BaseModel):
     """Parameters for listing inbound email actions."""
 
-    query: Optional[str] = Field(None, description="Search query for email actions")
     active: Optional[bool] = Field(None, description="Filter by active status")
-    action_type: Optional[str] = Field(None, description="Filter by action type")
+    action: Optional[str] = Field(None, description="Filter by action type")
+    type: Optional[str] = Field(None, description="Filter by email type")
     table: Optional[str] = Field(None, description="Filter by target table")
-    limit: int = Field(10, description="Maximum number of email actions to return")
-    offset: int = Field(0, description="Offset for pagination")
+    event_name: Optional[str] = Field(None, description="Filter by event name")
+    limit: int = Field(default=10, description="Maximum number of email actions to return")
+    offset: int = Field(default=0, description="Offset for pagination")
+    query: Optional[str] = Field(None, description="Search query for email actions")
 
 
 class GetInboundEmailActionParams(BaseModel):
@@ -74,17 +109,7 @@ class InboundEmailActionResponse(BaseModel):
     success: bool = Field(..., description="Whether the operation was successful")
     message: str = Field(..., description="Message describing the result")
     action_id: Optional[str] = Field(None, description="ID of the email action")
-    sys_id: Optional[str] = Field(None, description="System ID of the email action")
     data: Optional[Dict[str, Any]] = Field(None, description="Additional response data")
-
-
-class InboundEmailActionListResponse(BaseModel):
-    """Response from listing inbound email actions."""
-
-    success: bool = Field(..., description="Whether the operation was successful")
-    message: str = Field(..., description="Message describing the result")
-    actions: List[Dict[str, Any]] = Field(default_factory=list, description="List of email actions")
-    total_count: int = Field(0, description="Total number of actions")
 
 
 def create_inbound_email_action(
@@ -101,30 +126,44 @@ def create_inbound_email_action(
         params: Parameters for creating the inbound email action.
 
     Returns:
-        Response with inbound email action creation result.
+        Response with created email action details.
     """
-    api_url = f"{config.api_url}/table/sysevent_email_action"
+    api_url = f"{config.api_url}/table/sysevent_in_email_action"
 
-    # Build request data
+    # Build request data with exact field names from the table
     data = {
         "name": params.name,
-        "type": params.action_type,
+        "action": params.action,
         "active": params.active,
+        "type": params.type,
+        "event_name": params.event_name,
         "stop_processing": params.stop_processing,
     }
 
-    if params.script:
-        data["script"] = params.script
+    # Add optional fields if provided
     if params.table:
         data["table"] = params.table
-    if params.order is not None:
-        data["order"] = params.order
+    if params.condition_script:
+        data["condition_script"] = params.condition_script
+    if params.filter_condition:
+        data["filter_condition"] = params.filter_condition
+    if params.script:
+        data["script"] = params.script
+    if params.template:
+        data["template"] = params.template
+    if params.from_user:
+        data["from"] = params.from_user  # Note: field name is 'from' not 'from_user'
+    if params.assignment_operator:
+        data["assignment_operator"] = params.assignment_operator
+    if params.required_roles:
+        data["required_roles"] = params.required_roles
+    if params.reply_email:
+        data["reply_email"] = params.reply_email
     if params.description:
         data["description"] = params.description
-    if params.condition:
-        data["condition"] = params.condition
+    if params.order is not None:
+        data["order"] = params.order
 
-    # Make request
     try:
         response = requests.post(
             api_url,
@@ -135,12 +174,12 @@ def create_inbound_email_action(
         response.raise_for_status()
 
         result = response.json().get("result", {})
+        action_id = result.get("sys_id", "")
 
         return InboundEmailActionResponse(
             success=True,
             message="Inbound email action created successfully",
-            action_id=result.get("name", ""),
-            sys_id=result.get("sys_id", ""),
+            action_id=action_id,
             data=result,
         )
 
@@ -166,33 +205,47 @@ def update_inbound_email_action(
         params: Parameters for updating the inbound email action.
 
     Returns:
-        Response with inbound email action update result.
+        Response with updated email action details.
     """
-    api_url = f"{config.api_url}/table/sysevent_email_action/{params.action_id}"
+    api_url = f"{config.api_url}/table/sysevent_in_email_action/{params.action_id}"
 
-    # Build request data with only provided fields
+    # Build request data with only non-None values
     data = {}
-    
     if params.name is not None:
         data["name"] = params.name
-    if params.action_type is not None:
-        data["type"] = params.action_type
-    if params.script is not None:
-        data["script"] = params.script
-    if params.table is not None:
-        data["table"] = params.table
+    if params.action is not None:
+        data["action"] = params.action
     if params.active is not None:
         data["active"] = params.active
-    if params.order is not None:
-        data["order"] = params.order
-    if params.description is not None:
-        data["description"] = params.description
-    if params.condition is not None:
-        data["condition"] = params.condition
+    if params.type is not None:
+        data["type"] = params.type
+    if params.table is not None:
+        data["table"] = params.table
+    if params.event_name is not None:
+        data["event_name"] = params.event_name
     if params.stop_processing is not None:
         data["stop_processing"] = params.stop_processing
+    if params.condition_script is not None:
+        data["condition_script"] = params.condition_script
+    if params.filter_condition is not None:
+        data["filter_condition"] = params.filter_condition
+    if params.script is not None:
+        data["script"] = params.script
+    if params.template is not None:
+        data["template"] = params.template
+    if params.from_user is not None:
+        data["from"] = params.from_user
+    if params.assignment_operator is not None:
+        data["assignment_operator"] = params.assignment_operator
+    if params.required_roles is not None:
+        data["required_roles"] = params.required_roles
+    if params.reply_email is not None:
+        data["reply_email"] = params.reply_email
+    if params.description is not None:
+        data["description"] = params.description
+    if params.order is not None:
+        data["order"] = params.order
 
-    # Make request
     try:
         response = requests.patch(
             api_url,
@@ -207,8 +260,7 @@ def update_inbound_email_action(
         return InboundEmailActionResponse(
             success=True,
             message="Inbound email action updated successfully",
-            action_id=result.get("name", ""),
-            sys_id=result.get("sys_id", ""),
+            action_id=params.action_id,
             data=result,
         )
 
@@ -224,19 +276,19 @@ def list_inbound_email_actions(
     config: ServerConfig,
     auth_manager: AuthManager,
     params: ListInboundEmailActionsParams,
-) -> InboundEmailActionListResponse:
+) -> InboundEmailActionResponse:
     """
-    List inbound email actions from ServiceNow with optional filtering.
+    List inbound email actions from ServiceNow.
 
     Args:
         config: Server configuration.
         auth_manager: Authentication manager.
-        params: Parameters for listing inbound email actions.
+        params: Parameters for listing email actions.
 
     Returns:
-        Response with list of inbound email actions.
+        Response with list of email actions.
     """
-    api_url = f"{config.api_url}/table/sysevent_email_action"
+    api_url = f"{config.api_url}/table/sysevent_in_email_action"
 
     # Build query parameters
     query_params = {
@@ -244,26 +296,24 @@ def list_inbound_email_actions(
         "sysparm_offset": params.offset,
     }
 
-    # Build query filters
-    filters = []
-    
+    # Build encoded query
+    query_conditions = []
     if params.active is not None:
-        filters.append(f"active={str(params.active).lower()}")
-    
-    if params.action_type:
-        filters.append(f"type={params.action_type}")
-    
+        query_conditions.append(f"active={params.active}")
+    if params.action:
+        query_conditions.append(f"action={params.action}")
+    if params.type:
+        query_conditions.append(f"type={params.type}")
     if params.table:
-        filters.append(f"table={params.table}")
-    
+        query_conditions.append(f"table={params.table}")
+    if params.event_name:
+        query_conditions.append(f"event_name={params.event_name}")
     if params.query:
-        # Search in name and description
-        filters.append(f"nameLIKE{params.query}^ORdescriptionLIKE{params.query}")
+        query_conditions.append(f"nameLIKE{params.query}^ORdescriptionLIKE{params.query}")
 
-    if filters:
-        query_params["sysparm_query"] = "^".join(filters)
+    if query_conditions:
+        query_params["sysparm_query"] = "^".join(query_conditions)
 
-    # Make request
     try:
         response = requests.get(
             api_url,
@@ -275,20 +325,17 @@ def list_inbound_email_actions(
 
         result = response.json().get("result", [])
 
-        return InboundEmailActionListResponse(
+        return InboundEmailActionResponse(
             success=True,
             message=f"Retrieved {len(result)} inbound email actions",
-            actions=result,
-            total_count=len(result),
+            data={"actions": result, "count": len(result)},
         )
 
     except requests.RequestException as e:
         logger.error(f"Failed to list inbound email actions: {e}")
-        return InboundEmailActionListResponse(
+        return InboundEmailActionResponse(
             success=False,
             message=f"Failed to list inbound email actions: {str(e)}",
-            actions=[],
-            total_count=0,
         )
 
 
@@ -303,14 +350,13 @@ def get_inbound_email_action(
     Args:
         config: Server configuration.
         auth_manager: Authentication manager.
-        params: Parameters for getting the inbound email action.
+        params: Parameters for getting the email action.
 
     Returns:
-        Response with inbound email action data.
+        Response with email action details.
     """
-    api_url = f"{config.api_url}/table/sysevent_email_action/{params.action_id}"
+    api_url = f"{config.api_url}/table/sysevent_in_email_action/{params.action_id}"
 
-    # Make request
     try:
         response = requests.get(
             api_url,
@@ -324,8 +370,7 @@ def get_inbound_email_action(
         return InboundEmailActionResponse(
             success=True,
             message="Inbound email action retrieved successfully",
-            action_id=result.get("name", ""),
-            sys_id=result.get("sys_id", ""),
+            action_id=params.action_id,
             data=result,
         )
 
@@ -348,14 +393,13 @@ def delete_inbound_email_action(
     Args:
         config: Server configuration.
         auth_manager: Authentication manager.
-        params: Parameters for deleting the inbound email action.
+        params: Parameters for deleting the email action.
 
     Returns:
-        Response with deletion result.
+        Response confirming deletion.
     """
-    api_url = f"{config.api_url}/table/sysevent_email_action/{params.action_id}"
+    api_url = f"{config.api_url}/table/sysevent_in_email_action/{params.action_id}"
 
-    # Make request
     try:
         response = requests.delete(
             api_url,

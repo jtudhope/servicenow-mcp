@@ -149,7 +149,7 @@ __all__ = [
 ]
 ```
 
-### 3. Update server.py
+### 3. Update tool_utils.py
 
 ```python
 # Add imports for the tool parameters and function
@@ -160,15 +160,19 @@ from servicenow_mcp.tools.{tool_module} import (
     {tool_name} as {tool_name}_tool,
 )
 
-# In the _register_tools method, add:
-@self.mcp_server.tool()
-def {tool_name}(params: {ToolName}Params) -> Dict[str, Any]:
-    return {tool_name}_tool(
-        self.config,
-        self.auth_manager,
-        params,
-    )
+
+# In the tool_definitions collection add
+    {tool_name}: (
+        {tool_name}_tool,
+        {ToolName}Params,
+        str,
+        "{Tool description with detailed explanation}",
+        "json",
+    ),
+
 ```
+
+
 
 ### 4. Add Unit Tests
 
