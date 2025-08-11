@@ -26,10 +26,12 @@ from servicenow_mcp.utils.tool_utils import get_tool_definitions
 
 # Set up logging
 #logging.basicConfig(level=logging.DEBUG)
+logFile = os.path.abspath(os.path.join(__file__ ,"../../..")) + '/.venv/app1.log'
 logger = logging.getLogger(__name__)
 session = None
 logging.basicConfig(
-    filename="C:/Development/servicenow-mcp/servicenow-mcp/app1.log",
+    # filename="C:/Development/servicenow-mcp/servicenow-mcp/app1.log",
+    filename=logFile,
     level=logging.DEBUG
 )
 logger.debug("Starting Log")
