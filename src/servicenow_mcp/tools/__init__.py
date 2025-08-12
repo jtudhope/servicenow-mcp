@@ -267,6 +267,23 @@ from servicenow_mcp.tools.portal.developer_portal_container import (
     reorder_portal_containers,
 )
 
+from servicenow_mcp.tools.developer_assignment_rule import (
+    create_assignment_rule,
+    update_assignment_rule,
+    list_assignment_rules,
+    get_assignment_rule,
+    delete_assignment_rule,
+)
+
+from servicenow_mcp.tools.developer_email_template import (
+    create_email_template,
+    update_email_template,
+    list_email_templates,
+    get_email_template,
+    delete_email_template,
+    clone_email_template,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -509,5 +526,20 @@ __all__ = [
     "update_catalog_variable",
     "delete_catalog_variable",
     "get_catalog_variable",
+
+    # Assignment Rule Management tools
+    "create_assignment_rule",
+    "update_assignment_rule", 
+    "list_assignment_rules",
+    "get_assignment_rule",
+    "delete_assignment_rule",
+
+    # Email Template Management tools
+    "create_email_template",
+    "update_email_template", 
+    "list_email_templates",
+    "get_email_template",
+    "delete_email_template",
+    "clone_email_template",
     
 ] 
