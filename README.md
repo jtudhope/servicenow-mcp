@@ -315,6 +315,19 @@ The default `config/tool_packages.yaml` includes the following role-based packag
 24. **bulk_create_choices** - Create multiple choices at once
 25. **reorder_choices** - Reorder choices by sequence
 
+26. **create_assignment_rule** - Create a new assignment rule in ServiceNow
+27. **update_assignment_rule** - Update an existing assignment rule
+28. **list_assignment_rules** - List assignment rules with optional filtering
+29. **get_assignment_rule** - Get details of a specific assignment rule
+30. **delete_assignment_rule** - Delete an assignment rule from ServiceNow
+
+31. **create_email_template** - Create a new email template in ServiceNow
+32. **update_email_template** - Update an existing email template
+33. **list_email_templates** - List email templates with optional filtering
+34. **get_email_template** - Get details of a specific email template
+35. **delete_email_template** - Delete an email template from ServiceNow
+36. **clone_email_template** - Clone an existing email template
+
 ### Application Menu Items
 
 1. **create_application_menu** - Create custom menu items that appear in the All menu and navigation areas
@@ -588,6 +601,30 @@ Below are some example natural language queries you can use with Claude to inter
 - "Add a menu item for data analytics that requires analyst role"
 - "Find all menu items that are available on mobile devices"
 - "Set up a menu entry for the new project tracking application"
+
+#### Assignment Rule Management Examples
+- "Create an assignment rule that assigns P1 incidents to the senior support team"
+- "List all assignment rules for the incident table"
+- "Update the VIP assignment rule to include new criteria"
+- "Show me all inactive assignment rules that need cleanup"
+- "Create a round-robin assignment rule for distributing tasks evenly"
+- "Delete the old assignment rule that's no longer needed"
+- "Get the details of the after-hours assignment rule"
+- "Create an assignment rule that routes tickets based on location"
+- "Update the assignment rule order to prioritize VIP customers first"
+- "Find all assignment rules that execute synchronously"
+
+#### Email Template Management Examples
+- "Create an email template for incident resolution notifications"
+- "List all email templates in the incident category"
+- "Update the welcome email template with new branding"
+- "Clone the change approval template for emergency changes"
+- "Show me all inactive email templates that need cleanup"
+- "Delete the old notification template that's no longer used"
+- "Get the details of the escalation email template"
+- "Create a template for user account creation notifications"
+- "Update the template to include mobile-friendly HTML formatting"
+- "Find all email templates that contain specific variables"
 
 #### Employee Center Quick Link Management Examples
 - "Create a quick link to the employee handbook knowledge article"

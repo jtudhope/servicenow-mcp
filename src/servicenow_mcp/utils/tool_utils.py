@@ -508,6 +508,38 @@ from servicenow_mcp.tools.developer_esc_quicklinks import (
     delete_quick_link as delete_quick_link_tool,
 )
 
+from servicenow_mcp.tools.developer_assignment_rule import (
+    CreateAssignmentRuleParams,
+    UpdateAssignmentRuleParams,
+    ListAssignmentRulesParams,
+    GetAssignmentRuleParams,
+    DeleteAssignmentRuleParams,
+)
+from servicenow_mcp.tools.developer_assignment_rule import (
+    create_assignment_rule as create_assignment_rule_tool,
+    update_assignment_rule as update_assignment_rule_tool,
+    list_assignment_rules as list_assignment_rules_tool,
+    get_assignment_rule as get_assignment_rule_tool,
+    delete_assignment_rule as delete_assignment_rule_tool,
+)
+
+from servicenow_mcp.tools.developer_email_template import (
+    CreateEmailTemplateParams,
+    UpdateEmailTemplateParams,
+    ListEmailTemplatesParams,
+    GetEmailTemplateParams,
+    DeleteEmailTemplateParams,
+    CloneEmailTemplateParams,
+)
+from servicenow_mcp.tools.developer_email_template import (
+    create_email_template as create_email_template_tool,
+    update_email_template as update_email_template_tool,
+    list_email_templates as list_email_templates_tool,
+    get_email_template as get_email_template_tool,
+    delete_email_template as delete_email_template_tool,
+    clone_email_template as clone_email_template_tool,
+)
+
 from servicenow_mcp.tools.portal.developer_portal import (
     CreatePortalParams,
     UpdatePortalParams,
@@ -618,6 +650,21 @@ from servicenow_mcp.tools.portal.developer_portal_container import (
     clone_portal_container as clone_portal_container_tool,
     delete_portal_container as delete_portal_container_tool,
     reorder_portal_containers as reorder_portal_containers_tool,
+)
+
+from servicenow_mcp.tools.service_catalog_management import (
+    CreateServiceCatalogParams,
+    UpdateServiceCatalogParams,
+    ListServiceCatalogsParams,
+    GetServiceCatalogParams,
+    DeleteServiceCatalogParams,
+)
+from servicenow_mcp.tools.service_catalog_management import (
+    create_service_catalog as create_service_catalog_tool,
+    update_service_catalog as update_service_catalog_tool,
+    list_service_catalogs as list_service_catalogs_tool,
+    get_service_catalog as get_service_catalog_tool,
+    delete_service_catalog as delete_service_catalog_tool,
 )
 
 # Define a type alias for the Pydantic models or dataclasses used for params
@@ -1932,6 +1979,124 @@ def get_tool_definitions(
             GetCatalogVariableParams,
             str,
             "Get detailed information about a specific catalog variable by sys_id from the item_option_new table",
+            "json",
+        ),
+
+        # Assignment Rule Management Tools
+        "create_assignment_rule": (
+            create_assignment_rule_tool,
+            CreateAssignmentRuleParams,
+            str,
+            "Create a new assignment rule in ServiceNow",
+            "json",
+        ),
+        "update_assignment_rule": (
+            update_assignment_rule_tool,
+            UpdateAssignmentRuleParams,
+            str,
+            "Update an existing assignment rule in ServiceNow",
+            "json",
+        ),
+        "list_assignment_rules": (
+            list_assignment_rules_tool,
+            ListAssignmentRulesParams,
+            str,
+            "List assignment rules from ServiceNow with optional filtering",
+            "json",
+        ),
+        "get_assignment_rule": (
+            get_assignment_rule_tool,
+            GetAssignmentRuleParams,
+            str,
+            "Get a specific assignment rule from ServiceNow",
+            "json",
+        ),
+        "delete_assignment_rule": (
+            delete_assignment_rule_tool,
+            DeleteAssignmentRuleParams,
+            str,
+            "Delete an assignment rule from ServiceNow",
+            "json",
+        ),
+
+        # Email Template Management Tools
+        "create_email_template": (
+            create_email_template_tool,
+            CreateEmailTemplateParams,
+            str,
+            "Create a new email template in ServiceNow",
+            "json",
+        ),
+        "update_email_template": (
+            update_email_template_tool,
+            UpdateEmailTemplateParams,
+            str,
+            "Update an existing email template in ServiceNow",
+            "json",
+        ),
+        "list_email_templates": (
+            list_email_templates_tool,
+            ListEmailTemplatesParams,
+            str,
+            "List email templates from ServiceNow with optional filtering",
+            "json",
+        ),
+        "get_email_template": (
+            get_email_template_tool,
+            GetEmailTemplateParams,
+            str,
+            "Get a specific email template from ServiceNow",
+            "json",
+        ),
+        "delete_email_template": (
+            delete_email_template_tool,
+            DeleteEmailTemplateParams,
+            str,
+            "Delete an email template from ServiceNow",
+            "json",
+        ),
+        "clone_email_template": (
+            clone_email_template_tool,
+            CloneEmailTemplateParams,
+            str,
+            "Clone an existing email template in ServiceNow",
+            "json",
+        ),
+
+        # Service Catalog Management Tools
+        "create_service_catalog": (
+            create_service_catalog_tool,
+            CreateServiceCatalogParams,
+            str,
+            "Create a new service catalog in ServiceNow",
+            "json",
+        ),
+        "update_service_catalog": (
+            update_service_catalog_tool,
+            UpdateServiceCatalogParams,
+            str,
+            "Update an existing service catalog in ServiceNow",
+            "json",
+        ),
+        "list_service_catalogs": (
+            list_service_catalogs_tool,
+            ListServiceCatalogsParams,
+            str,
+            "List service catalogs from ServiceNow",
+            "json",
+        ),
+        "get_service_catalog": (
+            get_service_catalog_tool,
+            GetServiceCatalogParams,
+            str,
+            "Get a specific service catalog from ServiceNow",
+            "json",
+        ),
+        "delete_service_catalog": (
+            delete_service_catalog_tool,
+            DeleteServiceCatalogParams,
+            str,
+            "Delete a service catalog from ServiceNow",
             "json",
         ),
 
