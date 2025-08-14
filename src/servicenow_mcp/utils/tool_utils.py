@@ -667,6 +667,174 @@ from servicenow_mcp.tools.service_catalog_management import (
     delete_service_catalog as delete_service_catalog_tool,
 )
 
+from servicenow_mcp.tools.developer_image import (
+    CreateImageParams,
+    UpdateImageParams,
+    ListImagesParams,
+    GetImageParams,
+    DeleteImageParams,
+)
+from servicenow_mcp.tools.developer_image import (
+    create_image as create_image_tool,
+    update_image as update_image_tool,
+    list_images as list_images_tool,
+    get_image as get_image_tool,
+    delete_image as delete_image_tool,
+)
+
+from servicenow_mcp.tools.developer_servicecatalog import (
+    CreateServiceCatalogParams,
+    UpdateServiceCatalogParams,
+    ListServiceCatalogsParams,
+    GetServiceCatalogParams,
+    DeleteServiceCatalogParams,
+)
+from servicenow_mcp.tools.developer_servicecatalog import (
+    create_service_catalog as create_service_catalog_tool,
+    update_service_catalog as update_service_catalog_tool,
+    list_service_catalogs as list_service_catalogs_tool,
+    get_service_catalog as get_service_catalog_tool,
+    delete_service_catalog as delete_service_catalog_tool,
+)
+
+from servicenow_mcp.tools.developer_attachment import (
+    UploadAttachmentParams,
+    UploadMultipartAttachmentParams,
+    ListAttachmentsParams,
+    GetAttachmentParams,
+    DownloadAttachmentParams,
+    DeleteAttachmentParams,
+)
+from servicenow_mcp.tools.developer_attachment import (
+    upload_attachment as upload_attachment_tool,
+    upload_multipart_attachment as upload_multipart_attachment_tool,
+    list_attachments as list_attachments_tool,
+    get_attachment as get_attachment_tool,
+    download_attachment as download_attachment_tool,
+    delete_attachment as delete_attachment_tool,
+)
+
+# Email Layout Tools
+from servicenow_mcp.tools.developer_email_layouts import (
+    CreateEmailLayoutParams,
+    UpdateEmailLayoutParams,
+    ListEmailLayoutsParams,
+    GetEmailLayoutParams,
+    DeleteEmailLayoutParams,
+)
+from servicenow_mcp.tools.developer_email_layouts import (
+    create_email_layout as create_email_layout_tool,
+    update_email_layout as update_email_layout_tool,
+    list_email_layouts as list_email_layouts_tool,
+    get_email_layout as get_email_layout_tool,
+    delete_email_layout as delete_email_layout_tool,
+    clone_email_layout as clone_email_layout_tool,
+)
+
+# Catalog UI Policy Tools
+from servicenow_mcp.tools.catalog.catalog_ui_policy import (
+    CreateCatalogUIPolicyParams,
+    UpdateCatalogUIPolicyParams,
+    ListCatalogUIPoliciesParams,
+    GetCatalogUIPolicyParams,
+    DeleteCatalogUIPolicyParams,
+)
+from servicenow_mcp.tools.catalog.catalog_ui_policy import (
+    create_catalog_ui_policy as create_catalog_ui_policy_tool,
+    update_catalog_ui_policy as update_catalog_ui_policy_tool,
+    list_catalog_ui_policies as list_catalog_ui_policies_tool,
+    get_catalog_ui_policy as get_catalog_ui_policy_tool,
+    delete_catalog_ui_policy as delete_catalog_ui_policy_tool,
+    clone_catalog_ui_policy as clone_catalog_ui_policy_tool,
+)
+
+# Catalog UI Policy Action Tools
+from servicenow_mcp.tools.catalog.catalog_ui_policy_action import (
+    CreateCatalogUIPolicyActionParams,
+    UpdateCatalogUIPolicyActionParams,
+    ListCatalogUIPolicyActionsParams,
+    GetCatalogUIPolicyActionParams,
+    DeleteCatalogUIPolicyActionParams,
+)
+from servicenow_mcp.tools.catalog.catalog_ui_policy_action import (
+    create_catalog_ui_policy_action as create_catalog_ui_policy_action_tool,
+    update_catalog_ui_policy_action as update_catalog_ui_policy_action_tool,
+    list_catalog_ui_policy_actions as list_catalog_ui_policy_actions_tool,
+    get_catalog_ui_policy_action as get_catalog_ui_policy_action_tool,
+    delete_catalog_ui_policy_action as delete_catalog_ui_policy_action_tool,
+    clone_catalog_ui_policy_action as clone_catalog_ui_policy_action_tool,
+)
+
+# Catalog Client Scripts Tools
+from servicenow_mcp.tools.catalog.catalog_client_scripts import (
+    CreateCatalogClientScriptParams,
+    UpdateCatalogClientScriptParams,
+    ListCatalogClientScriptsParams,
+    GetCatalogClientScriptParams,
+    DeleteCatalogClientScriptParams,
+)
+from servicenow_mcp.tools.catalog.catalog_client_scripts import (
+    create_catalog_client_script as create_catalog_client_script_tool,
+    update_catalog_client_script as update_catalog_client_script_tool,
+    list_catalog_client_scripts as list_catalog_client_scripts_tool,
+    get_catalog_client_script as get_catalog_client_script_tool,
+    delete_catalog_client_script as delete_catalog_client_script_tool,
+    clone_catalog_client_script as clone_catalog_client_script_tool,
+)
+
+# Catalog Item Available For Tools
+from servicenow_mcp.tools.catalog.catalog_item_available_for import (
+    AddAvailableForParams,
+    RemoveAvailableForParams,
+    AddNotAvailableForParams,
+    RemoveNotAvailableForParams,
+    ListAvailableForParams,
+)
+from servicenow_mcp.tools.catalog.catalog_item_available_for import (
+    add_available_for as add_available_for_tool,
+    remove_available_for as remove_available_for_tool,
+    add_not_available_for as add_not_available_for_tool,
+    remove_not_available_for as remove_not_available_for_tool,
+    list_available_for as list_available_for_tool,
+    bulk_update_available_for as bulk_update_available_for_tool,
+)
+
+# Taxonomy Tools
+from servicenow_mcp.tools.knowledge.taxonomy import (
+    CreateTaxonomyParams,
+    UpdateTaxonomyParams,
+    ListTaxonomiesParams,
+    GetTaxonomyParams,
+    DeleteTaxonomyParams,
+    CloneTaxonomyParams,
+)
+from servicenow_mcp.tools.knowledge.taxonomy import (
+    create_taxonomy as create_taxonomy_tool,
+    update_taxonomy as update_taxonomy_tool,
+    list_taxonomies as list_taxonomies_tool,
+    get_taxonomy as get_taxonomy_tool,
+    delete_taxonomy as delete_taxonomy_tool,
+    clone_taxonomy as clone_taxonomy_tool,
+)
+
+# Topic Tools
+from servicenow_mcp.tools.knowledge.topic import (
+    CreateTopicParams,
+    UpdateTopicParams,
+    ListTopicsParams,
+    GetTopicParams,
+    DeleteTopicParams,
+    CloneTopicParams,
+)
+from servicenow_mcp.tools.knowledge.topic import (
+    create_topic as create_topic_tool,
+    update_topic as update_topic_tool,
+    list_topics as list_topics_tool,
+    get_topic as get_topic_tool,
+    delete_topic as delete_topic_tool,
+    clone_topic as clone_topic_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -2063,6 +2231,223 @@ def get_tool_definitions(
             "json",
         ),
 
+        # Email Layout Tools
+        "create_email_layout": (
+            create_email_layout_tool,
+            CreateEmailLayoutParams,
+            str,
+            "Create a new email layout in the sys_email_layout table",
+            "json",
+        ),
+        "update_email_layout": (
+            update_email_layout_tool,
+            UpdateEmailLayoutParams,
+            str,
+            "Update an existing email layout in the sys_email_layout table",
+            "json",
+        ),
+        "list_email_layouts": (
+            list_email_layouts_tool,
+            ListEmailLayoutsParams,
+            str,
+            "List email layouts from the sys_email_layout table with optional filtering",
+            "json",
+        ),
+        "get_email_layout": (
+            get_email_layout_tool,
+            GetEmailLayoutParams,
+            str,
+            "Get a specific email layout from the sys_email_layout table",
+            "json",
+        ),
+        "delete_email_layout": (
+            delete_email_layout_tool,
+            DeleteEmailLayoutParams,
+            str,
+            "Delete an email layout from the sys_email_layout table",
+            "json",
+        ),
+        "clone_email_layout": (
+            clone_email_layout_tool,
+            dict,
+            str,
+            "Clone an existing email layout in the sys_email_layout table",
+            "json",
+        ),
+
+        # Catalog UI Policy Tools
+        "create_catalog_ui_policy": (
+            create_catalog_ui_policy_tool,
+            CreateCatalogUIPolicyParams,
+            str,
+            "Create a new catalog UI policy in ServiceNow",
+            "json",
+        ),
+        "update_catalog_ui_policy": (
+            update_catalog_ui_policy_tool,
+            UpdateCatalogUIPolicyParams,
+            str,
+            "Update an existing catalog UI policy in ServiceNow",
+            "json",
+        ),
+        "list_catalog_ui_policies": (
+            list_catalog_ui_policies_tool,
+            ListCatalogUIPoliciesParams,
+            str,
+            "List catalog UI policies from ServiceNow",
+            "json",
+        ),
+        "get_catalog_ui_policy": (
+            get_catalog_ui_policy_tool,
+            GetCatalogUIPolicyParams,
+            str,
+            "Get a specific catalog UI policy from ServiceNow",
+            "json",
+        ),
+        "delete_catalog_ui_policy": (
+            delete_catalog_ui_policy_tool,
+            DeleteCatalogUIPolicyParams,
+            str,
+            "Delete a catalog UI policy from ServiceNow",
+            "json",
+        ),
+        "clone_catalog_ui_policy": (
+            clone_catalog_ui_policy_tool,
+            dict,
+            str,
+            "Clone an existing catalog UI policy in ServiceNow",
+            "json",
+        ),
+        # Catalog UI Policy Action Tools
+        "create_catalog_ui_policy_action": (
+            create_catalog_ui_policy_action_tool,
+            CreateCatalogUIPolicyActionParams,
+            str,
+            "Create a new catalog UI policy action in ServiceNow",
+            "json",
+        ),
+        "update_catalog_ui_policy_action": (
+            update_catalog_ui_policy_action_tool,
+            UpdateCatalogUIPolicyActionParams,
+            str,
+            "Update an existing catalog UI policy action in ServiceNow",
+            "json",
+        ),
+        "list_catalog_ui_policy_actions": (
+            list_catalog_ui_policy_actions_tool,
+            ListCatalogUIPolicyActionsParams,
+            str,
+            "List catalog UI policy actions from ServiceNow",
+            "json",
+        ),
+        "get_catalog_ui_policy_action": (
+            get_catalog_ui_policy_action_tool,
+            GetCatalogUIPolicyActionParams,
+            str,
+            "Get a specific catalog UI policy action from ServiceNow",
+            "json",
+        ),
+        "delete_catalog_ui_policy_action": (
+            delete_catalog_ui_policy_action_tool,
+            DeleteCatalogUIPolicyActionParams,
+            str,
+            "Delete a catalog UI policy action from ServiceNow",
+            "json",
+        ),
+        "clone_catalog_ui_policy_action": (
+            clone_catalog_ui_policy_action_tool,
+            dict,
+            str,
+            "Clone an existing catalog UI policy action in ServiceNow",
+            "json",
+        ),
+        # Catalog Client Scripts Tools
+        "create_catalog_client_script": (
+            create_catalog_client_script_tool,
+            CreateCatalogClientScriptParams,
+            str,
+            "Create a new catalog client script in ServiceNow",
+            "json",
+        ),
+        "update_catalog_client_script": (
+            update_catalog_client_script_tool,
+            UpdateCatalogClientScriptParams,
+            str,
+            "Update an existing catalog client script in ServiceNow",
+            "json",
+        ),
+        "list_catalog_client_scripts": (
+            list_catalog_client_scripts_tool,
+            ListCatalogClientScriptsParams,
+            str,
+            "List catalog client scripts from ServiceNow",
+            "json",
+        ),
+        "get_catalog_client_script": (
+            get_catalog_client_script_tool,
+            GetCatalogClientScriptParams,
+            str,
+            "Get a specific catalog client script from ServiceNow",
+            "json",
+        ),
+        "delete_catalog_client_script": (
+            delete_catalog_client_script_tool,
+            DeleteCatalogClientScriptParams,
+            str,
+            "Delete a catalog client script from ServiceNow",
+            "json",
+        ),
+        "clone_catalog_client_script": (
+            clone_catalog_client_script_tool,
+            dict,
+            str,
+            "Clone an existing catalog client script in ServiceNow",
+            "json",
+        ),
+        # Catalog Item Available For Tools
+        "add_available_for": (
+            add_available_for_tool,
+            AddAvailableForParams,
+            str,
+            "Add an available for rule to a catalog item in ServiceNow",
+            "json",
+        ),
+        "remove_available_for": (
+            remove_available_for_tool,
+            RemoveAvailableForParams,
+            str,
+            "Remove an available for rule from a catalog item in ServiceNow",
+            "json",
+        ),
+        "add_not_available_for": (
+            add_not_available_for_tool,
+            AddNotAvailableForParams,
+            str,
+            "Add a not available for rule to a catalog item in ServiceNow",
+            "json",
+        ),
+        "remove_not_available_for": (
+            remove_not_available_for_tool,
+            RemoveNotAvailableForParams,
+            str,
+            "Remove a not available for rule from a catalog item in ServiceNow",
+            "json",
+        ),
+        "list_available_for": (
+            list_available_for_tool,
+            ListAvailableForParams,
+            str,
+            "List available for or not available for rules for a catalog item in ServiceNow",
+            "json",
+        ),
+        "bulk_update_available_for": (
+            bulk_update_available_for_tool,
+            dict,
+            str,
+            "Bulk update available for rules for a catalog item in ServiceNow",
+            "json",
+        ),
+
         # Service Catalog Management Tools
         "create_service_catalog": (
             create_service_catalog_tool,
@@ -2097,6 +2482,168 @@ def get_tool_definitions(
             DeleteServiceCatalogParams,
             str,
             "Delete a service catalog from ServiceNow",
+            "json",
+        ),
+
+        # Image Management Tools
+        "create_image": (
+            create_image_tool,
+            CreateImageParams,
+            str,
+            "Create a new image in the db_image table with base64 encoded image data",
+            "json",
+        ),
+        "update_image": (
+            update_image_tool,
+            UpdateImageParams,
+            str,
+            "Update an existing image in the db_image table",
+            "json",
+        ),
+        "list_images": (
+            list_images_tool,
+            ListImagesParams,
+            str,
+            "List images from the db_image table with optional filtering",
+            "json",
+        ),
+        "get_image": (
+            get_image_tool,
+            GetImageParams,
+            str,
+            "Get a specific image from the db_image table with optional image data",
+            "json",
+        ),
+        "delete_image": (
+            delete_image_tool,
+            DeleteImageParams,
+            str,
+            "Delete an image from the db_image table",
+            "json",
+        ),
+
+        # Service Catalog Management Tools
+        "create_service_catalog": (
+            create_service_catalog_tool,
+            CreateServiceCatalogParams,
+            str,
+            "Create a new service catalog in the sc_catalog table",
+            "json",
+        ),
+        "update_service_catalog": (
+            update_service_catalog_tool,
+            UpdateServiceCatalogParams,
+            str,
+            "Update an existing service catalog in the sc_catalog table",
+            "json",
+        ),
+        "list_service_catalogs": (
+            list_service_catalogs_tool,
+            ListServiceCatalogsParams,
+            str,
+            "List service catalogs from the sc_catalog table with optional filtering",
+            "json",
+        ),
+        "get_service_catalog": (
+            get_service_catalog_tool,
+            GetServiceCatalogParams,
+            str,
+            "Get a specific service catalog from the sc_catalog table",
+            "json",
+        ),
+        "delete_service_catalog": (
+            delete_service_catalog_tool,
+            DeleteServiceCatalogParams,
+            str,
+            "Delete a service catalog from the sc_catalog table",
+            "json",
+        ),
+
+        # Attachment Management Tools
+        "upload_attachment": (
+            upload_attachment_tool,
+            UploadAttachmentParams,
+            str,
+            "Upload a file attachment using binary data to ServiceNow Attachment API",
+            "json",
+        ),
+        "upload_multipart_attachment": (
+            upload_multipart_attachment_tool,
+            UploadMultipartAttachmentParams,
+            str,
+            "Upload a file attachment using multipart form data to ServiceNow Attachment API",
+            "json",
+        ),
+        "list_attachments": (
+            list_attachments_tool,
+            ListAttachmentsParams,
+            str,
+            "List attachments from ServiceNow Attachment API with optional filtering",
+            "json",
+        ),
+        "get_attachment": (
+            get_attachment_tool,
+            GetAttachmentParams,
+            str,
+            "Get attachment metadata from ServiceNow Attachment API",
+            "json",
+        ),
+        "download_attachment": (
+            download_attachment_tool,
+            DownloadAttachmentParams,
+            str,
+            "Download attachment binary data as base64 from ServiceNow Attachment API",
+            "json",
+        ),
+        "delete_attachment": (
+            delete_attachment_tool,
+            DeleteAttachmentParams,
+            str,
+            "Delete an attachment from ServiceNow Attachment API",
+            "json",
+        ),
+
+        # Taxonomy Management Tools
+        "create_taxonomy": (
+            create_taxonomy_tool,
+            CreateTaxonomyParams,
+            str,
+            "Create a new taxonomy in the taxonomy table for hierarchical classification structures",
+            "json",
+        ),
+        "update_taxonomy": (
+            update_taxonomy_tool,
+            UpdateTaxonomyParams,
+            str,
+            "Update an existing taxonomy in the taxonomy table",
+            "json",
+        ),
+        "list_taxonomies": (
+            list_taxonomies_tool,
+            ListTaxonomiesParams,
+            str,
+            "List taxonomies from the taxonomy table with optional filtering",
+            "json",
+        ),
+        "get_taxonomy": (
+            get_taxonomy_tool,
+            GetTaxonomyParams,
+            str,
+            "Get a specific taxonomy from the taxonomy table",
+            "json",
+        ),
+        "delete_taxonomy": (
+            delete_taxonomy_tool,
+            DeleteTaxonomyParams,
+            str,
+            "Delete a taxonomy from the taxonomy table",
+            "json",
+        ),
+        "clone_taxonomy": (
+            clone_taxonomy_tool,
+            CloneTaxonomyParams,
+            str,
+            "Clone an existing taxonomy in the taxonomy table",
             "json",
         ),
 

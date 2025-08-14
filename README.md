@@ -328,6 +328,25 @@ The default `config/tool_packages.yaml` includes the following role-based packag
 35. **delete_email_template** - Delete an email template from ServiceNow
 36. **clone_email_template** - Clone an existing email template
 
+37. **create_image** - Create a new image in the db_image table with base64 encoded data
+38. **update_image** - Update an existing image in the db_image table
+39. **list_images** - List images from the db_image table with optional filtering
+40. **get_image** - Get a specific image from the db_image table
+41. **delete_image** - Delete an image from the db_image table
+
+42. **create_service_catalog** - Create a new service catalog in the sc_catalog table
+43. **update_service_catalog** - Update an existing service catalog in the sc_catalog table
+44. **list_service_catalogs** - List service catalogs from the sc_catalog table with optional filtering
+45. **get_service_catalog** - Get a specific service catalog from the sc_catalog table
+46. **delete_service_catalog** - Delete a service catalog from the sc_catalog table
+
+47. **upload_attachment** - Upload a file attachment using binary data to ServiceNow Attachment API
+48. **upload_multipart_attachment** - Upload a file attachment using multipart form data
+49. **list_attachments** - List attachments from ServiceNow Attachment API with optional filtering
+50. **get_attachment** - Get attachment metadata from ServiceNow Attachment API
+51. **download_attachment** - Download attachment binary data as base64 from ServiceNow
+52. **delete_attachment** - Delete an attachment from ServiceNow Attachment API
+
 ### Application Menu Items
 
 1. **create_application_menu** - Create custom menu items that appear in the All menu and navigation areas
@@ -620,6 +639,30 @@ Below are some example natural language queries you can use with Claude to inter
 - "Update the welcome email template with new branding"
 - "Clone the change approval template for emergency changes"
 - "Show me all inactive email templates that need cleanup"
+
+#### Image Management Examples
+- "Upload a company logo image to ServiceNow"
+- "List all images associated with the user table"
+- "Update the image name for image ID 12345"
+- "Get the base64 data for an image"
+- "Delete an unused image from the system"
+- "Find all PNG images that contain 'logo' in the name"
+
+#### Service Catalog Management Examples
+- "Create a new service catalog for HR services"
+- "List all active service catalogs"
+- "Update the IT catalog to enable wish list functionality"
+- "Get details for the catalog with ID 12345"
+- "Delete the unused training catalog"
+- "Show me all catalogs available on mobile"
+
+#### Attachment Management Examples
+- "Upload this screenshot to the incident record"
+- "List all PDF attachments on change requests"
+- "Download the attachment with ID 12345 as base64"
+- "Delete the old attachment from this ticket"
+- "Show me all image attachments larger than 1MB"
+- "Upload this document to the knowledge article"
 - "Delete the old notification template that's no longer used"
 - "Get the details of the escalation email template"
 - "Create a template for user account creation notifications"
