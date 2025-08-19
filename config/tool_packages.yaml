@@ -29,6 +29,7 @@ catalog_builder:
   - get_catalog_item
   - create_catalog_item
   - update_catalog_item
+  - delete_catalog_item
   # Categories
   - list_catalog_categories
   - create_catalog_category
@@ -40,6 +41,109 @@ catalog_builder:
   - update_catalog_variable,
   - delete_catalog_variable,
   - get_catalog_variable,
+  # Variable Sets
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
+  # Catalog UI Policies
+  - create_catalog_ui_policy
+  - update_catalog_ui_policy
+  - list_catalog_ui_policies
+  - get_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - clone_catalog_ui_policy
+  # Catalog UI Policy Actions
+  - create_catalog_ui_policy_action
+  - update_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - get_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - clone_catalog_ui_policy_action
+  # Catalog Client Scripts
+  - create_catalog_client_script
+  - update_catalog_client_script
+  - list_catalog_client_scripts
+  - get_catalog_client_script
+  - delete_catalog_client_script
+  - clone_catalog_client_script
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
 
   # Basic Scripting (UI Policy & User Criteria)
   - create_ui_policy
@@ -74,6 +178,34 @@ knowledge_author:
   - publish_article
   - list_articles
   - get_article
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
 
 platform_developer:
   # Script Includes
@@ -83,6 +215,34 @@ platform_developer:
   - update_script_include
   - delete_script_include
   - execute_script_include
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
   # Workflows
   - list_workflows
   - get_workflow_details
@@ -135,6 +295,240 @@ platform_developer:
   - get_email_template
   - delete_email_template
   - clone_email_template
+  # Email Layouts
+  - create_email_layout
+  - update_email_layout
+  - list_email_layouts
+  - get_email_layout
+  - delete_email_layout
+  - clone_email_layout
+  # Image Management
+  - create_image
+  - update_image
+  - list_images
+  - get_image
+  - delete_image
+  # Service Catalog Management
+  - create_service_catalog
+  - update_service_catalog
+  - list_service_catalogs
+  - get_service_catalog
+  - delete_service_catalog
+  # Attachment Management
+  - upload_attachment
+  - upload_multipart_attachment
+  - list_attachments
+  - get_attachment
+  - download_attachment
+  - delete_attachment
+  # Catalog UI Policies
+  - create_catalog_ui_policy
+  - update_catalog_ui_policy
+  - list_catalog_ui_policies
+  - get_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - clone_catalog_ui_policy
+  # Catalog UI Policy Actions
+  - create_catalog_ui_policy_action
+  - update_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - get_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - clone_catalog_ui_policy_action
+  # Catalog Client Scripts
+  - create_catalog_client_script
+  - update_catalog_client_script
+  - list_catalog_client_scripts
+  - get_catalog_client_script
+  - delete_catalog_client_script
+  - clone_catalog_client_script
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Service Catalog Management
+  - create_service_catalog
+  - update_service_catalog
+  - list_service_catalogs
+  - get_service_catalog
+  - delete_service_catalog
+  # Attachment Management
+  - upload_attachment
+  - upload_multipart_attachment
+  - list_attachments
+  - get_attachment
+  - download_attachment
+  - delete_attachment
+  # Catalog UI Policies
+  - create_catalog_ui_policy
+  - update_catalog_ui_policy
+  - list_catalog_ui_policies
+  - get_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - clone_catalog_ui_policy
+  # Catalog UI Policy Actions
+  - create_catalog_ui_policy_action
+  - update_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - get_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - clone_catalog_ui_policy_action
+  # Catalog Client Scripts
+  - create_catalog_client_script
+  - update_catalog_client_script
+  - list_catalog_client_scripts
+  - get_catalog_client_script
+  - delete_catalog_client_script
+  - clone_catalog_client_script
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Attachment Management
+  - upload_attachment
+  - upload_multipart_attachment
+  - list_attachments
+  - get_attachment
+  - download_attachment
+  - delete_attachment
+  # Catalog UI Policies
+  - create_catalog_ui_policy
+  - update_catalog_ui_policy
+  - list_catalog_ui_policies
+  - get_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - clone_catalog_ui_policy
+  # Catalog UI Policy Actions
+  - create_catalog_ui_policy_action
+  - update_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - get_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - clone_catalog_ui_policy_action
+  # Catalog Client Scripts
+  - create_catalog_client_script
+  - update_catalog_client_script
+  - list_catalog_client_scripts
+  - get_catalog_client_script
+  - delete_catalog_client_script
+  - clone_catalog_client_script
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
 
 agile_management:
   # Story Management
@@ -186,6 +580,7 @@ full:
   - get_catalog_item
   - create_catalog_item
   - update_catalog_item
+  - delete_catalog_item
   # Catalog (Categories)
   - list_catalog_categories
   - create_catalog_category
@@ -417,3 +812,91 @@ full:
   - get_email_template
   - delete_email_template
   - clone_email_template
+  # Email Layouts
+  - create_email_layout
+  - update_email_layout
+  - list_email_layouts
+  - get_email_layout
+  - delete_email_layout
+  - clone_email_layout
+  # Image Management
+  - create_image
+  - update_image
+  - list_images
+  - get_image
+  - delete_image
+  # Service Catalog Management
+  - create_service_catalog
+  - update_service_catalog
+  - list_service_catalogs
+  - get_service_catalog
+  - delete_service_catalog
+  # Attachment Management
+  - upload_attachment
+  - upload_multipart_attachment
+  - list_attachments
+  - get_attachment
+  - download_attachment
+  - delete_attachment
+  # Catalog UI Policies
+  - create_catalog_ui_policy
+  - update_catalog_ui_policy
+  - list_catalog_ui_policies
+  - get_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - clone_catalog_ui_policy
+  # Catalog UI Policy Actions
+  - create_catalog_ui_policy_action
+  - update_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - get_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - clone_catalog_ui_policy_action
+  # Catalog Client Scripts
+  - create_catalog_client_script
+  - update_catalog_client_script
+  - list_catalog_client_scripts
+  - get_catalog_client_script
+  - delete_catalog_client_script
+  - clone_catalog_client_script
+  # Catalog Item Available For
+  - add_available_for
+  - remove_available_for
+  - add_not_available_for
+  - remove_not_available_for
+  - list_available_for
+  - bulk_update_available_for
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set

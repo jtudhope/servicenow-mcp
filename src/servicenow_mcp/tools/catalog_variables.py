@@ -39,6 +39,8 @@ class CreateCatalogVariableParams(BaseModel):
     map_to_field: Optional[str] = Field(None, description="Target field to map this variable to")
     choice_field: Optional[str] = Field(None, description="Choice field for dependent choices")
     choice_table: Optional[str] = Field(None, description="Choice table for choice fields")
+    show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
+    show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
 
 
 class CreateCatalogVariableResponse(BaseModel):
@@ -104,6 +106,10 @@ def create_catalog_variable(
         data["choice_field"] = params.choice_field
     if params.choice_table:
         data["choice_table"] = params.choice_table
+    if params.show_help is not None:
+        data["show_help"] = params.show_help
+    if params.show_help_on_load is not None:
+        data["show_help_on_load"] = params.show_help_on_load
 
     try:
         response = requests.post(
@@ -227,6 +233,8 @@ class UpdateCatalogVariableParams(BaseModel):
     map_to_field: Optional[str] = Field(None, description="Target field to map this variable to")
     choice_field: Optional[str] = Field(None, description="Choice field for dependent choices")
     choice_table: Optional[str] = Field(None, description="Choice table for choice fields")
+    show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
+    show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
 
 
 class UpdateCatalogVariableResponse(BaseModel):
@@ -292,6 +300,10 @@ def update_catalog_variable(
         data["choice_field"] = params.choice_field
     if params.choice_table is not None:
         data["choice_table"] = params.choice_table
+    if params.show_help is not None:
+        data["show_help"] = params.show_help
+    if params.show_help_on_load is not None:
+        data["show_help_on_load"] = params.show_help_on_load
 
     try:
         response = requests.patch(

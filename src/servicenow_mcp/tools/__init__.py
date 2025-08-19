@@ -9,11 +9,14 @@ from servicenow_mcp.tools.catalog_optimization import (
 )
 from servicenow_mcp.tools.catalog_tools import (
     create_catalog_category,
+    create_catalog_item,
+    delete_catalog_item,
     get_catalog_item,
     list_catalog_categories,
     list_catalog_items,
     move_catalog_items,
     update_catalog_category,
+    update_catalog_item,
 )
 from servicenow_mcp.tools.catalog_variables import (
     create_catalog_variable,
@@ -284,6 +287,119 @@ from servicenow_mcp.tools.developer_email_template import (
     clone_email_template,
 )
 
+from servicenow_mcp.tools.developer_image import (
+    create_image,
+    update_image,
+    list_images,
+    get_image,
+    delete_image,
+)
+
+from servicenow_mcp.tools.developer_servicecatalog import (
+    create_service_catalog,
+    update_service_catalog,
+    list_service_catalogs,
+    get_service_catalog,
+    delete_service_catalog,
+)
+
+from servicenow_mcp.tools.developer_attachment import (
+    upload_attachment,
+    upload_multipart_attachment,
+    list_attachments,
+    get_attachment,
+    download_attachment,
+    delete_attachment,
+)
+
+from servicenow_mcp.tools.developer_email_layouts import (
+    create_email_layout,
+    update_email_layout,
+    list_email_layouts,
+    get_email_layout,
+    delete_email_layout,
+    clone_email_layout,
+)
+
+from servicenow_mcp.tools.catalog.catalog_ui_policy import (
+    create_catalog_ui_policy,
+    update_catalog_ui_policy,
+    list_catalog_ui_policies,
+    get_catalog_ui_policy,
+    delete_catalog_ui_policy,
+    clone_catalog_ui_policy,
+)
+
+from servicenow_mcp.tools.catalog.catalog_ui_policy_action import (
+    create_catalog_ui_policy_action,
+    update_catalog_ui_policy_action,
+    list_catalog_ui_policy_actions,
+    get_catalog_ui_policy_action,
+    delete_catalog_ui_policy_action,
+    clone_catalog_ui_policy_action,
+)
+
+from servicenow_mcp.tools.catalog.catalog_client_scripts import (
+    create_catalog_client_script,
+    update_catalog_client_script,
+    list_catalog_client_scripts,
+    get_catalog_client_script,
+    delete_catalog_client_script,
+    clone_catalog_client_script,
+)
+
+from servicenow_mcp.tools.catalog.catalog_item_available_for import (
+    add_available_for,
+    remove_available_for,
+    add_not_available_for,
+    remove_not_available_for,
+    list_available_for,
+    bulk_update_available_for,
+)
+
+from servicenow_mcp.tools.knowledge.taxonomy import (
+    create_taxonomy,
+    update_taxonomy,
+    list_taxonomies,
+    get_taxonomy,
+    delete_taxonomy,
+    clone_taxonomy,
+)
+
+from servicenow_mcp.tools.knowledge.topic import (
+    create_topic,
+    update_topic,
+    list_topics,
+    get_topic,
+    delete_topic,
+    clone_topic,
+)
+
+from servicenow_mcp.tools.knowledge.connected_content import (
+    create_connected_content,
+    update_connected_content,
+    list_connected_content,
+    get_connected_content,
+    delete_connected_content,
+    bulk_connect_content,
+)
+
+from servicenow_mcp.tools.catalog.question_choice import (
+    create_question_choice,
+    update_question_choice,
+    list_question_choices,
+    get_question_choice,
+    delete_question_choice,
+)
+
+from servicenow_mcp.tools.catalog.variable_sets import (
+    create_variable_set,
+    update_variable_set,
+    list_variable_sets,
+    get_variable_set,
+    delete_variable_set,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -297,12 +413,14 @@ __all__ = [
     # Catalog tools
     "list_catalog_items",
     "get_catalog_item",
+    "create_catalog_item",
+    "update_catalog_item",
+    "delete_catalog_item",
     "list_catalog_categories",
     "create_catalog_category",
     "update_catalog_category",
     "move_catalog_items",
     "get_optimization_recommendations",
-    "update_catalog_item",
 
     
     # Change management tools
@@ -541,5 +659,105 @@ __all__ = [
     "get_email_template",
     "delete_email_template",
     "clone_email_template",
+
+    # Image Management tools
+    "create_image",
+    "update_image",
+    "list_images",
+    "get_image",
+    "delete_image",
+
+    # Service Catalog Management tools
+    "create_service_catalog",
+    "update_service_catalog",
+    "list_service_catalogs",
+    "get_service_catalog",
+    "delete_service_catalog",
+
+    # Attachment Management tools
+    "upload_attachment",
+    "upload_multipart_attachment",
+    "list_attachments",
+    "get_attachment",
+    "download_attachment",
+    "delete_attachment",
+
+    # Email Layout Management tools
+    "create_email_layout",
+    "update_email_layout",
+    "list_email_layouts",
+    "get_email_layout",
+    "delete_email_layout",
+    "clone_email_layout",
+
+    # Catalog UI Policy Management tools
+    "create_catalog_ui_policy",
+    "update_catalog_ui_policy",
+    "list_catalog_ui_policies",
+    "get_catalog_ui_policy",
+    "delete_catalog_ui_policy",
+    "clone_catalog_ui_policy",
+
+    # Catalog UI Policy Action Management tools
+    "create_catalog_ui_policy_action",
+    "update_catalog_ui_policy_action",
+    "list_catalog_ui_policy_actions",
+    "get_catalog_ui_policy_action",
+    "delete_catalog_ui_policy_action",
+    "clone_catalog_ui_policy_action",
+
+    # Catalog Client Scripts Management tools
+    "create_catalog_client_script",
+    "update_catalog_client_script",
+    "list_catalog_client_scripts",
+    "get_catalog_client_script",
+    "delete_catalog_client_script",
+    "clone_catalog_client_script",
+
+    # Catalog Item Available For Management tools
+    "add_available_for",
+    "remove_available_for",
+    "add_not_available_for",
+    "remove_not_available_for",
+    "list_available_for",
+    "bulk_update_available_for",
+
+    # Taxonomy Management tools
+    "create_taxonomy",
+    "update_taxonomy",
+    "list_taxonomies",
+    "get_taxonomy",
+    "delete_taxonomy",
+    "clone_taxonomy",
+    
+    # Topic Management tools
+    "create_topic",
+    "update_topic",
+    "list_topics",
+    "get_topic",
+    "delete_topic",
+    "clone_topic",
+    
+    # Connected Content Management tools
+    "create_connected_content",
+    "update_connected_content",
+    "list_connected_content",
+    "get_connected_content",
+    "delete_connected_content",
+    "bulk_connect_content",
+
+    # Question Choice Management tools
+    "create_question_choice",
+    "update_question_choice",
+    "list_question_choices",
+    "get_question_choice",
+    "delete_question_choice",
+
+    # Variable Sets Management tools
+    "create_variable_set",
+    "update_variable_set",
+    "list_variable_sets",
+    "get_variable_set",
+    "delete_variable_set",
     
 ] 

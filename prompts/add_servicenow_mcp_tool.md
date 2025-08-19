@@ -162,7 +162,7 @@ from servicenow_mcp.tools.{tool_module} import (
 
 
 # In the tool_definitions collection add
-    {tool_name}: (
+    "{tool_name}": (
         {tool_name}_tool,
         {ToolName}Params,
         str,
@@ -173,46 +173,7 @@ from servicenow_mcp.tools.{tool_module} import (
 ```
 
 
-
-### 4. Add Unit Tests
-
-```python
-# Add to existing test file or create a new one in tests/test_{tool_module}.py
-
-@patch("requests.post")  # Or appropriate HTTP method
-def test_{tool_name}(self, mock_post):
-    """Test {tool_name} function."""
-    # Configure mock
-    mock_response = MagicMock()
-    mock_response.raise_for_status = MagicMock()
-    mock_response.json.return_value = {
-        "result": {
-            # Mocked response data
-        }
-    }
-    mock_post.return_value = mock_response
-    
-    # Create test params
-    params = {ToolName}Params(
-        param1="value1",
-        param2="value2",
-    )
-    
-    # Call function
-    result = {tool_name}(self.config, self.auth_manager, params)
-    
-    # Verify result
-    self.assertTrue(result.success)
-    # Add more assertions
-    
-    # Verify mock was called correctly
-    mock_post.assert_called_once()
-    call_args = mock_post.call_args
-    self.assertEqual(call_args[0][0], f"{self.config.api_url}/table/{table_name}")
-    # Add more assertions for request data
-```
-
-### 5. Update Documentation
+### 4. Update Documentation
 
 Create or update a markdown file in `docs/` that explains the tool:
 
@@ -250,9 +211,9 @@ The tool returns a response with the following fields:
 | success | boolean | Whether the operation was successful |
 | message | string | A message describing the result |
 | ... | ... | ... |
-```
 
-### 6. Update README.md
+
+### 5. Update README.md
 
 Add the new tool to the appropriate section in README.md:
 
