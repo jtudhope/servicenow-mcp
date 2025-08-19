@@ -9,11 +9,14 @@ from servicenow_mcp.tools.catalog_optimization import (
 )
 from servicenow_mcp.tools.catalog_tools import (
     create_catalog_category,
+    create_catalog_item,
+    delete_catalog_item,
     get_catalog_item,
     list_catalog_categories,
     list_catalog_items,
     move_catalog_items,
     update_catalog_category,
+    update_catalog_item,
 )
 from servicenow_mcp.tools.catalog_variables import (
     create_catalog_variable,
@@ -363,6 +366,40 @@ from servicenow_mcp.tools.knowledge.taxonomy import (
     clone_taxonomy,
 )
 
+from servicenow_mcp.tools.knowledge.topic import (
+    create_topic,
+    update_topic,
+    list_topics,
+    get_topic,
+    delete_topic,
+    clone_topic,
+)
+
+from servicenow_mcp.tools.knowledge.connected_content import (
+    create_connected_content,
+    update_connected_content,
+    list_connected_content,
+    get_connected_content,
+    delete_connected_content,
+    bulk_connect_content,
+)
+
+from servicenow_mcp.tools.catalog.question_choice import (
+    create_question_choice,
+    update_question_choice,
+    list_question_choices,
+    get_question_choice,
+    delete_question_choice,
+)
+
+from servicenow_mcp.tools.catalog.variable_sets import (
+    create_variable_set,
+    update_variable_set,
+    list_variable_sets,
+    get_variable_set,
+    delete_variable_set,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -376,12 +413,14 @@ __all__ = [
     # Catalog tools
     "list_catalog_items",
     "get_catalog_item",
+    "create_catalog_item",
+    "update_catalog_item",
+    "delete_catalog_item",
     "list_catalog_categories",
     "create_catalog_category",
     "update_catalog_category",
     "move_catalog_items",
     "get_optimization_recommendations",
-    "update_catalog_item",
 
     
     # Change management tools
@@ -690,5 +729,35 @@ __all__ = [
     "get_taxonomy",
     "delete_taxonomy",
     "clone_taxonomy",
+    
+    # Topic Management tools
+    "create_topic",
+    "update_topic",
+    "list_topics",
+    "get_topic",
+    "delete_topic",
+    "clone_topic",
+    
+    # Connected Content Management tools
+    "create_connected_content",
+    "update_connected_content",
+    "list_connected_content",
+    "get_connected_content",
+    "delete_connected_content",
+    "bulk_connect_content",
+
+    # Question Choice Management tools
+    "create_question_choice",
+    "update_question_choice",
+    "list_question_choices",
+    "get_question_choice",
+    "delete_question_choice",
+
+    # Variable Sets Management tools
+    "create_variable_set",
+    "update_variable_set",
+    "list_variable_sets",
+    "get_variable_set",
+    "delete_variable_set",
     
 ] 

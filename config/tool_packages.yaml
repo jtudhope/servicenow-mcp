@@ -29,6 +29,7 @@ catalog_builder:
   - get_catalog_item
   - create_catalog_item
   - update_catalog_item
+  - delete_catalog_item
   # Categories
   - list_catalog_categories
   - create_catalog_category
@@ -40,6 +41,12 @@ catalog_builder:
   - update_catalog_variable,
   - delete_catalog_variable,
   - get_catalog_variable,
+  # Variable Sets
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
   # Catalog UI Policies
   - create_catalog_ui_policy
   - update_catalog_ui_policy
@@ -75,6 +82,39 @@ catalog_builder:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
   # Catalog Item Available For
   - add_available_for
   - remove_available_for
@@ -89,6 +129,21 @@ catalog_builder:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
 
   # Basic Scripting (UI Policy & User Criteria)
   - create_ui_policy
@@ -123,6 +178,34 @@ knowledge_author:
   - publish_article
   - list_articles
   - get_article
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
 
 platform_developer:
   # Script Includes
@@ -139,6 +222,27 @@ platform_developer:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
   # Workflows
   - list_workflows
   - get_workflow_details
@@ -252,6 +356,32 @@ platform_developer:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set
   # Catalog Item Available For
   - add_available_for
   - remove_available_for
@@ -266,6 +396,20 @@ platform_developer:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
   # Service Catalog Management
   - create_service_catalog
   - update_service_catalog
@@ -314,6 +458,20 @@ platform_developer:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
   # Attachment Management
   - upload_attachment
   - upload_multipart_attachment
@@ -356,6 +514,21 @@ platform_developer:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
 
 agile_management:
   # Story Management
@@ -407,6 +580,7 @@ full:
   - get_catalog_item
   - create_catalog_item
   - update_catalog_item
+  - delete_catalog_item
   # Catalog (Categories)
   - list_catalog_categories
   - create_catalog_category
@@ -699,3 +873,30 @@ full:
   - get_taxonomy
   - delete_taxonomy
   - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+
+  # Question Choice Management
+  - create_question_choice
+  - update_question_choice
+  - list_question_choices
+  - get_question_choice
+  - delete_question_choice
+  # Variable Sets Management
+  - create_variable_set
+  - update_variable_set
+  - list_variable_sets
+  - get_variable_set
+  - delete_variable_set

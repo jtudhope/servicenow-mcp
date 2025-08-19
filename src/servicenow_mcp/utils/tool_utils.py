@@ -14,11 +14,14 @@ from servicenow_mcp.tools.catalog_optimization import (
 )
 from servicenow_mcp.tools.catalog_tools import (
     CreateCatalogCategoryParams,
+    CreateCatalogItemParams,
+    DeleteCatalogItemParams,
     GetCatalogItemParams,
     ListCatalogCategoriesParams,
     ListCatalogItemsParams,
     MoveCatalogItemsParams,
     UpdateCatalogCategoryParams,
+    UpdateCatalogItemParams,
 )
 from servicenow_mcp.tools.catalog_tools import (
     create_catalog_category as create_catalog_category_tool,
@@ -37,6 +40,15 @@ from servicenow_mcp.tools.catalog_tools import (
 )
 from servicenow_mcp.tools.catalog_tools import (
     update_catalog_category as update_catalog_category_tool,
+)
+from servicenow_mcp.tools.catalog_tools import (
+    create_catalog_item as create_catalog_item_tool,
+)
+from servicenow_mcp.tools.catalog_tools import (
+    update_catalog_item as update_catalog_item_catalog_tool,
+)
+from servicenow_mcp.tools.catalog_tools import (
+    delete_catalog_item as delete_catalog_item_tool,
 )
 
 from servicenow_mcp.tools.catalog_variables import (
@@ -835,6 +847,53 @@ from servicenow_mcp.tools.knowledge.topic import (
     clone_topic as clone_topic_tool,
 )
 
+# Connected Content Tools
+from servicenow_mcp.tools.knowledge.connected_content import (
+    CreateConnectedContentParams,
+    UpdateConnectedContentParams,
+    ListConnectedContentParams,
+    GetConnectedContentParams,
+    DeleteConnectedContentParams,
+    BulkConnectContentParams,
+)
+from servicenow_mcp.tools.knowledge.connected_content import (
+    create_connected_content as create_connected_content_tool,
+    update_connected_content as update_connected_content_tool,
+    list_connected_content as list_connected_content_tool,
+    get_connected_content as get_connected_content_tool,
+    delete_connected_content as delete_connected_content_tool,
+    bulk_connect_content as bulk_connect_content_tool,
+)
+
+# Question Choice Tools
+from servicenow_mcp.tools.catalog.question_choice import (
+    CreateQuestionChoiceParams,
+    UpdateQuestionChoiceParams,
+    ListQuestionChoicesParams,
+)
+from servicenow_mcp.tools.catalog.question_choice import (
+    create_question_choice as create_question_choice_tool,
+    update_question_choice as update_question_choice_tool,
+    list_question_choices as list_question_choices_tool,
+    get_question_choice as get_question_choice_tool,
+    delete_question_choice as delete_question_choice_tool,
+)
+
+from servicenow_mcp.tools.catalog.variable_sets import (
+    CreateVariableSetParams,
+    UpdateVariableSetParams,
+    ListVariableSetsParams,
+    GetVariableSetParams,
+    DeleteVariableSetParams,
+)
+from servicenow_mcp.tools.catalog.variable_sets import (
+    create_variable_set as create_variable_set_tool,
+    update_variable_set as update_variable_set_tool,
+    list_variable_sets as list_variable_sets_tool,
+    get_variable_set as get_variable_set_tool,
+    delete_variable_set as delete_variable_set_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -910,6 +969,27 @@ def get_tool_definitions(
             GetCatalogItemParams,
             str,  # Expects JSON string
             "Get a specific service catalog item.",
+            "json_dict",  # Tool returns Pydantic model
+        ),
+        "create_catalog_item": (
+            create_catalog_item_tool,
+            CreateCatalogItemParams,
+            str,  # Expects JSON string
+            "Create a new service catalog item.",
+            "json_dict",  # Tool returns Pydantic model
+        ),
+        "update_catalog_item": (
+            update_catalog_item_catalog_tool,
+            UpdateCatalogItemParams,
+            str,  # Expects JSON string
+            "Update an existing service catalog item.",
+            "json_dict",  # Tool returns Pydantic model
+        ),
+        "delete_catalog_item": (
+            delete_catalog_item_tool,
+            DeleteCatalogItemParams,
+            str,  # Expects JSON string
+            "Delete a service catalog item.",
             "json_dict",  # Tool returns Pydantic model
         ),
         "list_catalog_categories": (
@@ -2644,6 +2724,167 @@ def get_tool_definitions(
             CloneTaxonomyParams,
             str,
             "Clone an existing taxonomy in the taxonomy table",
+            "json",
+        ),
+        
+        # Topic Tools
+        "create_topic": (
+            create_topic_tool,
+            CreateTopicParams,
+            str,
+            "Create a new topic in the topic table",
+            "json",
+        ),
+        "update_topic": (
+            update_topic_tool,
+            UpdateTopicParams,
+            str,
+            "Update an existing topic in the topic table",
+            "json",
+        ),
+        "list_topics": (
+            list_topics_tool,
+            ListTopicsParams,
+            str,
+            "List topics from the topic table",
+            "json",
+        ),
+        "get_topic": (
+            get_topic_tool,
+            GetTopicParams,
+            str,
+            "Get a specific topic from the topic table",
+            "json",
+        ),
+        "delete_topic": (
+            delete_topic_tool,
+            DeleteTopicParams,
+            str,
+            "Delete a topic from the topic table",
+            "json",
+        ),
+        "clone_topic": (
+            clone_topic_tool,
+            CloneTopicParams,
+            str,
+            "Clone an existing topic in the topic table",
+            "json",
+        ),
+        # Connected Content Tools
+        "create_connected_content": (
+            create_connected_content_tool,
+            CreateConnectedContentParams,
+            str,
+            "Create a new connected content relationship in the m2m_connected_content table",
+            "json",
+        ),
+        "update_connected_content": (
+            update_connected_content_tool,
+            UpdateConnectedContentParams,
+            str,
+            "Update an existing connected content relationship in the m2m_connected_content table",
+            "json",
+        ),
+        "list_connected_content": (
+            list_connected_content_tool,
+            ListConnectedContentParams,
+            str,
+            "List connected content relationships from the m2m_connected_content table",
+            "json",
+        ),
+        "get_connected_content": (
+            get_connected_content_tool,
+            GetConnectedContentParams,
+            str,
+            "Get a specific connected content relationship from the m2m_connected_content table",
+            "json",
+        ),
+        "delete_connected_content": (
+            delete_connected_content_tool,
+            DeleteConnectedContentParams,
+            str,
+            "Delete a connected content relationship from the m2m_connected_content table",
+            "json",
+        ),
+        "bulk_connect_content": (
+            bulk_connect_content_tool,
+            BulkConnectContentParams,
+            str,
+            "Bulk connect multiple content items to a topic in the m2m_connected_content table",
+            "json",
+        ),
+
+        # Question Choice Tools
+        "create_question_choice": (
+            create_question_choice_tool,
+            CreateQuestionChoiceParams,
+            str,
+            "Create a new question choice for catalog variables",
+            "json",
+        ),
+        "update_question_choice": (
+            update_question_choice_tool,
+            UpdateQuestionChoiceParams,
+            str,
+            "Update an existing question choice",
+            "json",
+        ),
+        "list_question_choices": (
+            list_question_choices_tool,
+            ListQuestionChoicesParams,
+            str,
+            "List question choices with optional filtering",
+            "json",
+        ),
+        "get_question_choice": (
+            get_question_choice_tool,
+            str,
+            str,
+            "Get a specific question choice by sys_id",
+            "json",
+        ),
+        "delete_question_choice": (
+            delete_question_choice_tool,
+            str,
+            str,
+            "Delete a question choice by sys_id",
+            "json",
+        ),
+
+        # Variable Sets Management tools
+        "create_variable_set": (
+            create_variable_set_tool,
+            CreateVariableSetParams,
+            str,
+            "Create a new variable set in the item_option_new_set table. A Variable Set is a reusable collection of Catalog Variables that you can group together and then attach to one or more catalog items or record producers.",
+            "json",
+        ),
+        "update_variable_set": (
+            update_variable_set_tool,
+            UpdateVariableSetParams,
+            str,
+            "Update an existing variable set in the item_option_new_set table by sys_id, modifying properties like title, internal name, layout, and role configurations.",
+            "json",
+        ),
+        "list_variable_sets": (
+            list_variable_sets_tool,
+            ListVariableSetsParams,
+            str,
+            "List variable sets from the item_option_new_set table with optional filtering by title or internal name.",
+            "json",
+        ),
+        "get_variable_set": (
+            get_variable_set_tool,
+            GetVariableSetParams,
+            str,
+            "Get detailed information about a specific variable set by sys_id from the item_option_new_set table.",
+            "json",
+        ),
+        "delete_variable_set": (
+            delete_variable_set_tool,
+            DeleteVariableSetParams,
+            str,
+            "Delete a variable set from the item_option_new_set table by sys_id to remove it from the catalog.",
             "json",
         ),
 
