@@ -400,6 +400,14 @@ from servicenow_mcp.tools.catalog.variable_sets import (
     delete_variable_set,
 )
 
+from servicenow_mcp.tools.portal.portal_catalog_associations import (
+    create_portal_catalog_association,
+    list_portal_catalog_associations,
+    delete_portal_catalog_association,
+    get_portal_catalog_association,
+    bulk_create_portal_catalog_associations,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -759,5 +767,12 @@ __all__ = [
     "list_variable_sets",
     "get_variable_set",
     "delete_variable_set",
+
+    # Portal Catalog Association Management tools
+    "create_portal_catalog_association",
+    "list_portal_catalog_associations",
+    "delete_portal_catalog_association",
+    "get_portal_catalog_association",
+    "bulk_create_portal_catalog_associations",
     
 ] 

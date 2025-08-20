@@ -894,6 +894,22 @@ from servicenow_mcp.tools.catalog.variable_sets import (
     delete_variable_set as delete_variable_set_tool,
 )
 
+# Portal Catalog Association Tools
+from servicenow_mcp.tools.portal.portal_catalog_associations import (
+    CreatePortalCatalogAssociationParams,
+    ListPortalCatalogAssociationsParams,
+    DeletePortalCatalogAssociationParams,
+    GetPortalCatalogAssociationParams,
+    BulkCreatePortalCatalogAssociationsParams,
+)
+from servicenow_mcp.tools.portal.portal_catalog_associations import (
+    create_portal_catalog_association as create_portal_catalog_association_tool,
+    list_portal_catalog_associations as list_portal_catalog_associations_tool,
+    delete_portal_catalog_association as delete_portal_catalog_association_tool,
+    get_portal_catalog_association as get_portal_catalog_association_tool,
+    bulk_create_portal_catalog_associations as bulk_create_portal_catalog_associations_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -2885,6 +2901,43 @@ def get_tool_definitions(
             DeleteVariableSetParams,
             str,
             "Delete a variable set from the item_option_new_set table by sys_id to remove it from the catalog.",
+            "json",
+        ),
+
+        # Portal Catalog Association Management tools
+        "create_portal_catalog_association": (
+            create_portal_catalog_association_tool,
+            CreatePortalCatalogAssociationParams,
+            str,
+            "Create a new portal catalog association in the m2m_sp_portal_catalog table to control what service catalogs are available on a given portal.",
+            "json",
+        ),
+        "list_portal_catalog_associations": (
+            list_portal_catalog_associations_tool,
+            ListPortalCatalogAssociationsParams,
+            str,
+            "List portal catalog associations from the m2m_sp_portal_catalog table with optional filtering by portal or catalog.",
+            "json",
+        ),
+        "delete_portal_catalog_association": (
+            delete_portal_catalog_association_tool,
+            DeletePortalCatalogAssociationParams,
+            str,
+            "Delete a portal catalog association from the m2m_sp_portal_catalog table to remove catalog availability from a portal.",
+            "json",
+        ),
+        "get_portal_catalog_association": (
+            get_portal_catalog_association_tool,
+            GetPortalCatalogAssociationParams,
+            str,
+            "Get detailed information about a specific portal catalog association by sys_id from the m2m_sp_portal_catalog table.",
+            "json",
+        ),
+        "bulk_create_portal_catalog_associations": (
+            bulk_create_portal_catalog_associations_tool,
+            BulkCreatePortalCatalogAssociationsParams,
+            str,
+            "Create multiple portal catalog associations in bulk to associate multiple catalogs with a single portal.",
             "json",
         ),
 

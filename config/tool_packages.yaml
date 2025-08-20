@@ -143,7 +143,12 @@ catalog_builder:
   - get_connected_content
   - delete_connected_content
   - bulk_connect_content
-
+  # Portal Catalog Associations
+  - create_portal_catalog_association
+  - list_portal_catalog_associations
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - bulk_create_portal_catalog_associations
 
   # Basic Scripting (UI Policy & User Criteria)
   - create_ui_policy
@@ -236,6 +241,12 @@ platform_developer:
   - get_connected_content
   - delete_connected_content
   - bulk_connect_content
+  # Portal Catalog Associations
+  - create_portal_catalog_association
+  - list_portal_catalog_associations
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - bulk_create_portal_catalog_associations
   # Connected Content Management
   - create_connected_content
   - update_connected_content
@@ -887,6 +898,12 @@ full:
   - get_connected_content
   - delete_connected_content
   - bulk_connect_content
+  # Portal Catalog Associations
+  - create_portal_catalog_association
+  - list_portal_catalog_associations
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - bulk_create_portal_catalog_associations
 
   # Question Choice Management
   - create_question_choice
