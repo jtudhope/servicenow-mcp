@@ -39,6 +39,7 @@ class CreateCatalogVariableParams(BaseModel):
     map_to_field: Optional[str] = Field(None, description="Target field to map this variable to")
     choice_field: Optional[str] = Field(None, description="Choice field for dependent choices")
     choice_table: Optional[str] = Field(None, description="Choice table for choice fields")
+    list_table: Optional[str] = Field(None, description="Table for list collector fields")
     show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
     show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
 
@@ -106,6 +107,8 @@ def create_catalog_variable(
         data["choice_field"] = params.choice_field
     if params.choice_table:
         data["choice_table"] = params.choice_table
+    if params.list_table:
+        data["list_table"] = params.list_table
     if params.show_help is not None:
         data["show_help"] = params.show_help
     if params.show_help_on_load is not None:
@@ -233,6 +236,7 @@ class UpdateCatalogVariableParams(BaseModel):
     map_to_field: Optional[str] = Field(None, description="Target field to map this variable to")
     choice_field: Optional[str] = Field(None, description="Choice field for dependent choices")
     choice_table: Optional[str] = Field(None, description="Choice table for choice fields")
+    list_table: Optional[str] = Field(None, description="Table for list variable fields")
     show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
     show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
 
@@ -300,6 +304,8 @@ def update_catalog_variable(
         data["choice_field"] = params.choice_field
     if params.choice_table is not None:
         data["choice_table"] = params.choice_table
+    if params.list_table is not None:
+        data["list_table"] = params.list_table
     if params.show_help is not None:
         data["show_help"] = params.show_help
     if params.show_help_on_load is not None:
