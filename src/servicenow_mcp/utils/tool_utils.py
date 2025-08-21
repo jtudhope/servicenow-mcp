@@ -897,6 +897,7 @@ from servicenow_mcp.tools.catalog.variable_sets import (
 # Portal Catalog Association Tools
 from servicenow_mcp.tools.portal.portal_catalog_associations import (
     CreatePortalCatalogAssociationParams,
+    UpdatePortalCatalogAssociationParams,
     ListPortalCatalogAssociationsParams,
     DeletePortalCatalogAssociationParams,
     GetPortalCatalogAssociationParams,
@@ -904,6 +905,7 @@ from servicenow_mcp.tools.portal.portal_catalog_associations import (
 )
 from servicenow_mcp.tools.portal.portal_catalog_associations import (
     create_portal_catalog_association as create_portal_catalog_association_tool,
+    update_portal_catalog_association as update_portal_catalog_association_tool,
     list_portal_catalog_associations as list_portal_catalog_associations_tool,
     delete_portal_catalog_association as delete_portal_catalog_association_tool,
     get_portal_catalog_association as get_portal_catalog_association_tool,
@@ -2928,6 +2930,13 @@ def get_tool_definitions(
             CreatePortalCatalogAssociationParams,
             str,
             "Create a new portal catalog association in the m2m_sp_portal_catalog table to control what service catalogs are available on a given portal.",
+            "json",
+        ),
+        "update_portal_catalog_association": (
+            update_portal_catalog_association_tool,
+            UpdatePortalCatalogAssociationParams,
+            str,
+            "Update an existing portal catalog association in the m2m_sp_portal_catalog table, modifying properties like active status and display order.",
             "json",
         ),
         "list_portal_catalog_associations": (

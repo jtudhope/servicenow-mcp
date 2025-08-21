@@ -402,6 +402,7 @@ from servicenow_mcp.tools.catalog.variable_sets import (
 
 from servicenow_mcp.tools.portal.portal_catalog_associations import (
     create_portal_catalog_association,
+    update_portal_catalog_association,
     list_portal_catalog_associations,
     delete_portal_catalog_association,
     get_portal_catalog_association,
@@ -779,6 +780,7 @@ __all__ = [
 
     # Portal Catalog Association Management tools
     "create_portal_catalog_association",
+    "update_portal_catalog_association",
     "list_portal_catalog_associations",
     "delete_portal_catalog_association",
     "get_portal_catalog_association",
