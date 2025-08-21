@@ -910,6 +910,24 @@ from servicenow_mcp.tools.portal.portal_catalog_associations import (
     bulk_create_portal_catalog_associations as bulk_create_portal_catalog_associations_tool,
 )
 
+# Portal Taxonomy Association Tools
+from servicenow_mcp.tools.portal.portal_taxonomy_associations import (
+    CreatePortalTaxonomyAssociationParams,
+    UpdatePortalTaxonomyAssociationParams,
+    ListPortalTaxonomyAssociationsParams,
+    DeletePortalTaxonomyAssociationParams,
+    GetPortalTaxonomyAssociationParams,
+    BulkCreatePortalTaxonomyAssociationsParams,
+)
+from servicenow_mcp.tools.portal.portal_taxonomy_associations import (
+    create_portal_taxonomy_association as create_portal_taxonomy_association_tool,
+    update_portal_taxonomy_association as update_portal_taxonomy_association_tool,
+    list_portal_taxonomy_associations as list_portal_taxonomy_associations_tool,
+    delete_portal_taxonomy_association as delete_portal_taxonomy_association_tool,
+    get_portal_taxonomy_association as get_portal_taxonomy_association_tool,
+    bulk_create_portal_taxonomy_associations as bulk_create_portal_taxonomy_associations_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -2938,6 +2956,48 @@ def get_tool_definitions(
             BulkCreatePortalCatalogAssociationsParams,
             str,
             "Create multiple portal catalog associations in bulk to associate multiple catalogs with a single portal.",
+            "json",
+        ),
+        "create_portal_taxonomy_association": (
+            create_portal_taxonomy_association_tool,
+            CreatePortalTaxonomyAssociationParams,
+            str,
+            "Create a new portal taxonomy association in the m2m_sp_portal_taxonomy table to control what taxonomies are available on a given portal.",
+            "json",
+        ),
+        "update_portal_taxonomy_association": (
+            update_portal_taxonomy_association_tool,
+            UpdatePortalTaxonomyAssociationParams,
+            str,
+            "Update an existing portal taxonomy association in the m2m_sp_portal_taxonomy table, modifying properties like active status and display order.",
+            "json",
+        ),
+        "list_portal_taxonomy_associations": (
+            list_portal_taxonomy_associations_tool,
+            ListPortalTaxonomyAssociationsParams,
+            str,
+            "List portal taxonomy associations from the m2m_sp_portal_taxonomy table with optional filtering by portal or taxonomy.",
+            "json",
+        ),
+        "delete_portal_taxonomy_association": (
+            delete_portal_taxonomy_association_tool,
+            DeletePortalTaxonomyAssociationParams,
+            str,
+            "Delete a portal taxonomy association from the m2m_sp_portal_taxonomy table to remove taxonomy availability from a portal.",
+            "json",
+        ),
+        "get_portal_taxonomy_association": (
+            get_portal_taxonomy_association_tool,
+            GetPortalTaxonomyAssociationParams,
+            str,
+            "Get detailed information about a specific portal taxonomy association by sys_id from the m2m_sp_portal_taxonomy table.",
+            "json",
+        ),
+        "bulk_create_portal_taxonomy_associations": (
+            bulk_create_portal_taxonomy_associations_tool,
+            BulkCreatePortalTaxonomyAssociationsParams,
+            str,
+            "Create multiple portal taxonomy associations in bulk to associate multiple taxonomies with a single portal.",
             "json",
         ),
 

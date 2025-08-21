@@ -408,6 +408,15 @@ from servicenow_mcp.tools.portal.portal_catalog_associations import (
     bulk_create_portal_catalog_associations,
 )
 
+from servicenow_mcp.tools.portal.portal_taxonomy_associations import (
+    create_portal_taxonomy_association,
+    update_portal_taxonomy_association,
+    list_portal_taxonomy_associations,
+    delete_portal_taxonomy_association,
+    get_portal_taxonomy_association,
+    bulk_create_portal_taxonomy_associations,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -774,5 +783,13 @@ __all__ = [
     "delete_portal_catalog_association",
     "get_portal_catalog_association",
     "bulk_create_portal_catalog_associations",
+
+    # Portal Taxonomy Association Management tools
+    "create_portal_taxonomy_association",
+    "update_portal_taxonomy_association",
+    "list_portal_taxonomy_associations",
+    "delete_portal_taxonomy_association",
+    "get_portal_taxonomy_association",
+    "bulk_create_portal_taxonomy_associations",
     
 ] 

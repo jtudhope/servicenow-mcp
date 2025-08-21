@@ -247,6 +247,13 @@ platform_developer:
   - delete_portal_catalog_association
   - get_portal_catalog_association
   - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
   # Connected Content Management
   - create_connected_content
   - update_connected_content
@@ -904,6 +911,13 @@ full:
   - delete_portal_catalog_association
   - get_portal_catalog_association
   - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
 
   # Question Choice Management
   - create_question_choice
