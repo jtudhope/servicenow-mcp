@@ -418,6 +418,14 @@ from servicenow_mcp.tools.portal.portal_taxonomy_associations import (
     bulk_create_portal_taxonomy_associations,
 )
 
+from servicenow_mcp.tools.portal.taxonomy_content_configuration import (
+    create_taxonomy_content_configuration,
+    update_taxonomy_content_configuration,
+    list_taxonomy_content_configurations,
+    get_taxonomy_content_configuration,
+    delete_taxonomy_content_configuration,
+)
+
 # from servicenow_mcp.tools.request_tools import create_request, update_request
 
 __all__ = [
@@ -793,5 +801,12 @@ __all__ = [
     "delete_portal_taxonomy_association",
     "get_portal_taxonomy_association",
     "bulk_create_portal_taxonomy_associations",
+
+    # Taxonomy Content Configuration Management tools
+    "create_taxonomy_content_configuration",
+    "update_taxonomy_content_configuration",
+    "list_taxonomy_content_configurations",
+    "get_taxonomy_content_configuration",
+    "delete_taxonomy_content_configuration",
     
 ] 

@@ -256,6 +256,12 @@ platform_developer:
   - delete_portal_taxonomy_association
   - get_portal_taxonomy_association
   - bulk_create_portal_taxonomy_associations
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
   # Connected Content Management
   - create_connected_content
   - update_connected_content

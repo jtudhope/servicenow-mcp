@@ -930,6 +930,22 @@ from servicenow_mcp.tools.portal.portal_taxonomy_associations import (
     bulk_create_portal_taxonomy_associations as bulk_create_portal_taxonomy_associations_tool,
 )
 
+# Taxonomy Content Configuration Tools
+from servicenow_mcp.tools.portal.taxonomy_content_configuration import (
+    CreateTaxonomyContentConfigParams,
+    UpdateTaxonomyContentConfigParams,
+    ListTaxonomyContentConfigParams,
+    GetTaxonomyContentConfigParams,
+    DeleteTaxonomyContentConfigParams,
+)
+from servicenow_mcp.tools.portal.taxonomy_content_configuration import (
+    create_taxonomy_content_configuration as create_taxonomy_content_configuration_tool,
+    update_taxonomy_content_configuration as update_taxonomy_content_configuration_tool,
+    list_taxonomy_content_configurations as list_taxonomy_content_configurations_tool,
+    get_taxonomy_content_configuration as get_taxonomy_content_configuration_tool,
+    delete_taxonomy_content_configuration as delete_taxonomy_content_configuration_tool,
+)
+
 # Define a type alias for the Pydantic models or dataclasses used for params
 ParamsModel = Type[Any]  # Use Type[Any] for broader compatibility initially
 
@@ -3007,6 +3023,43 @@ def get_tool_definitions(
             BulkCreatePortalTaxonomyAssociationsParams,
             str,
             "Create multiple portal taxonomy associations in bulk to associate multiple taxonomies with a single portal.",
+            "json",
+        ),
+
+        # Taxonomy Content Configuration Tools
+        "create_taxonomy_content_configuration": (
+            create_taxonomy_content_configuration_tool,
+            CreateTaxonomyContentConfigParams,
+            str,
+            "Create a new taxonomy content configuration in ServiceNow",
+            "json",
+        ),
+        "update_taxonomy_content_configuration": (
+            update_taxonomy_content_configuration_tool,
+            UpdateTaxonomyContentConfigParams,
+            str,
+            "Update an existing taxonomy content configuration in ServiceNow",
+            "json",
+        ),
+        "list_taxonomy_content_configurations": (
+            list_taxonomy_content_configurations_tool,
+            ListTaxonomyContentConfigParams,
+            str,
+            "List taxonomy content configurations from ServiceNow with optional filtering",
+            "json",
+        ),
+        "get_taxonomy_content_configuration": (
+            get_taxonomy_content_configuration_tool,
+            GetTaxonomyContentConfigParams,
+            str,
+            "Get a specific taxonomy content configuration from ServiceNow",
+            "json",
+        ),
+        "delete_taxonomy_content_configuration": (
+            delete_taxonomy_content_configuration_tool,
+            DeleteTaxonomyContentConfigParams,
+            str,
+            "Delete a taxonomy content configuration from ServiceNow",
             "json",
         ),
 
