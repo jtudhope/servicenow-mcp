@@ -940,3 +940,9 @@ full:
   - list_variable_sets
   - get_variable_set
   - delete_variable_set
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
