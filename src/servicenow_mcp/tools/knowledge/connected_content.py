@@ -40,10 +40,17 @@ class UpdateConnectedContentParams(BaseModel):
     """Parameters for updating a connected content relationship."""
 
     connection_id: str = Field(..., description="Connected content relationship sys_id")
+    topic: Optional[str] = Field(None, description="Updated topic sys_id")
+    content_type: Optional[str] = Field(None, description="Updated content type configuration sys_id")
+    catalog_item: Optional[str] = Field(None, description="Updated catalog item sys_id for catalog content connections")
+    knowledge: Optional[str] = Field(None, description="Updated knowledge article sys_id for knowledge content connections")
+    quick_link: Optional[str] = Field(None, description="Updated quick link sys_id for quick link content connections")
     order: Optional[int] = Field(None, description="Updated display order")
     popularity: Optional[float] = Field(None, description="Updated popularity score")
     content_display_value: Optional[str] = Field(None, description="Updated display value")
     alphabetical_order: Optional[int] = Field(None, description="Updated alphabetical ordering")
+    sys_domain: Optional[str] = Field(None, description="Updated domain for the connection")
+    sys_domain_path: Optional[str] = Field(None, description="Updated domain path for the connection")
 
 
 class ListConnectedContentParams(BaseModel):
@@ -203,6 +210,16 @@ def update_connected_content(
     # Prepare request body with only provided fields
     body = {}
     
+    if params.topic is not None:
+        body["topic"] = params.topic
+    if params.content_type is not None:
+        body["content_type"] = params.content_type
+    if params.catalog_item is not None:
+        body["catalog_item"] = params.catalog_item
+    if params.knowledge is not None:
+        body["knowledge"] = params.knowledge
+    if params.quick_link is not None:
+        body["quick_link"] = params.quick_link
     if params.order is not None:
         body["order"] = params.order
     if params.popularity is not None:
@@ -211,6 +228,10 @@ def update_connected_content(
         body["content_display_value"] = params.content_display_value
     if params.alphabetical_order is not None:
         body["alphabetical_order"] = params.alphabetical_order
+    if params.sys_domain is not None:
+        body["sys_domain"] = params.sys_domain
+    if params.sys_domain_path is not None:
+        body["sys_domain_path"] = params.sys_domain_path
     
     # Make the API request
     headers = auth_manager.get_headers()

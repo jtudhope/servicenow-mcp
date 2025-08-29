@@ -145,6 +145,7 @@ catalog_builder:
   - bulk_connect_content
   # Portal Catalog Associations
   - create_portal_catalog_association
+  - update_portal_catalog_association
   - list_portal_catalog_associations
   - delete_portal_catalog_association
   - get_portal_catalog_association
@@ -243,10 +244,24 @@ platform_developer:
   - bulk_connect_content
   # Portal Catalog Associations
   - create_portal_catalog_association
+  - update_portal_catalog_association
   - list_portal_catalog_associations
   - delete_portal_catalog_association
   - get_portal_catalog_association
   - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
   # Connected Content Management
   - create_connected_content
   - update_connected_content
@@ -900,10 +915,18 @@ full:
   - bulk_connect_content
   # Portal Catalog Associations
   - create_portal_catalog_association
+  - update_portal_catalog_association
   - list_portal_catalog_associations
   - delete_portal_catalog_association
   - get_portal_catalog_association
   - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
 
   # Question Choice Management
   - create_question_choice
@@ -917,3 +940,9 @@ full:
   - list_variable_sets
   - get_variable_set
   - delete_variable_set
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
