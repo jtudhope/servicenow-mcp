@@ -5,6 +5,359 @@
 # If MCP_TOOL_PACKAGE is set to 'none', no tools are loaded (except list_tool_packages).
 
 # --- Package Definitions ---
+# Tools are organized by their folder structure in src/servicenow_mcp/tools/
+
+# --- Foundation Package (foundation/) ---
+foundation:
+  # Incident Management
+  - add_comment
+  - create_incident
+  - list_incidents
+  - resolve_incident
+  - update_incident
+  # Change Management
+  - add_change_task
+  - approve_change
+  - create_change_request
+  - get_change_request_details
+  - list_change_requests
+  - reject_change
+  - submit_change_for_approval
+  - update_change_request
+  # User Management
+  - add_group_members
+  - assign_roles_to_user
+  - check_user_has_role
+  - create_group
+  - create_user
+  - get_role_id
+  - get_user
+  - list_groups
+  - list_users
+  - remove_group_members
+  - update_group
+  - update_user
+
+# --- Catalog Package (catalog/) ---
+catalog:
+  # Core Catalog Items
+  - create_catalog_item
+  - delete_catalog_item
+  - get_catalog_item
+  - list_catalog_items
+  - move_catalog_items
+  - update_catalog_item
+  # Catalog Categories
+  - create_catalog_category
+  - list_catalog_categories
+  - update_catalog_category
+  # Catalog Variables
+  - create_catalog_variable
+  - delete_catalog_variable
+  - get_catalog_variable
+  - get_catalog_item_variables
+  - list_catalog_variables
+  - update_catalog_variable
+  # Variable Sets
+  - create_variable_set
+  - delete_variable_set
+  - get_variable_set
+  - list_variable_sets
+  - update_variable_set
+  # Question Choices
+  - create_question_choice
+  - delete_question_choice
+  - get_question_choice
+  - list_question_choices
+  - update_question_choice
+  # Service Catalogs
+  - create_service_catalog
+  - delete_service_catalog
+  - get_service_catalog
+  - list_service_catalogs
+  - update_service_catalog
+  # UI Policies
+  - clone_catalog_ui_policy
+  - create_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - get_catalog_ui_policy
+  - list_catalog_ui_policies
+  - update_catalog_ui_policy
+  # UI Policy Actions
+  - clone_catalog_ui_policy_action
+  - create_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - get_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - update_catalog_ui_policy_action
+  # Client Scripts
+  - clone_catalog_client_script
+  - create_catalog_client_script
+  - delete_catalog_client_script
+  - get_catalog_client_script
+  - list_catalog_client_scripts
+  - update_catalog_client_script
+  # Available For Management
+  - add_available_for
+  - add_not_available_for
+  - bulk_update_available_for
+  - list_available_for
+  - remove_available_for
+  - remove_not_available_for
+  # Optimization
+  - get_optimization_recommendations
+
+# --- Developer Package (developer/) ---
+developer:
+  # Script Includes
+  - create_script_include
+  - delete_script_include
+  - get_script_include
+  - list_script_includes
+  - update_script_include
+  # Workflows
+  - activate_workflow
+  - add_workflow_activity
+  - create_workflow
+  - deactivate_workflow
+  - delete_workflow
+  - delete_workflow_activity
+  - get_workflow_activities
+  - get_workflow_details
+  - list_workflow_versions
+  - list_workflows
+  - reorder_workflow_activities
+  - update_workflow
+  - update_workflow_activity
+  # Changesets
+  - add_file_to_changeset
+  - commit_changeset
+  - create_changeset
+  - get_changeset_details
+  - list_changesets
+  - publish_changeset
+  - update_changeset
+  # UI Actions
+  - create_ui_action
+  - delete_ui_action
+  - get_ui_action
+  - list_ui_actions
+  - update_ui_action
+  # ACL Management
+  - create_acl
+  - delete_acl
+  - get_acl
+  - list_acls
+  - update_acl
+  # Assignment Rules
+  - create_assignment_rule
+  - delete_assignment_rule
+  - get_assignment_rule
+  - list_assignment_rules
+  - update_assignment_rule
+  # Inbound Email Actions
+  - create_inbound_email_action
+  - delete_inbound_email_action
+  - get_inbound_email_action
+  - list_inbound_email_actions
+  - update_inbound_email_action
+  # Table Management
+  - create_table
+  - create_table_column
+  - get_table
+  - get_table_column
+  - list_table_columns
+  - list_tables
+  - update_table
+  - update_table_column
+  # Choice Management
+  - bulk_create_choices
+  - create_choice
+  - delete_choice
+  - get_choice
+  - list_choices
+  - reorder_choices
+  - update_choice
+  # User Role Management
+  - assign_user_role
+  - bulk_assign_user_roles
+  - bulk_remove_user_roles
+  - list_user_roles
+  - remove_user_role
+  # Image Management
+  - create_image
+  - delete_image
+  - get_image
+  - list_images
+  - update_image
+  # Attachment Management
+  - delete_attachment
+  - download_attachment
+  - get_attachment
+  - list_attachments
+  - upload_attachment
+  - upload_multipart_attachment
+  # Quick Links
+  - create_quick_link
+  - delete_quick_link
+  - get_quick_link
+  - list_quick_links
+  - update_quick_link
+  # Security
+  - security_elevation
+
+# --- Agile Package (agile/) ---
+agile:
+  # Epic Management
+  - create_epic
+  - list_epics
+  - update_epic
+  # Project Management
+  - create_project
+  - list_projects
+  - update_project
+  # Scrum Task Management
+  - create_scrum_task
+  - list_scrum_tasks
+  - update_scrum_task
+  # Story Management
+  - create_story
+  - create_story_dependency
+  - delete_story_dependency
+  - list_stories
+  - list_story_dependencies
+  - update_story
+
+# --- Knowledge Package (knowledge/) ---
+knowledge:
+  # Knowledge Base
+  - create_knowledge_base
+  - list_knowledge_bases
+  # Categories
+  - create_category
+  - list_categories
+  # Articles
+  - create_article
+  - get_article
+  - list_articles
+  - publish_article
+  - update_article
+  # Taxonomy
+  - clone_taxonomy
+  - create_taxonomy
+  - delete_taxonomy
+  - get_taxonomy
+  - list_taxonomies
+  - update_taxonomy
+  # Topics
+  - clone_topic
+  - create_topic
+  - delete_topic
+  - get_topic
+  - list_topics
+  - update_topic
+  # Connected Content
+  - bulk_connect_content
+  - create_connected_content
+  - delete_connected_content
+  - get_connected_content
+  - list_connected_content
+  - update_connected_content
+
+# --- Notifications Package (notifications/) ---
+notifications:
+  # Email Templates
+  - clone_email_template
+  - create_email_template
+  - delete_email_template
+  - get_email_template
+  - list_email_templates
+  - update_email_template
+  # Email Layouts
+  - clone_email_layout
+  - create_email_layout
+  - delete_email_layout
+  - get_email_layout
+  - list_email_layouts
+  - update_email_layout
+  # Email Notifications
+  - create_email_notification
+  - delete_email_notification
+  - get_email_notification
+  - list_email_notifications
+  - update_email_notification
+
+# --- Menu Package (menu/) ---
+menu:
+  # Application Menu
+  - create_application_menu
+  - delete_application_menu
+  - get_application_menu
+  - list_application_menus
+  - update_application_menu
+  # Application Modules
+  - create_app_module
+  - delete_app_module
+  - get_app_module
+  - list_app_modules
+  - update_app_module
+
+# --- Portal Package (portal/) ---
+portal:
+  # Portal Configuration
+  - create_portal
+  - delete_portal
+  - get_portal
+  - list_portals
+  - update_portal
+  # Portal Pages
+  - clone_portal_page
+  - create_portal_page
+  - delete_portal_page
+  - get_portal_page
+  - list_portal_pages
+  - update_portal_page
+  # Portal Containers
+  - clone_portal_container
+  - create_portal_container
+  - delete_portal_container
+  - get_portal_container
+  - list_portal_containers
+  - reorder_portal_containers
+  - update_portal_container
+  # Portal Rows
+  - clone_portal_row
+  - create_portal_row
+  - delete_portal_row
+  - get_portal_row
+  - list_portal_rows
+  - reorder_portal_rows
+  - update_portal_row
+  # Portal Columns
+  - clone_portal_column
+  - create_portal_column
+  - create_responsive_grid
+  - delete_portal_column
+  - get_portal_column
+  - list_portal_columns
+  - reorder_portal_columns
+  - update_portal_column
+  # Widget Instances
+  - bulk_update_widget_instances
+  - clone_widget_instance
+  - create_widget_instance
+  - delete_widget_instance
+  - get_widget_instance
+  - list_widget_instances
+  - update_widget_instance
+  # Portal Catalog Associations
+  - bulk_create_portal_catalog_associations
+  - create_portal_catalog_association
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - list_portal_catalog_associations
+
+# --- Role-based Package Combinations ---
 
 none: []
 
@@ -23,140 +376,93 @@ service_desk:
   - list_articles
 
 catalog_builder:
-  # Core Catalog
-  - list_catalogs
-  - list_catalog_items
-  - get_catalog_item
+  # Core Catalog Management
   - create_catalog_item
-  - update_catalog_item
   - delete_catalog_item
-  # Categories
-  - list_catalog_categories
-  - create_catalog_category
-  - update_catalog_category
+  - get_catalog_item
+  - list_catalog_items
   - move_catalog_items
+  - update_catalog_item
+  - create_catalog_category
+  - list_catalog_categories
+  - update_catalog_category
   # Variables
-  - create_catalog_variable,
-  - list_catalog_variables,
-  - update_catalog_variable,
-  - delete_catalog_variable,
-  - get_catalog_variable,
-  # Variable Sets
+  - create_catalog_variable
+  - delete_catalog_variable
+  - get_catalog_variable
+  - get_catalog_item_variables
+  - list_catalog_variables
+  - update_catalog_variable
   - create_variable_set
-  - update_variable_set
-  - list_variable_sets
-  - get_variable_set
   - delete_variable_set
-  # Catalog UI Policies
-  - create_catalog_ui_policy
-  - update_catalog_ui_policy
-  - list_catalog_ui_policies
-  - get_catalog_ui_policy
-  - delete_catalog_ui_policy
-  - clone_catalog_ui_policy
-  # Catalog UI Policy Actions
-  - create_catalog_ui_policy_action
-  - update_catalog_ui_policy_action
-  - list_catalog_ui_policy_actions
-  - get_catalog_ui_policy_action
-  - delete_catalog_ui_policy_action
-  - clone_catalog_ui_policy_action
-  # Catalog Client Scripts
-  - create_catalog_client_script
-  - update_catalog_client_script
-  - list_catalog_client_scripts
-  - get_catalog_client_script
-  - delete_catalog_client_script
-  - clone_catalog_client_script
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Question Choice Management
+  - get_variable_set
+  - list_variable_sets
+  - update_variable_set
+  # Question Choices
   - create_question_choice
-  - update_question_choice
-  - list_question_choices
-  - get_question_choice
   - delete_question_choice
-  # Variable Sets Management
-  - create_variable_set
-  - update_variable_set
-  - list_variable_sets
-  - get_variable_set
-  - delete_variable_set
-  # Catalog Item Available For
+  - get_question_choice
+  - list_question_choices
+  - update_question_choice
+  # UI Policies and Scripts
+  - clone_catalog_ui_policy
+  - create_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - get_catalog_ui_policy
+  - list_catalog_ui_policies
+  - update_catalog_ui_policy
+  - clone_catalog_ui_policy_action
+  - create_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - get_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - update_catalog_ui_policy_action
+  - clone_catalog_client_script
+  - create_catalog_client_script
+  - delete_catalog_client_script
+  - get_catalog_client_script
+  - list_catalog_client_scripts
+  - update_catalog_client_script
+  # Available For Management
   - add_available_for
-  - remove_available_for
   - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
   - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Portal Catalog Associations
-  - create_portal_catalog_association
-  - list_portal_catalog_associations
-  - delete_portal_catalog_association
-  - get_portal_catalog_association
-  - bulk_create_portal_catalog_associations
-
-  # Basic Scripting (UI Policy & User Criteria)
-  - create_ui_policy
-  - create_ui_policy_action
-  - create_user_criteria
-  - create_user_criteria_condition
+  - list_available_for
+  - remove_available_for
+  - remove_not_available_for
+  # Service Catalogs
+  - create_service_catalog
+  - delete_service_catalog
+  - get_service_catalog
+  - list_service_catalogs
+  - update_service_catalog
   # Optimization
   - get_optimization_recommendations
+  # Knowledge Management for Content
+  - clone_taxonomy
+  - create_taxonomy
+  - delete_taxonomy
+  - get_taxonomy
+  - list_taxonomies
+  - update_taxonomy
+  - clone_topic
+  - create_topic
+  - delete_topic
+  - get_topic
+  - list_topics
+  - update_topic
+  - bulk_connect_content
+  - create_connected_content
+  - delete_connected_content
+  - get_connected_content
+  - list_connected_content
+  - update_connected_content
+  # Portal Integration
+  - bulk_create_portal_catalog_associations
+  - create_portal_catalog_association
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - list_portal_catalog_associations
 
 change_coordinator:
   # Change Lifecycle
@@ -175,8 +481,8 @@ knowledge_author:
   - create_knowledge_base
   - list_knowledge_bases
   # KB Categories
-  - create_category  # KB specific category tool
-  - list_categories  # KB specific category tool
+  - create_category
+  - list_categories
   # Article Lifecycle
   - create_article
   - update_article
@@ -184,362 +490,151 @@ knowledge_author:
   - list_articles
   - get_article
   # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
   - clone_taxonomy
+  - create_taxonomy
+  - delete_taxonomy
+  - get_taxonomy
+  - list_taxonomies
+  - update_taxonomy
   # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
   - clone_topic
+  - create_topic
+  - delete_topic
+  - get_topic
+  - list_topics
+  - update_topic
   # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
   - bulk_connect_content
-  # Connected Content Management
   - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
   - delete_connected_content
-  - bulk_connect_content
+  - get_connected_content
+  - list_connected_content
+  - update_connected_content
 
 platform_developer:
-  # Script Includes
-  - list_script_includes
-  - get_script_include
+  # Script Development
   - create_script_include
-  - update_script_include
   - delete_script_include
-  - execute_script_include
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Portal Catalog Associations
-  - create_portal_catalog_association
-  - list_portal_catalog_associations
-  - delete_portal_catalog_association
-  - get_portal_catalog_association
-  - bulk_create_portal_catalog_associations
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Workflows
-  - list_workflows
-  - get_workflow_details
-  - create_workflow
-  - update_workflow
+  - get_script_include
+  - list_script_includes
+  - update_script_include
+  # Workflow Development
   - activate_workflow
-  - deactivate_workflow
-  - list_workflow_versions
-  # Workflow Activities
   - add_workflow_activity
-  - update_workflow_activity
+  - create_workflow
+  - deactivate_workflow
+  - delete_workflow
   - delete_workflow_activity
-  - reorder_workflow_activities
   - get_workflow_activities
-  # General UI Policies
-  - create_ui_policy
-  - create_ui_policy_action
-  # Changesets
-  - list_changesets
-  - get_changeset_details
-  - create_changeset
-  - update_changeset
-  - commit_changeset
-  - publish_changeset
+  - get_workflow_details
+  - list_workflow_versions
+  - list_workflows
+  - reorder_workflow_activities
+  - update_workflow
+  - update_workflow_activity
+  # Change Management
   - add_file_to_changeset
-  # UI Actions
+  - commit_changeset
+  - create_changeset
+  - get_changeset_details
+  - list_changesets
+  - publish_changeset
+  - update_changeset
+  # UI Development
   - create_ui_action
-  - update_ui_action
-  - list_ui_actions
-  - get_ui_action
   - delete_ui_action
-  # ACL Management
+  - get_ui_action
+  - list_ui_actions
+  - update_ui_action
+  # Security
   - create_acl
-  - update_acl
-  - list_acls
-  - get_acl
   - delete_acl
-  # Security Elevation
+  - get_acl
+  - list_acls
+  - update_acl
   - security_elevation
   # Assignment Rules
   - create_assignment_rule
-  - update_assignment_rule
-  - list_assignment_rules
-  - get_assignment_rule
   - delete_assignment_rule
-  # Email Templates
-  - create_email_template
-  - update_email_template
-  - list_email_templates
-  - get_email_template
-  - delete_email_template
+  - get_assignment_rule
+  - list_assignment_rules
+  - update_assignment_rule
+  # Email System
   - clone_email_template
-  # Email Layouts
-  - create_email_layout
-  - update_email_layout
-  - list_email_layouts
-  - get_email_layout
-  - delete_email_layout
+  - create_email_template
+  - delete_email_template
+  - get_email_template
+  - list_email_templates
+  - update_email_template
   - clone_email_layout
+  - create_email_layout
+  - delete_email_layout
+  - get_email_layout
+  - list_email_layouts
+  - update_email_layout
+  - create_email_notification
+  - delete_email_notification
+  - get_email_notification
+  - list_email_notifications
+  - update_email_notification
+  - create_inbound_email_action
+  - delete_inbound_email_action
+  - get_inbound_email_action
+  - list_inbound_email_actions
+  - update_inbound_email_action
+  # Table Management
+  - create_table
+  - create_table_column
+  - get_table
+  - get_table_column
+  - list_table_columns
+  - list_tables
+  - update_table
+  - update_table_column
+  # Choice Management
+  - bulk_create_choices
+  - create_choice
+  - delete_choice
+  - get_choice
+  - list_choices
+  - reorder_choices
+  - update_choice
+  # Menu Management
+  - create_application_menu
+  - delete_application_menu
+  - get_application_menu
+  - list_application_menus
+  - update_application_menu
+  - create_app_module
+  - delete_app_module
+  - get_app_module
+  - list_app_modules
+  - update_app_module
+  # Attachment Management
+  - delete_attachment
+  - download_attachment
+  - get_attachment
+  - list_attachments
+  - upload_attachment
+  - upload_multipart_attachment
   # Image Management
   - create_image
-  - update_image
-  - list_images
-  - get_image
   - delete_image
-  # Service Catalog Management
-  - create_service_catalog
-  - update_service_catalog
-  - list_service_catalogs
-  - get_service_catalog
-  - delete_service_catalog
-  # Attachment Management
-  - upload_attachment
-  - upload_multipart_attachment
-  - list_attachments
-  - get_attachment
-  - download_attachment
-  - delete_attachment
-  # Catalog UI Policies
-  - create_catalog_ui_policy
-  - update_catalog_ui_policy
-  - list_catalog_ui_policies
-  - get_catalog_ui_policy
-  - delete_catalog_ui_policy
-  - clone_catalog_ui_policy
-  # Catalog UI Policy Actions
-  - create_catalog_ui_policy_action
-  - update_catalog_ui_policy_action
-  - list_catalog_ui_policy_actions
-  - get_catalog_ui_policy_action
-  - delete_catalog_ui_policy_action
-  - clone_catalog_ui_policy_action
-  # Catalog Client Scripts
-  - create_catalog_client_script
-  - update_catalog_client_script
-  - list_catalog_client_scripts
-  - get_catalog_client_script
-  - delete_catalog_client_script
-  - clone_catalog_client_script
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Question Choice Management
-  - create_question_choice
-  - update_question_choice
-  - list_question_choices
-  - get_question_choice
-  - delete_question_choice
-  # Variable Sets Management
-  - create_variable_set
-  - update_variable_set
-  - list_variable_sets
-  - get_variable_set
-  - delete_variable_set
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Service Catalog Management
-  - create_service_catalog
-  - update_service_catalog
-  - list_service_catalogs
-  - get_service_catalog
-  - delete_service_catalog
-  # Attachment Management
-  - upload_attachment
-  - upload_multipart_attachment
-  - list_attachments
-  - get_attachment
-  - download_attachment
-  - delete_attachment
-  # Catalog UI Policies
-  - create_catalog_ui_policy
-  - update_catalog_ui_policy
-  - list_catalog_ui_policies
-  - get_catalog_ui_policy
-  - delete_catalog_ui_policy
-  - clone_catalog_ui_policy
-  # Catalog UI Policy Actions
-  - create_catalog_ui_policy_action
-  - update_catalog_ui_policy_action
-  - list_catalog_ui_policy_actions
-  - get_catalog_ui_policy_action
-  - delete_catalog_ui_policy_action
-  - clone_catalog_ui_policy_action
-  # Catalog Client Scripts
-  - create_catalog_client_script
-  - update_catalog_client_script
-  - list_catalog_client_scripts
-  - get_catalog_client_script
-  - delete_catalog_client_script
-  - clone_catalog_client_script
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-  # Attachment Management
-  - upload_attachment
-  - upload_multipart_attachment
-  - list_attachments
-  - get_attachment
-  - download_attachment
-  - delete_attachment
-  # Catalog UI Policies
-  - create_catalog_ui_policy
-  - update_catalog_ui_policy
-  - list_catalog_ui_policies
-  - get_catalog_ui_policy
-  - delete_catalog_ui_policy
-  - clone_catalog_ui_policy
-  # Catalog UI Policy Actions
-  - create_catalog_ui_policy_action
-  - update_catalog_ui_policy_action
-  - list_catalog_ui_policy_actions
-  - get_catalog_ui_policy_action
-  - delete_catalog_ui_policy_action
-  - clone_catalog_ui_policy_action
-  # Catalog Client Scripts
-  - create_catalog_client_script
-  - update_catalog_client_script
-  - list_catalog_client_scripts
-  - get_catalog_client_script
-  - delete_catalog_client_script
-  - clone_catalog_client_script
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
-  - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
-  - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
-  - bulk_connect_content
-
+  - get_image
+  - list_images
+  - update_image
+  # User Role Management
+  - assign_user_role
+  - bulk_assign_user_roles
+  - bulk_remove_user_roles
+  - list_user_roles
+  - remove_user_role
+  # Quick Links
+  - create_quick_link
+  - delete_quick_link
+  - get_quick_link
+  - list_quick_links
+  - update_quick_link
 
 agile_management:
   # Story Management
@@ -574,346 +669,305 @@ system_administrator:
   - list_groups
   - add_group_members
   - remove_group_members
-  # System Logs
-  - list_syslog_entries
-  - get_syslog_entry
-
-full:
-  # Incident Management
-  - create_incident
-  - update_incident
-  - add_comment
-  - resolve_incident
-  - list_incidents
-  # Catalog (Core)
-  - list_catalogs
-  - list_catalog_items
-  - get_catalog_item
-  - create_catalog_item
-  - update_catalog_item
-  - delete_catalog_item
-  # Catalog (Categories)
-  - list_catalog_categories
-  - create_catalog_category
-  - update_catalog_category
-  - move_catalog_items
-  # Catalog (Optimization)
-  - get_optimization_recommendations
-
-  # Change Management
-  - create_change_request
-  - update_change_request
-  - list_change_requests
-  - get_change_request_details
-  - add_change_task
-  - submit_change_for_approval
-  - approve_change
-  - reject_change
-  # Workflow
-  - list_workflows
-  - get_workflow_details
-  - list_workflow_versions
-  - get_workflow_activities
-  - create_workflow
-  - update_workflow
-  - activate_workflow
-  - deactivate_workflow
-  - add_workflow_activity
-  - update_workflow_activity
-  - delete_workflow_activity
-  - reorder_workflow_activities
-  # Changeset
-  - list_changesets
-  - get_changeset_details
-  - create_changeset
-  - update_changeset
-  - commit_changeset
-  - publish_changeset
-  - add_file_to_changeset
-  # Script Include
-  - list_script_includes
-  - get_script_include
-  - create_script_include
-  - update_script_include
-  - delete_script_include
-  - execute_script_include
-  # Knowledge Base
-  - create_knowledge_base
-  - list_knowledge_bases
-  - create_category # KB specific
-  - list_categories # KB specific
-  - create_article
-  - update_article
-  - publish_article
-  - list_articles
-  - get_article
-  # User Management
-  - create_user
-  - update_user
-  - get_user
-  - list_users
-  - create_group
-  - update_group
-  - add_group_members
-  - remove_group_members
-  - list_groups
-  # Syslog
-  - list_syslog_entries
-  - get_syslog_entry
-  # Catalog Criteria
-  - create_user_criteria
-  - create_user_criteria_condition
-  # UI Policy
-  - create_ui_policy
-  - create_ui_policy_action
-  # Story Management
-  - create_story
-  - update_story
-  - list_stories
-  - list_story_dependencies
-  - create_story_dependency
-  - delete_story_dependency
-  # Epic Management
-  - create_epic
-  - update_epic
-  - list_epics
-  # Scrum Task Management
-  - create_scrum_task
-  - update_scrum_task
-  - list_scrum_tasks
-  # Project Management
-  - create_project
-  - update_project
-  - list_projects
-  # UI Actions
-  - create_ui_action
-  - update_ui_action
-  - list_ui_actions
-  - get_ui_action
-  - delete_ui_action
-  # ACL Management
-  - create_acl
-  - update_acl
-  - list_acls
-  - get_acl
-  - delete_acl
-  # Security Elevation
-  - security_elevation
-  # Inbound Email Actions
-  - create_inbound_email_action
-  - update_inbound_email_action
-  - list_inbound_email_actions
-  - get_inbound_email_action
-  - delete_inbound_email_action
-  # Table Management
-  - create_table
-  - create_table_column
-  - update_table
-  - update_table_column
-  - list_tables
-  - list_table_columns
-  - get_table
-  - get_table_column
-  # Choice Management
-  - create_choice
-  - update_choice
-  - list_choices
-  - get_choice
-  - delete_choice
-  - bulk_create_choices
-  - reorder_choices
-  # Email Notification Actions
-  - create_email_notification
-  - update_email_notification
-  - list_email_notifications
-  - get_email_notification
-  - delete_email_notification
-  # Application Menu Items
-  - create_application_menu
-  - update_application_menu
-  - list_application_menus
-  - get_application_menu
-  - delete_application_menu
-  # Application Module Menu Tools
-  - create_app_module
-  - update_app_module
-  - list_app_modules
-  - get_app_module
-  - delete_app_module
-  # User Role Management
+  # User Roles
+  - assign_roles_to_user
+  - check_user_has_role
+  - get_role_id
   - assign_user_role
-  - remove_user_role
-  - list_user_roles
   - bulk_assign_user_roles
   - bulk_remove_user_roles
-  # Employee Center Quick Links
-  - create_quick_link
-  - update_quick_link
-  - list_quick_links
-  - get_quick_link
-  - delete_quick_link
+  - list_user_roles
+  - remove_user_role
 
-  # Portal Configuration Management
-  - create_portal
-  - update_portal
-  - list_portals
-  - get_portal
-  - delete_portal
-  
-  # Employee Center Widget Instance Management
-  - create_widget_instance
-  - update_widget_instance
-  - list_widget_instances
-  - get_widget_instance
-  - delete_widget_instance
-  - clone_widget_instance
-  - bulk_update_widget_instances
+full:
+  # Foundation Tools
+  - add_comment
+  - create_incident
+  - list_incidents
+  - resolve_incident
+  - update_incident
+  - add_change_task
+  - approve_change
+  - create_change_request
+  - get_change_request_details
+  - list_change_requests
+  - reject_change
+  - submit_change_for_approval
+  - update_change_request
+  - add_group_members
+  - assign_roles_to_user
+  - check_user_has_role
+  - create_group
+  - create_user
+  - get_role_id
+  - get_user
+  - list_groups
+  - list_users
+  - remove_group_members
+  - update_group
+  - update_user
 
-  # Portal Pages
-  - create_portal_page
-  - update_portal_page
-  - list_portal_pages
-  - get_portal_page
-  - clone_portal_page
-  - delete_portal_page
-
-  # Portal Rows
-  - create_portal_row
-  - update_portal_row
-  - list_portal_rows
-  - get_portal_row
-  - clone_portal_row
-  - delete_portal_row
-  - reorder_portal_rows
-
-  # Portal Columns
-  - create_portal_column
-  - update_portal_column
-  - list_portal_columns
-  - get_portal_column
-  - clone_portal_column
-  - delete_portal_column
-  - reorder_portal_columns
-  - create_responsive_grid
-
-  # Portal Container Management
-  - create_portal_container
-  - update_portal_container
-  - list_portal_containers
-  - get_portal_container
-  - clone_portal_container
-  - delete_portal_container
-  - reorder_portal_containers
-  # Catalog (Variables)
+  # Catalog Tools
+  - create_catalog_item
+  - delete_catalog_item
+  - get_catalog_item
+  - list_catalog_items
+  - move_catalog_items
+  - update_catalog_item
+  - create_catalog_category
+  - list_catalog_categories
+  - update_catalog_category
   - create_catalog_variable
-  - list_catalog_variables
-  - update_catalog_variable
   - delete_catalog_variable
   - get_catalog_variable
-  # Assignment Rules
-  - create_assignment_rule
-  - update_assignment_rule
-  - list_assignment_rules
-  - get_assignment_rule
-  - delete_assignment_rule
-  # Email Templates
-  - create_email_template
-  - update_email_template
-  - list_email_templates
-  - get_email_template
-  - delete_email_template
-  - clone_email_template
-  # Email Layouts
-  - create_email_layout
-  - update_email_layout
-  - list_email_layouts
-  - get_email_layout
-  - delete_email_layout
-  - clone_email_layout
-  # Image Management
-  - create_image
-  - update_image
-  - list_images
-  - get_image
-  - delete_image
-  # Service Catalog Management
+  - get_catalog_item_variables
+  - list_catalog_variables
+  - update_catalog_variable
+  - create_variable_set
+  - delete_variable_set
+  - get_variable_set
+  - list_variable_sets
+  - update_variable_set
+  - create_question_choice
+  - delete_question_choice
+  - get_question_choice
+  - list_question_choices
+  - update_question_choice
   - create_service_catalog
-  - update_service_catalog
-  - list_service_catalogs
-  - get_service_catalog
   - delete_service_catalog
-  # Attachment Management
+  - get_service_catalog
+  - list_service_catalogs
+  - update_service_catalog
+  - clone_catalog_ui_policy
+  - create_catalog_ui_policy
+  - delete_catalog_ui_policy
+  - get_catalog_ui_policy
+  - list_catalog_ui_policies
+  - update_catalog_ui_policy
+  - clone_catalog_ui_policy_action
+  - create_catalog_ui_policy_action
+  - delete_catalog_ui_policy_action
+  - get_catalog_ui_policy_action
+  - list_catalog_ui_policy_actions
+  - update_catalog_ui_policy_action
+  - clone_catalog_client_script
+  - create_catalog_client_script
+  - delete_catalog_client_script
+  - get_catalog_client_script
+  - list_catalog_client_scripts
+  - update_catalog_client_script
+  - add_available_for
+  - add_not_available_for
+  - bulk_update_available_for
+  - list_available_for
+  - remove_available_for
+  - remove_not_available_for
+  - get_optimization_recommendations
+
+  # Developer Tools
+  - create_script_include
+  - delete_script_include
+  - get_script_include
+  - list_script_includes
+  - update_script_include
+  - activate_workflow
+  - add_workflow_activity
+  - create_workflow
+  - deactivate_workflow
+  - delete_workflow
+  - delete_workflow_activity
+  - get_workflow_activities
+  - get_workflow_details
+  - list_workflow_versions
+  - list_workflows
+  - reorder_workflow_activities
+  - update_workflow
+  - update_workflow_activity
+  - add_file_to_changeset
+  - commit_changeset
+  - create_changeset
+  - get_changeset_details
+  - list_changesets
+  - publish_changeset
+  - update_changeset
+  - create_ui_action
+  - delete_ui_action
+  - get_ui_action
+  - list_ui_actions
+  - update_ui_action
+  - create_acl
+  - delete_acl
+  - get_acl
+  - list_acls
+  - update_acl
+  - create_assignment_rule
+  - delete_assignment_rule
+  - get_assignment_rule
+  - list_assignment_rules
+  - update_assignment_rule
+  - create_inbound_email_action
+  - delete_inbound_email_action
+  - get_inbound_email_action
+  - list_inbound_email_actions
+  - update_inbound_email_action
+  - create_table
+  - create_table_column
+  - get_table
+  - get_table_column
+  - list_table_columns
+  - list_tables
+  - update_table
+  - update_table_column
+  - bulk_create_choices
+  - create_choice
+  - delete_choice
+  - get_choice
+  - list_choices
+  - reorder_choices
+  - update_choice
+  - assign_user_role
+  - bulk_assign_user_roles
+  - bulk_remove_user_roles
+  - list_user_roles
+  - remove_user_role
+  - create_image
+  - delete_image
+  - get_image
+  - list_images
+  - update_image
+  - delete_attachment
+  - download_attachment
+  - get_attachment
+  - list_attachments
   - upload_attachment
   - upload_multipart_attachment
-  - list_attachments
-  - get_attachment
-  - download_attachment
-  - delete_attachment
-  # Catalog UI Policies
-  - create_catalog_ui_policy
-  - update_catalog_ui_policy
-  - list_catalog_ui_policies
-  - get_catalog_ui_policy
-  - delete_catalog_ui_policy
-  - clone_catalog_ui_policy
-  # Catalog UI Policy Actions
-  - create_catalog_ui_policy_action
-  - update_catalog_ui_policy_action
-  - list_catalog_ui_policy_actions
-  - get_catalog_ui_policy_action
-  - delete_catalog_ui_policy_action
-  - clone_catalog_ui_policy_action
-  # Catalog Client Scripts
-  - create_catalog_client_script
-  - update_catalog_client_script
-  - list_catalog_client_scripts
-  - get_catalog_client_script
-  - delete_catalog_client_script
-  - clone_catalog_client_script
-  # Catalog Item Available For
-  - add_available_for
-  - remove_available_for
-  - add_not_available_for
-  - remove_not_available_for
-  - list_available_for
-  - bulk_update_available_for
-  # Taxonomy Management
-  - create_taxonomy
-  - update_taxonomy
-  - list_taxonomies
-  - get_taxonomy
-  - delete_taxonomy
+  - create_quick_link
+  - delete_quick_link
+  - get_quick_link
+  - list_quick_links
+  - update_quick_link
+  - security_elevation
+
+  # Agile Tools
+  - create_epic
+  - list_epics
+  - update_epic
+  - create_project
+  - list_projects
+  - update_project
+  - create_scrum_task
+  - list_scrum_tasks
+  - update_scrum_task
+  - create_story
+  - create_story_dependency
+  - delete_story_dependency
+  - list_stories
+  - list_story_dependencies
+  - update_story
+
+  # Knowledge Tools
+  - create_knowledge_base
+  - list_knowledge_bases
+  - create_category
+  - list_categories
+  - create_article
+  - get_article
+  - list_articles
+  - publish_article
+  - update_article
   - clone_taxonomy
-  # Topic Management
-  - create_topic
-  - update_topic
-  - list_topics
-  - get_topic
-  - delete_topic
+  - create_taxonomy
+  - delete_taxonomy
+  - get_taxonomy
+  - list_taxonomies
+  - update_taxonomy
   - clone_topic
-  # Connected Content Management
-  - create_connected_content
-  - update_connected_content
-  - list_connected_content
-  - get_connected_content
-  - delete_connected_content
+  - create_topic
+  - delete_topic
+  - get_topic
+  - list_topics
+  - update_topic
   - bulk_connect_content
-  # Portal Catalog Associations
+  - create_connected_content
+  - delete_connected_content
+  - get_connected_content
+  - list_connected_content
+  - update_connected_content
+
+  # Notification Tools
+  - clone_email_template
+  - create_email_template
+  - delete_email_template
+  - get_email_template
+  - list_email_templates
+  - update_email_template
+  - clone_email_layout
+  - create_email_layout
+  - delete_email_layout
+  - get_email_layout
+  - list_email_layouts
+  - update_email_layout
+  - create_email_notification
+  - delete_email_notification
+  - get_email_notification
+  - list_email_notifications
+  - update_email_notification
+
+  # Menu Tools
+  - create_application_menu
+  - delete_application_menu
+  - get_application_menu
+  - list_application_menus
+  - update_application_menu
+  - create_app_module
+  - delete_app_module
+  - get_app_module
+  - list_app_modules
+  - update_app_module
+
+  # Portal Tools
+  - create_portal
+  - delete_portal
+  - get_portal
+  - list_portals
+  - update_portal
+  - clone_portal_page
+  - create_portal_page
+  - delete_portal_page
+  - get_portal_page
+  - list_portal_pages
+  - update_portal_page
+  - clone_portal_container
+  - create_portal_container
+  - delete_portal_container
+  - get_portal_container
+  - list_portal_containers
+  - reorder_portal_containers
+  - update_portal_container
+  - clone_portal_row
+  - create_portal_row
+  - delete_portal_row
+  - get_portal_row
+  - list_portal_rows
+  - reorder_portal_rows
+  - update_portal_row
+  - clone_portal_column
+  - create_portal_column
+  - create_responsive_grid
+  - delete_portal_column
+  - get_portal_column
+  - list_portal_columns
+  - reorder_portal_columns
+  - update_portal_column
+  - bulk_update_widget_instances
+  - clone_widget_instance
+  - create_widget_instance
+  - delete_widget_instance
+  - get_widget_instance
+  - list_widget_instances
+  - update_widget_instance
+  - bulk_create_portal_catalog_associations
   - create_portal_catalog_association
-  - list_portal_catalog_associations
   - delete_portal_catalog_association
   - get_portal_catalog_association
-  - bulk_create_portal_catalog_associations
-
-  # Question Choice Management
-  - create_question_choice
-  - update_question_choice
-  - list_question_choices
-  - get_question_choice
-  - delete_question_choice
-  # Variable Sets Management
-  - create_variable_set
-  - update_variable_set
-  - list_variable_sets
-  - get_variable_set
-  - delete_variable_set
+  - list_portal_catalog_associations

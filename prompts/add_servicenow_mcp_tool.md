@@ -11,11 +11,10 @@ The ServiceNow MCP (Model Completion Protocol) server allows Claude to interact 
 For each new tool, you need to:
 
 1. Create/modify a tool module in `src/servicenow_mcp/tools/`
-2. Update the tools `__init__.py` to expose the new tool
-3. Update `server.py` to register the tool with the MCP server
-4. Add unit tests in the `tests/` directory
-5. Update documentation in the `docs/` directory
-6. Update the `README.md` to include the new tool
+2. Update the tools `src/servicenow_mcp/tools/__init__.py` to expose the new tool
+3. Update `src/servicenow_mcp/utils/tool_utils.py` to register the tool with the MCP server
+4. Update documentation in the `docs/` directory
+5. Update the `README.md` to include the new tool
 
 ## Implementation Steps
 
@@ -25,8 +24,11 @@ Follow these steps to ensure a complete implementation:
 
 ### 1. Tool Module Implementation
 
+The tool should be created in a subfolder within src/servicenow_mcp/tools/{tool_folder_name}, if the user fails to specify a folder BE SURE TO PROMPT them with the correct folder location to use. You can review the available folders and suggest a folder.
+
 ```python
 # Create a new file or modify an existing module in src/servicenow_mcp/tools/
+
 
 """
 {TOOL_NAME} tools for the ServiceNow MCP server.
@@ -120,7 +122,7 @@ def {tool_name}(
 ### 2. Update config/tool_packages.yaml
 
 ```python
-# Add configuration for new tool to appropriate category
+# Add configuration for new tool to appropriate category, use the {tool_folder_name} as the category
 platform_developer:
   # Script Includes
   - list_script_includes
@@ -134,43 +136,25 @@ platform_developer:
 
 ### 2. Update tools/__init__.py
 
+Add the folder to scan to import the tool if a new folder was created (otherwise the tool will automatically be identified)
 ```python
 # Add import for new tool
-from servicenow_mcp.tools.{tool_module} import (
-    {tool_name},
-)
 
-# Add to __all__ list
-__all__ = [
-    # Existing tools...
+subfolders = ['catalog', 'developer', 'foundation', 'agile', 'notifications', 'knowledge', 'menu', 'portal','{tool_folder_name}']
     
-    # New tools
-    "{tool_name}",
-]
 ```
 
 ### 3. Update tool_utils.py
 
+
+Add the folder to scan to import the tool if a new folder was created (otherwise the tool will automatically be identified)
 ```python
-# Add imports for the tool parameters and function
-from servicenow_mcp.tools.{tool_module} import (
-    {ToolName}Params,
-)
-from servicenow_mcp.tools.{tool_module} import (
-    {tool_name} as {tool_name}_tool,
-)
+# Add import for new tool
 
-
-# In the tool_definitions collection add
-    "{tool_name}": (
-        {tool_name}_tool,
-        {ToolName}Params,
-        str,
-        "{Tool description with detailed explanation}",
-        "json",
-    ),
-
+subfolders = ['catalog', 'developer', 'foundation', 'agile', 'notifications', 'knowledge', 'menu', 'portal','{tool_folder_name}']
+    
 ```
+
 
 
 ### 4. Update Documentation
@@ -233,13 +217,6 @@ Also add example usage to the "Example Usage with Claude" section:
 ...
 - "{Example natural language query that would use the new tool}"
 ```
-
-## Testing Guidelines
-
-1. Write unit tests for all new functions and edge cases
-2. Mock all external API calls
-3. Test failure conditions and error handling
-4. Verify parameter validation
 
 ## Documentation Guidelines
 

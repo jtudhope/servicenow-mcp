@@ -347,6 +347,14 @@ The default `config/tool_packages.yaml` includes the following role-based packag
 51. **download_attachment** - Download attachment binary data as base64 from ServiceNow
 52. **delete_attachment** - Delete an attachment from ServiceNow Attachment API
 
+53. **create_atf_test** - Create a new ATF (Automated Test Framework) test in ServiceNow
+54. **update_atf_test** - Update an existing ATF test's properties and configuration
+55. **get_atf_test** - Get detailed information about a specific ATF test
+56. **list_atf_tests** - List ATF tests with optional filtering by name, application, and status
+57. **delete_atf_test** - Delete an ATF test from ServiceNow
+58. **run_atf_test** - Execute an ATF test and trigger test execution
+59. **get_atf_test_results** - Get ATF test execution results and status
+
 ### Application Menu Items
 
 1. **create_application_menu** - Create custom menu items that appear in the All menu and navigation areas
@@ -655,6 +663,18 @@ Below are some example natural language queries you can use with Claude to inter
 - "Get details for the catalog with ID 12345"
 - "Delete the unused training catalog"
 - "Show me all catalogs available on mobile"
+
+#### ATF (Automated Test Framework) Examples
+- "Create a new ATF test called 'User Login Validation Test'"
+- "List all active ATF tests for the incident management application"
+- "Show me ATF tests that contain 'login' in their name"
+- "Run the ATF test with ID abc123def456"
+- "Get the results of the last ATF test execution"
+- "Update the ATF test description to include new validation steps"
+- "Delete the obsolete ATF test for the old workflow"
+- "Find all ATF tests that are currently inactive"
+- "Execute all ATF tests for the customer service portal"
+- "Show me the execution history for test ID xyz789"
 
 #### Attachment Management Examples
 - "Upload this screenshot to the incident record"

@@ -42,6 +42,10 @@ class CreateCatalogVariableParams(BaseModel):
     list_table: Optional[str] = Field(None, description="Table for list collector fields")
     show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
     show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
+    include_none: Optional[bool] = Field(None, description="Whether to include None/empty option for choice variables")
+    unique_lookup_unique: Optional[bool] = Field(None, description="Whether to enforce unique lookup values")
+    tooltip: Optional[str] = Field(None, description="Tooltip text to display for the variable")
+    attributes: Optional[str] = Field(None, description="Additional attributes for the variable (XML format)")
 
 
 class CreateCatalogVariableResponse(BaseModel):
@@ -113,6 +117,14 @@ def create_catalog_variable(
         data["show_help"] = params.show_help
     if params.show_help_on_load is not None:
         data["show_help_on_load"] = params.show_help_on_load
+    if params.include_none is not None:
+        data["include_none"] = params.include_none
+    if params.unique_lookup_unique is not None:
+        data["unique_lookup_unique"] = params.unique_lookup_unique
+    if params.tooltip:
+        data["tooltip"] = params.tooltip
+    if params.attributes:
+        data["attributes"] = params.attributes
 
     try:
         response = requests.post(
@@ -239,6 +251,10 @@ class UpdateCatalogVariableParams(BaseModel):
     list_table: Optional[str] = Field(None, description="Table for list variable fields")
     show_help: Optional[bool] = Field(None, description="Whether to show help icon for the variable")
     show_help_on_load: Optional[bool] = Field(None, description="Whether to show help expanded when form loads")
+    include_none: Optional[bool] = Field(None, description="Whether to include None/empty option for choice variables")
+    unique_lookup_unique: Optional[bool] = Field(None, description="Whether to enforce unique lookup values")
+    tooltip: Optional[str] = Field(None, description="Tooltip text to display for the variable")
+    attributes: Optional[str] = Field(None, description="Additional attributes for the variable (XML format)")
 
 
 class UpdateCatalogVariableResponse(BaseModel):
@@ -310,6 +326,14 @@ def update_catalog_variable(
         data["show_help"] = params.show_help
     if params.show_help_on_load is not None:
         data["show_help_on_load"] = params.show_help_on_load
+    if params.include_none is not None:
+        data["include_none"] = params.include_none
+    if params.unique_lookup_unique is not None:
+        data["unique_lookup_unique"] = params.unique_lookup_unique
+    if params.tooltip is not None:
+        data["tooltip"] = params.tooltip
+    if params.attributes is not None:
+        data["attributes"] = params.attributes
 
     try:
         response = requests.patch(
