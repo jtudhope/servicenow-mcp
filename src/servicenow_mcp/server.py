@@ -29,7 +29,7 @@ from servicenow_mcp.utils.tool_utils import get_tool_definitions
 logger = logging.getLogger(__name__)
 session = None
 logging.basicConfig(
-    filename="app1.log",
+    filename="",
     level=logging.DEBUG
 )
 logger.debug("Starting Log")

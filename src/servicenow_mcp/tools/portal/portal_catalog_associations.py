@@ -277,6 +277,22 @@ def get_portal_catalog_association(
 
 
 # Bulk Create Portal Catalog Associations
+class UpdatePortalCatalogAssociationParams(BaseModel):
+    """Parameters for updating a portal catalog association."""
+
+    association_id: str = Field(..., description="The sys_id of the association to update")
+    active: Optional[bool] = Field(None, description="Whether the association is active")
+    order: Optional[int] = Field(None, description="Display order of the association")
+
+
+class UpdatePortalCatalogAssociationResponse(BaseModel):
+    """Response from update portal catalog association operation."""
+
+    success: bool = Field(..., description="Whether the operation was successful")
+    message: str = Field(..., description="Message describing the result")
+    association_data: Optional[Dict[str, Any]] = Field(None, description="Updated association details")
+
+
 class BulkCreatePortalCatalogAssociationsParams(BaseModel):
     """Parameters for bulk creating portal catalog associations."""
 
@@ -291,6 +307,62 @@ class BulkCreatePortalCatalogAssociationsResponse(BaseModel):
     message: str = Field(..., description="Message describing the result")
     created_associations: List[Dict[str, Any]] = Field(default=[], description="List of created associations")
     failed_associations: List[Dict[str, Any]] = Field(default=[], description="List of failed associations")
+
+
+def update_portal_catalog_association(
+    config: ServerConfig,
+    auth_manager: AuthManager,
+    params: UpdatePortalCatalogAssociationParams,
+) -> UpdatePortalCatalogAssociationResponse:
+    """
+    Update an existing portal catalog association in the m2m_sp_portal_catalog table.
+
+    Args:
+        config: Server configuration.
+        auth_manager: Authentication manager.
+        params: Parameters for updating the portal catalog association.
+
+    Returns:
+        Response with updated association details.
+    """
+    api_url = f"{config.api_url}/table/m2m_sp_portal_catalog/{params.association_id}"
+
+    # Build update data only for provided fields
+    data = {}
+    if params.active is not None:
+        data["active"] = str(params.active).lower()
+    if params.order is not None:
+        data["order"] = str(params.order)
+
+    if not data:
+        return UpdatePortalCatalogAssociationResponse(
+            success=False,
+            message="No fields provided for update",
+        )
+
+    try:
+        response = requests.patch(
+            api_url,
+            json=data,
+            headers=auth_manager.get_headers(),
+            timeout=config.timeout,
+        )
+        response.raise_for_status()
+
+        result = response.json().get("result", {})
+
+        return UpdatePortalCatalogAssociationResponse(
+            success=True,
+            message="Portal catalog association updated successfully",
+            association_data=result,
+        )
+
+    except requests.RequestException as e:
+        logger.error(f"Failed to update portal catalog association: {e}")
+        return UpdatePortalCatalogAssociationResponse(
+            success=False,
+            message=f"Failed to update portal catalog association: {str(e)}",
+        )
 
 
 def bulk_create_portal_catalog_associations(

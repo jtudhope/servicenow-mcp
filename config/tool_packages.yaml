@@ -436,6 +436,40 @@ catalog_builder:
   - get_service_catalog
   - list_service_catalogs
   - update_service_catalog
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Portal Catalog Associations
+  - create_portal_catalog_association
+  - update_portal_catalog_association
+  - list_portal_catalog_associations
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - bulk_create_portal_catalog_associations
+
+  # Basic Scripting (UI Policy & User Criteria)
+  - create_ui_policy
+  - create_ui_policy_action
+  - create_user_criteria
+  - create_user_criteria_condition
   # Optimization
   - get_optimization_recommendations
   # Knowledge Management for Content
@@ -518,7 +552,60 @@ platform_developer:
   - get_script_include
   - list_script_includes
   - update_script_include
-  # Workflow Development
+  - execute_script_include
+  # Taxonomy Management
+  - create_taxonomy
+  - update_taxonomy
+  - list_taxonomies
+  - get_taxonomy
+  - delete_taxonomy
+  - clone_taxonomy
+  # Topic Management
+  - create_topic
+  - update_topic
+  - list_topics
+  - get_topic
+  - delete_topic
+  - clone_topic
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Portal Catalog Associations
+  - create_portal_catalog_association
+  - update_portal_catalog_association
+  - list_portal_catalog_associations
+  - delete_portal_catalog_association
+  - get_portal_catalog_association
+  - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
+  # Connected Content Management
+  - create_connected_content
+  - update_connected_content
+  - list_connected_content
+  - get_connected_content
+  - delete_connected_content
+  - bulk_connect_content
+  # Workflows
+  - list_workflows
+  - get_workflow_details
+  - create_workflow
+  - update_workflow
   - activate_workflow
   - add_workflow_activity
   - create_workflow
@@ -968,6 +1055,21 @@ full:
   - update_widget_instance
   - bulk_create_portal_catalog_associations
   - create_portal_catalog_association
+  - update_portal_catalog_association
+  - list_portal_catalog_associations
   - delete_portal_catalog_association
   - get_portal_catalog_association
-  - list_portal_catalog_associations
+  - bulk_create_portal_catalog_associations
+  # Portal Taxonomy Associations
+  - create_portal_taxonomy_association
+  - update_portal_taxonomy_association
+  - list_portal_taxonomy_associations
+  - delete_portal_taxonomy_association
+  - get_portal_taxonomy_association
+  - bulk_create_portal_taxonomy_associations
+  # Taxonomy Content Configuration
+  - create_taxonomy_content_configuration
+  - update_taxonomy_content_configuration
+  - list_taxonomy_content_configurations
+  - get_taxonomy_content_configuration
+  - delete_taxonomy_content_configuration
